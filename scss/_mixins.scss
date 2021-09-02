@@ -1,0 +1,7 @@
+@mixin section-colors($color: $alpha-dark-4) {
+	background-color: $color;
+
+	.arrow-down {
+		border-top-color: $color;
+	}
+}
