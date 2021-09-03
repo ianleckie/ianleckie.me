@@ -24,3 +24,5 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+css/styles.css
+css/styles.css.map

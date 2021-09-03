@@ -1,6 +1,7 @@
 // modules
 @use 'html5boilerplate';
 @use 'simple-grid';
+@use 'prism';
 
 // webfonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Signika:wght@300;400;500;600');
@@ -27,6 +28,7 @@ $dark-red:			#730202;
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
 $text-size: 1.5em;
+$text-size-smaller: 1.4em;
 $line-height: 1.5;
 
 $header-font-family: 'Signika', Helvetica, sans-serif;
@@ -339,8 +341,16 @@ main p {
 	box-shadow: $large-shadow;
 }
 
-.thank-you {
-	font-weight: $font-weight-semi-bold;
+#section-counter {
+	position: fixed;
+	top: 2em;
+	left: 2em;
+	width: 3em;
+	text-align: center;
+	background-color: $alpha-dark-4;
+	line-height: 2.5;
+	padding: 0 1em;
+	border-radius: 2.5em;
 }
 
 #intro {
@@ -380,6 +390,10 @@ main p {
 		}
 	}
 
+	li {
+		font-size: $text-size-smaller;
+	}
+
 	#software-frameworks:before {
 		@include material-icon($icon-experience, $color: $beige, $bg-color: $purple);
 		
@@ -412,6 +426,13 @@ main p {
 
 	p {
 		color: $alpha-dark-5;
+		font-size: $text-size-smaller;
+		text-align: justify;
+
+		.thank-you {
+			color: $alpha-dark-5;
+			font-weight: $font-weight-semi-bold;
+		}
 	}
 
 	a:hover {
