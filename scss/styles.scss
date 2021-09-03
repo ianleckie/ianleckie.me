@@ -91,10 +91,6 @@ $icon-list: 					"\ef76"; //beenhere
 /* site styles */
 body {
 	background-color: $red;
-}
-
-
-* {
 	font-family: $font-family;
 	line-height: $line-height;
 	color: $light-beige;
@@ -121,9 +117,9 @@ p, li {
 
 ul {
 	margin: 0;
-	padding: 0 0 0 3.2em;
+	padding: 0 0 0 3em;
 	list-style: none;
-	text-indent: -1.6em;
+	text-indent: -1.5em;
 
 	li {
 		margin: 0;
@@ -209,6 +205,9 @@ main p {
 	margin: 0.6em 5%;
 	color: $beige;
 	background-color: $alpha-light-2;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .button.email span:before {
@@ -383,11 +382,7 @@ main p {
 
 	h2 {
 		color: $dark-purple;
-
-		.material-icons {
-			vertical-align: -0.15em;
-			background-color: $purple;
-		}
+		line-height: 2;
 	}
 
 	li {
@@ -425,6 +420,7 @@ main p {
 	}
 
 	p {
+		margin-top: 1.5em;
 		color: $alpha-dark-5;
 		font-size: $text-size-smaller;
 		text-align: justify;
@@ -501,14 +497,14 @@ main p {
 
 /* responsive styles */
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+	/* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 1.25dppx),
+	(min-resolution: 120dpi) {
+	/* Style adjustments for high resolution devices */
 }
 
 

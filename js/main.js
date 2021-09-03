@@ -12,7 +12,7 @@ function checkVisibility( element_id ) {
 function updateSectionNumber() {
 
 	var section_ids     = ['#intro', '#experience', '#more-about-me', '#resume', '#colophon'];
-	var section_element = $('#section-num');
+	var section_element = $('#section-number');
 
 	for (var key = 1; key < section_ids.length - 1; key++) {
 
