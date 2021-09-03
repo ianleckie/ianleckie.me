@@ -56,9 +56,9 @@
 						
 						<h1>Hello, I’m Ian Leckie.</h1>
 
-						<p><strong>I'm a <a href="" title="View some code examples and projects on GitHub">Developer</a> and <a href="" title="View my design portfolio">Designer</a> with over two decades of experience crafting full-stack web applications.</strong></p>
+						<p><strong>I'm a <a href="pages/code-examples.html" title="View some code examples and projects on GitHub" target="overlay">Developer</a> and <a href="pages/design-portfolio.html" title="View my design portfolio" target="overlay">Designer</a> with over two decades of experience crafting full-stack web applications.</strong></p>
 
-						<p>I’ve worked with <a href="" title="See some of the clients I have worked with">clients</a> both local and global on projects ranging from public websites with custom CMSs, to process management and automating B2B workflows. I excel when I am wearing multiple hats and I’m a fast, self-directed learner. My top priorities are creating a great user experience and writing readable, easily maintained code.</p>
+						<p>I’ve worked with <a href="pages/clients.html" title="See some of the clients I have worked with" target="overlay">clients</a> both local and global on projects ranging from public websites with custom CMSs, to process management and automating B2B workflows. I excel when I am wearing multiple hats and I’m a fast, self-directed learner. My top priorities are creating a great user experience and writing readable, easily maintained code.</p>
 
 						<p>I’m seeking a remote position in a dynamic, progressive organization where I can leverage my unique combination of skills in interesting and challenging ways. You can learn a little more about me below, or skip right to my <a href="#resume" title="Scroll down to my Cover Letter &amp; Resume">Cover Letter &amp; Resume.</a></p>
 
@@ -149,41 +149,19 @@
 
 				<div class="row" id="more-about-me">
 
-					<div class="col-7">
+					<div class="col-7 description">
 
-						<p>If I'm not at home, you're most likely to find me out camping, <a href="" class="selected">hiking</a> or <a href="">kayaking.</a> Or maybe riding or working on my <a href="">bicycles.</a></p>
+						<p>If I'm not at home, you're most likely to find me out camping, <a href="pages/hiking.html" target="gallery">hiking</a> or <a href="pages/kayaking.html" target="gallery">kayaking.</a> Or maybe riding or working on my <a href="pages/bicycles.html" target="gallery">bicycles.</a></p>
 
-						<p>I’ve been teaching myself <a href="">3D modeling,</a> and recently I’ve been fascinated by designing and building in <a href="">Minecraft.</a></p>
+						<p>I’ve been teaching myself <a href="pages/3d-modeling.html" target="gallery">3D modeling,</a> and recently I’ve been fascinated by designing and building in <a href="pages/minecraft.html" target="gallery">Minecraft.</a></p>
 
-						<p>The only things I've been passionate about for longer than web development are making <a href="">music,</a> and <a href="">art,</a> taking <a href="">photographs,</a> and collecting <a href="">vinyl records.</a></p>
+						<p>The only things I've been passionate about for longer than web development are making <a href="pages/music.html" target="gallery">music,</a> and <a href="pages/art.html" target="gallery">art,</a> taking <a href="pages/photography.html" target="gallery">photographs,</a> and collecting <a href="pages/vinyl.html" target="gallery">vinyl records.</a></p>
 
-						<p>Oh, and I make a killer <a href="">chai!</a></p>
+						<p>Oh, and I make a killer <a href="pages/chai.html" target="overlay">chai!</a></p>
 						
 					</div>
 
-					<div class="col-5">
-
-						<div class="gallery">
-
-							<!-- <div class="video-container">
-							
-								<iframe src="https://www.youtube-nocookie.com/embed/8t8nilbUL9M?start=5" title="In Situ by Ian Leckie" frameborder="0"></iframe>
-
-							</div>
-
-							<div class="caption">In Situ, a song I wrote and recorded in 2020</div> -->
-
-							<div class="image-container">
-
-								<img src="img/hiking.jpg" title="Hiking at Glacier National Park, 2019">
-
-								<div class="caption">Hiking at Glacier National Park, 2019</div>
-
-							</div>
-
-						</div>
-						
-					</div>
+					<div class="col-5" id="gallery"></div>
 
 				</div>
 
@@ -295,6 +273,8 @@
 	<div id="article-counter">
 		<span id="article-number">1</span> of 4
 	</div>
+
+	<div id="overlay"><div></div><span id="close"></span></div>
 
 	<script src="js/vendor/modernizr-3.11.2.min.js"></script>
 	<script src="js/vendor/jquery-3.6.0.min.js"></script>

@@ -8,22 +8,22 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // colors
-$light-beige:		#EBE4C7;
-$beige:					#BFBAA3;
-$dark-beige:		#A6A18D;
-$darkest-beige:	#45433B;
+$light-beige:   #EBE4C7;
+$beige:         #BFBAA3;
+$dark-beige:    #A6A18D;
+$darkest-beige: #45433B;
 
-$purple:				#633E60;
-$dark-purple:		#422f54;
+$purple:        #633E60;
+$dark-purple:   #422f54;
 
-$light-blue:		#5CB3B8;
-$blue:					#4D9599;
+$light-blue:    #5CB3B8;
+$blue:          #4D9599;
 
-$light-green:		#C1D96C;
-$green:					#838C3A;
+$light-green:   #C1D96C;
+$green:         #838C3A;
 
-$red:						#8C0303;
-$dark-red:			#730202;
+$red:           #8C0303;
+$dark-red:      #730202;
 
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
@@ -36,33 +36,34 @@ $header-size: 3em;
 $intro-header-size: 4em;
 $header-line-height: 1.25;
 
-$font-weight-light:			200;
-$font-weight-regular:		300;
-$font-weight-semi-bold:	500;
-$font-weight-bold:			600;
+$font-weight-light:     200;
+$font-weight-regular:   300;
+$font-weight-semi-bold: 500;
+$font-weight-bold:      600;
 
 // shadows and rgba colors
-$text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+$text-shadow:  0 2px 8px  rgba(0,0,0,0.3);
 $large-shadow: 0 6px 18px rgba(0,0,0,0.2);
 
-$alpha-light-1:	rgba(255,255,255,0.75);
-$alpha-light-2:	rgba(255,255,255,0.05);
-$alpha-dark-1:	rgba(0,0,0,0.1);
-$alpha-dark-2:	rgba(0,0,0,0.2);
-$alpha-dark-3:	rgba(0,0,0,0.3);
-$alpha-dark-4:	rgba(0,0,0,0.4);
-$alpha-dark-5:	rgba(0,0,0,0.5);
+$alpha-light-1: rgba(255,255,255,0.75);
+$alpha-light-2: rgba(255,255,255,0.05);
+$alpha-dark-1:	 rgba(0,0,0,0.1);
+$alpha-dark-2:	 rgba(0,0,0,0.2);
+$alpha-dark-3:	 rgba(0,0,0,0.3);
+$alpha-dark-4:	 rgba(0,0,0,0.4);
+$alpha-dark-5:	 rgba(0,0,0,0.5);
 
 // material icons
-$icon-default: 				"\e835"; //check_box_outline_blank
-$icon-email: 					"\e0be"; //email
-$icon-phone: 					"\e325"; //phone_iphone
-$icon-experience: 		"\f100"; //home_repair_service
-$icon-skills: 				"\f1c3"; //wysiwyg
-$icon-open-file: 			"\e89e"; //open_in_new
-$icon-file-download:	"\e2c4"; //file_download
-$icon-tool: 					"\e3ae"; //brush
-$icon-list: 					"\ef76"; //beenhere
+$icon-default:       "\e835"; //check_box_outline_blank
+$icon-email:         "\e0be"; //email
+$icon-phone:         "\e325"; //phone_iphone
+$icon-experience:    "\f100"; //home_repair_service
+$icon-skills:        "\f1c3"; //wysiwyg
+$icon-open-file:     "\e89e"; //open_in_new
+$icon-file-download: "\e2c4"; //file_download
+$icon-tool:          "\e3ae"; //brush
+$icon-list:          "\ef76"; //beenhere
+$icon-close:         "\e5cd"; //close
 
 // mixins
 @mixin section-colors($color: $alpha-dark-4) {
@@ -185,6 +186,10 @@ main p {
 	margin-bottom: 0;
 }
 
+.noscroll {
+	overflow: hidden;
+}
+
 .button {
 	display: inline-block;
 	background-color: $alpha-dark-4;
@@ -220,10 +225,10 @@ main p {
 
 .button.email:hover, .button.phone:hover {
 	background-color: $dark-purple;
-}
 
-.button.email:hover span:before, .button.phone:hover span:before {
-	background-color: $alpha-light-2;
+	span:before {
+		background-color: $alpha-light-2;
+	}
 }
 
 .button.download {
@@ -233,21 +238,21 @@ main p {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-}
 
-.button.download span:before {
-	@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: $alpha-dark-2);
+	span:before {
+		@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: $alpha-dark-2);
+	}
 }
 
 .button.download:hover {
 	background-color: $dark-red;
+
+	span:before {
+		background-color: $alpha-dark-4;
+	}
 }
 
-.button.download:hover span:before {
-	background-color: $alpha-dark-4;
-}
-
-.gallery {
+#gallery {
 	max-width: 100%;
 	margin-top: 2em;
 
@@ -296,7 +301,7 @@ main p {
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
 	border-top: 40px solid $alpha-dark-4;
-	z-index: 1000;
+	z-index: 900;
 }
 
 .arrow-down-border {
@@ -304,7 +309,7 @@ main p {
 	border-left: 52px solid transparent;
 	border-right: 52px solid transparent;
 	border-top: 52px solid $beige;
-	z-index: 999;
+	z-index: 899;
 }
 
 .file-preview {
@@ -350,6 +355,49 @@ main p {
 	line-height: 2.5;
 	padding: 0 1em;
 	border-radius: 2.5em;
+}
+
+#overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $alpha-dark-5;
+	z-index: 998;
+
+	div {
+		position: fixed;
+		top: 0;
+		right: 10%;
+		bottom: 0;
+		left: 10%;
+		background-color: $beige;
+		z-index: 999;
+	}
+
+	#close {
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		top: 2em;
+		right: 12.5%;
+		border-radius: 2em;
+		z-index: 1000;
+	}
+
+	#close:hover {
+		cursor: pointer;
+		background-color: $dark-purple;
+	}
+
+	#close:before {
+		@include material-icon( $icon-close );
+		margin: 0;
+		background-color: $alpha-dark-5;
+		font-size: 1.4em;
+	}
 }
 
 #intro {
@@ -404,6 +452,10 @@ main p {
 
 #more-about-me {
 	@include section-colors($green);
+
+	.description {
+		padding-bottom: 4em;
+	}
 }
 
 #resume {
@@ -497,14 +549,7 @@ main p {
 
 /* responsive styles */
 @media only screen and (min-width: 35em) {
-	/* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-	(-webkit-min-device-pixel-ratio: 1.25),
-	(min-resolution: 1.25dppx),
-	(min-resolution: 120dpi) {
-	/* Style adjustments for high resolution devices */
+	
 }
 
 
