@@ -1,4 +1,7 @@
 var article_number_selector   = '#article-number',
+	gallery_link_selector     = 'a[target="gallery"]';
+	gallery_selector          = '#gallery',
+	overlay_link_selector     = 'a[target="overlay"]';
     overlay_selector          = '#overlay',
     overlay_contents_selector = '#overlay div';
 
@@ -51,10 +54,10 @@ function updateGallery( event ) {
 
 	event.preventDefault();
 
-	$( 'a' ).removeClass( 'selected ');
+	$( gallery_link_selector ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( '#gallery' ).load( $(this).attr( 'href' ) );
+	$( gallery_selector ).load( $(this).attr( 'href' ) );
 
 }
 
@@ -105,11 +108,9 @@ function loadFunction( jQuery ) {
 
 	$( '#close' ).click( toggleOverlay );
 
-	$( 'a[target="overlay"]' ).click( openLinkInOverlay );
+	$( overlay_link_selector ).click( openLinkInOverlay );
 	
-	$( 'a[target="gallery"]' ).click( updateGallery );
-
-	$( 'a[target="gallery"]' ).first().click();
+	$( gallery_link_selector ).click( updateGallery ).first().click();
 
 }
  
