@@ -1,40 +1,48 @@
-function checkVisibility( element_id ) {
+/*
+Checks whether an element is in the viewport
+*/
+function checkVisibility( element ) {
 
 	var viewport_height = $(window).height();
 	var scroll_top      = $(window).scrollTop();
-	var element_top     = $(element_id).offset().top;
-	var element_height  = $(element_id).outerHeight( true );
+	var element_top     = element.offset().top;
+	var element_height  = element.outerHeight( true );
 
 	return ( ( element_top < ( viewport_height + scroll_top ) ) && ( element_top > ( scroll_top - element_height ) ) );
 
 }
 
-function updateSectionNumber() {
+/*
+Determines which article is currently active
+by checking the visibility of each article
+and it's predecessor and keeps #article-number
+updated with that value
+*/
+function updateArticleNumber() {
+	
+	var article_number  = $('#article-number');
+	var last_is_visible = false;
 
-	var section_ids     = ['#intro', '#experience', '#more-about-me', '#resume', '#colophon'];
-	var section_element = $('#section-number');
+	$('article').each(function( index ) {
 
-	for (var key = 1; key < section_ids.length - 1; key++) {
+		is_visible = checkVisibility( $(this) );
 
-		if ( checkVisibility( section_ids[0] ) ) {
+		if ( !last_is_visible && is_visible ) {
 			
-			section_element.html( 1 );
-			break;
-		
-		} else if ( !checkVisibility( section_ids[key - 1] ) && checkVisibility( section_ids[key] ) ) {
-			
-			section_element.html( key + 1 );
-			break;
+			article_number.text( index + 1 );
+			return false;
 		
 		}
-	
-	}
+
+		last_is_visible = is_visible;
+
+	});
 
 }
 
 function loadFunction( jQuery ) {
 
-	$( window ).scroll( updateSectionNumber );
+	$( window ).scroll( updateArticleNumber );
 
 }
  
