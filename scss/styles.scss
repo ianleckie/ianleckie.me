@@ -259,10 +259,11 @@ main p {
 	background-color: $alpha-dark-2;
 	border-radius: 24px;
 	padding: 1em;
+	box-shadow: $large-shadow;
 
 	img {
 		width: 100%;
-		border: 6px solid $light-beige;
+		border: 6px solid $alpha-dark-4;
 		box-sizing: border-box;
 		border-radius: 16px;
 	}
@@ -272,8 +273,7 @@ main p {
 		overflow: hidden;
 		height: 0;
 		padding-bottom: 56.25%; /* 16:9 aspect ratio */
-		border: 6px solid $light-beige;
-		border-radius: 16px;
+		margin: 6px 6px 0;
 
 		iframe, embed {
 			position: absolute;
@@ -530,6 +530,7 @@ main p {
 			background-color: $alpha-light-2;
 			line-height: 1.6;
 			border-radius: 1.6em;
+			white-space: nowrap;
 
 			a {
 				color: $beige;
