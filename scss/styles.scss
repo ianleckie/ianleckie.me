@@ -253,13 +253,18 @@ main p {
 }
 
 #gallery {
+	box-sizing: border-box;
 	max-width: 100%;
-	margin-top: 2em;
+	margin-top: 1em;
+	background-color: $alpha-dark-2;
+	border-radius: 24px;
+	padding: 1em;
 
 	img {
 		width: 100%;
 		border: 6px solid $light-beige;
 		box-sizing: border-box;
+		border-radius: 16px;
 	}
 
 	.video-container {
@@ -268,6 +273,7 @@ main p {
 		height: 0;
 		padding-bottom: 56.25%; /* 16:9 aspect ratio */
 		border: 6px solid $light-beige;
+		border-radius: 16px;
 
 		iframe, embed {
 			position: absolute;
@@ -282,13 +288,10 @@ main p {
 }
 
 .caption {
-	padding: 1em 1em;
+	padding: 1em 0.5em 0.25em;
 	font-size: 1.1em;
-	font-weight: $font-weight-light;
 	font-style: italic;
-	background-color: $alpha-light-2;
-	border-bottom-right-radius: 16px;
-	border-bottom-left-radius: 16px;
+	color: $alpha-light-1;
 }
 
 .arrow-down, .arrow-down-border {
