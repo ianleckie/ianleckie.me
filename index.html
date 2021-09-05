@@ -54,7 +54,7 @@
 					
 					<div class="col-8" id="about-me">
 						
-						<h1>Hello, I’m Ian Leckie.</h1>
+						<h1>Hello, I’m <span class="name">Ian Leckie.</span></h1>
 
 						<p><strong>I'm a <a href="pages/code-examples.html" title="View some code examples and projects on GitHub" target="overlay">Developer</a> and <a href="pages/design-portfolio.html" title="View my design portfolio" target="overlay">Designer</a> with over two decades of experience crafting full-stack web applications.</strong></p>
 
@@ -151,7 +151,7 @@
 
 					<div class="col-7 description">
 
-						<p>If I'm not at home, you're most likely to find me out camping, <a href="pages/hiking.html" target="gallery">hiking</a> or <a href="pages/kayaking.html" target="gallery">kayaking.</a> Or maybe riding or working on my <a href="pages/bicycle.html" target="gallery">bicycles.</a></p>
+						<p>If I'm not at home, you're most likely to find me out <a href="pages/hiking.html" target="gallery">hiking,</a> camping or <a href="pages/kayaking.html" target="gallery">kayaking.</a> Or maybe riding or working on my <a href="pages/bicycle.html" target="gallery">bicycles.</a></p>
 
 						<p>I’ve been teaching myself <a href="pages/3d-modeling.html" target="gallery">3D modeling,</a> and recently I’ve been fascinated by designing and building in <a href="pages/minecraft.html" target="gallery">Minecraft.</a></p>
 
@@ -188,9 +188,9 @@
 
 				<div class="row">
 
-					<div class="col-2"></div>
+					<div class="col-2-sm"></div>
 					
-					<div class="col-4">
+					<div class="col-4-sm">
 
 						<h2>Cover Letter</h2>
 
@@ -200,7 +200,7 @@
 
 					</div>
 					
-					<div class="col-4">
+					<div class="col-4-sm">
 
 						<h2>Resume</h2>
 
@@ -210,7 +210,7 @@
 
 					</div>
 
-					<div class="col-2"></div>
+					<div class="col-2-sm"></div>
 
 				</div>
 
@@ -274,7 +274,12 @@
 		<span id="article-number">1</span> of 4
 	</div>
 
-	<div id="overlay"><div></div><span id="close"></span></div>
+	<div id="overlay">
+		<div class="wrapper">
+			<div class="contents"></div>
+			<span class="close"></span>
+		</div>
+	</div>
 
 	<script src="js/vendor/modernizr-3.11.2.min.js"></script>
 	<script src="js/vendor/jquery-3.6.0.min.js"></script>

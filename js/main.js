@@ -3,7 +3,7 @@ var article_number_selector   = '#article-number',
 	gallery_selector          = '#gallery',
 	overlay_link_selector     = 'a[target="overlay"]';
     overlay_selector          = '#overlay',
-    overlay_contents_selector = '#overlay div';
+    overlay_contents_selector = '#overlay .contents';
 
 /*
 Checks whether an element is in the viewport
@@ -106,7 +106,7 @@ function loadFunction( jQuery ) {
 
 	$( window ).keypress( closeOverlayOnEscPress );
 
-	$( '#close' ).click( toggleOverlay );
+	$( '#overlay .close' ).click( toggleOverlay );
 
 	$( overlay_link_selector ).click( openLinkInOverlay );
 	

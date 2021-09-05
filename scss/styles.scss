@@ -1,11 +1,7 @@
-// modules
-@use 'html5boilerplate';
-@use 'simple-grid';
-@use 'prism';
+// variables
 
-// webfonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Signika:wght@300;400;500;600');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// sizing
+$breakpoint: 70em;
 
 // colors
 $light-beige:   #EBE4C7;
@@ -65,7 +61,24 @@ $icon-tool:          "\e3ae"; //brush
 $icon-list:          "\ef76"; //beenhere
 $icon-close:         "\e5cd"; //close
 
+
+// modules
+@use 'html5boilerplate';
+@use 'simple-grid' with ( $breakpoint: $breakpoint );
+@use 'prism';
+
+
+// webfonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Signika:wght@300;400;500;600');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
 // mixins
+@mixin center() {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 @mixin section-colors($color: $alpha-dark-4) {
 	background-color: $color;
 
@@ -88,6 +101,7 @@ $icon-close:         "\e5cd"; //close
 	text-align: center;
 	border-radius: 50%;
 }
+
 
 /* site styles */
 body {
@@ -190,6 +204,10 @@ main p {
 	overflow: hidden;
 }
 
+.name {
+	white-space: nowrap;
+}
+
 .button {
 	display: inline-block;
 	background-color: $alpha-dark-4;
@@ -236,8 +254,8 @@ main p {
 	color: $beige;
 	background-color: $red;
 	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
+	
+	@include center();
 
 	span:before {
 		@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: $alpha-dark-2);
@@ -369,34 +387,48 @@ main p {
 	bottom: 0;
 	left: 0;
 	background-color: $alpha-dark-5;
-	z-index: 998;
+	z-index: 997;
 
-	div {
+	.wrapper {
 		position: fixed;
 		top: 0;
-		right: 10%;
+		right: 0;
 		bottom: 0;
-		left: 10%;
-		background-color: $beige;
-		z-index: 999;
+		left: 0;
+		background-color: $alpha-dark-3;
+		z-index: 998;
+
+		.contents {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			max-width: $breakpoint;
+			background-color: $beige;
+			z-index: 999;
+			padding: 3em;
+			overflow: scroll;
+
+			@include center();
+		}
 	}
 
-	#close {
+	.close {
 		margin: 0;
 		padding: 0;
-		position: fixed;
-		top: 2em;
-		right: 12.5%;
+		position: absolute;
+		top: 1em;
+		right: 1em;
 		border-radius: 2em;
 		z-index: 1000;
 	}
 
-	#close:hover {
+	.close:hover {
 		cursor: pointer;
-		background-color: $dark-purple;
+		background-color: $purple;
 	}
 
-	#close:before {
+	.close:before {
 		@include material-icon( $icon-close );
 		margin: 0;
 		background-color: $alpha-dark-5;
@@ -553,7 +585,7 @@ main p {
 
 
 /* responsive styles */
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: $breakpoint) {
 	
 }
 
@@ -565,7 +597,6 @@ main p {
 	*::after {
 		background: #fff !important;
 		color: #000 !important;
-		/* Black prints faster */
 		box-shadow: none !important;
 		text-shadow: none !important;
 	}
@@ -583,10 +614,6 @@ main p {
 		content: " (" attr(title) ")";
 	}
 
-	/*
-	 * Don't show links that are fragment identifiers,
-	 * or use the `javascript:` pseudo protocol
-	 */
 	a[href^="#"]::after,
 	a[href^="javascript:"]::after {
 		content: "";
