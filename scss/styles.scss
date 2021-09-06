@@ -385,21 +385,33 @@ main p {
 
 			nav {
 				margin: 1em -1em 0 -1em;
+				padding-left: 1.5em;
 				background-color: $beige;
-				border-radius: 32px 32px 0 0;
+				border-radius: 2em 2em 0 0;
 			}
 
 			nav a {
+				margin: 1em 0 0 0;
+				padding: 0 0.7em;
 				display: inline-block;
 				font-size: 1.5em;
-				font-weight: $font-weight-semi-bold;
-				margin: 0;
-				padding: 0.25em 1em;
+				font-weight: $font-weight-bold;
 				text-decoration: none;
+				border-radius: 1.5em;
+			}
+
+			nav a:hover {
+				color: $light-beige;
 			}
 
 			nav a.selected {
-				background-color: transparent !important;
+				background-color: $light-beige;
+				cursor: default;
+				box-shadow: $large-shadow;
+			}
+
+			nav a.selected:hover {
+				color: $purple;
 			}
 
 			section {
@@ -417,19 +429,19 @@ main p {
 
 			h1 {
 				color: $purple;
-				margin-bottom: 0.75em;
+				margin: 0;
 			}
 
 			p {
+				margin: 0.5em 0 0;
+				color: $alpha-dark-5;
+			}
+
+			section p {
 				font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 				font-size: 1.1em;
 				font-weight: $font-weight-semi-bold;
-				color: $alpha-dark-5;
 				margin: 1em 0.5em 0;
-			}
-			
-			h1 + p {
-				margin-top: 1em;
 			}
 
 			a {
@@ -444,20 +456,33 @@ main p {
 			}
 
 			a.github {
+				background-color: $light-beige;
 				display: inline-block;
-				margin-left: -0.25em;
-				padding-left: 0.25em;
+				margin-left: -0.1em;
+				padding: 0.25em 1em 0.25em 0.25em;
+				border-radius: 1em;
+				box-shadow: $large-shadow;
+			}
+
+			a.github:hover {
+				text-decoration: none;
+				background-color: $purple;
+				color: $beige;
 			}
 
 			a.github::before {
 				display: inline-block;
 				content: url( '../img/github-mark-24.png' );
 				line-height: 0;
-				padding: 0;
+				padding: 2px;
 				background-color: $light-beige;
 				border-radius: 50%;
 				margin-right: 0.5em;
-				vertical-align: -0.25em;
+				vertical-align: -0.35em;
+			}
+
+			a.github:hover::before {
+				background-color: $light-beige;
 			}
 
 			strong {
@@ -465,12 +490,13 @@ main p {
 			}
 
 			pre {
-				height: 26em;
+				height: 25.2em;
 				overflow: scroll;
 				border: 0.5em solid $light-beige;
-				border-radius: 16px;
-				margin-top: 1em;
+				border-radius: 1.25em;
+				margin: 1em 0 1.25em;
 				padding: 0.5em 1em;
+				box-shadow: $large-shadow;
 			}
 		}
 	}
@@ -483,6 +509,14 @@ main p {
 		right: 1em;
 		border-radius: 2em;
 		z-index: 1000;
+	}
+
+	.close::after {
+		content: '[esc]';
+		color: $dark-beige;
+		position: absolute;
+		top: 105%;
+		@include center;
 	}
 
 	.close:hover {

@@ -5,7 +5,10 @@ var section_number_selector   = '#section-number',
     gallery_selector          = '#gallery',
     overlay_link_selector     = 'a[target="overlay"]',
     overlay_selector          = '#overlay',
-    overlay_contents_selector = '#overlay .contents';
+    overlay_contents_selector = '#overlay .contents',
+    overlay_section_selector  = '#overlay section',
+    overlay_close_selector    = '#overlay .close',
+    code_link_selector        = '#code-nav a';
 
 /*
 Checks whether an element is in the viewport
@@ -108,7 +111,7 @@ Loads the sample code found at uri into the element identified
 by target_selector, then processes it with prism using the
 specified lang value
 */
-function loadSampleCode( target_selector, uri, lang ) {
+function loadExampleCode( target_selector, uri, lang ) {
 
 	$.get( uri, function( data ) {
 
@@ -118,17 +121,31 @@ function loadSampleCode( target_selector, uri, lang ) {
 
 }
 
+function selectCodeExample( event ) {
+
+	event.preventDefault();
+
+	$( code_link_selector ).removeClass( 'selected ');
+	$( this ).addClass( 'selected' );
+
+	$( overlay_section_selector ).hide();
+	$( $(this).attr( 'href' ) ).show();
+
+}
+
 function loadFunction( jQuery ) {
 
 	$( window ).scroll( updateSectionNumber );
 
 	$( window ).keypress( closeOverlayOnEscPress );
 
-	$( '#overlay .close' ).click( toggleOverlay );
+	$( overlay_close_selector ).click( toggleOverlay );
 
 	$( overlay_link_selector ).click( openLinkInOverlay );
 	
 	$( gallery_link_selector ).click( updateGallery ).first().click();
+
+	// $( code_link_selector ).click( selectCodeExample );
 
 }
  
