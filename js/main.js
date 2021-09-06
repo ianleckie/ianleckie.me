@@ -1,7 +1,9 @@
-var article_number_selector   = '#article-number',
-	gallery_link_selector     = 'a[target="gallery"]';
-	gallery_selector          = '#gallery',
-	overlay_link_selector     = 'a[target="overlay"]';
+var dev_mode = true;
+
+var section_number_selector   = '#section-number',
+    gallery_link_selector     = 'a[target="gallery"]',
+    gallery_selector          = '#gallery',
+    overlay_link_selector     = 'a[target="overlay"]',
     overlay_selector          = '#overlay',
     overlay_contents_selector = '#overlay .contents';
 
@@ -20,23 +22,23 @@ function checkVisibility( element ) {
 }
 
 /*
-Determines which article is currently active
-by checking the visibility of each article
-and it's predecessor and keeps #article-number
+Determines which section is currently active
+by checking the visibility of each section
+and it's predecessor and keeps #section-number
 updated with that value
 */
-function updateArticleNumber() {
+function updateSectionNumber() {
 	
-	var article_number  = $( article_number_selector );
+	var section_number  = $( section_number_selector );
 	var last_is_visible = false;
 
-	$( 'article' ).each( function( index ) {
+	$( 'section' ).each( function( index ) {
 
 		is_visible = checkVisibility( $( this ) );
 
 		if ( !last_is_visible && is_visible ) {
 			
-			article_number.text( index + 1 );
+			section_number.text( index + 1 );
 			return false;
 		
 		}
@@ -57,7 +59,7 @@ function updateGallery( event ) {
 	$( gallery_link_selector ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( gallery_selector ).load( $(this).attr( 'href' ) );
+	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
 
 }
 
@@ -70,7 +72,8 @@ function openLinkInOverlay( event ) {
 
 	toggleOverlay();
 
-	$( overlay_contents_selector ).load( $(this).attr( 'href' ) );
+	$( overlay_contents_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
+
 
 }
 
@@ -79,8 +82,8 @@ Empties overlay, toggles body scrolling
 and then fades overlay in or out
 */
 function toggleOverlay() {
-	
-	$( overlay_contents_selector ).html( '' );
+
+	$( overlay_contents_selector ).html('');
 
 	$( 'body' ).toggleClass( 'noscroll' );
 
@@ -100,9 +103,24 @@ function closeOverlayOnEscPress( event ) {
 
 }
 
+/*
+Loads the sample code found at uri into the element identified
+by target_selector, then processes it with prism using the
+specified lang value
+*/
+function loadSampleCode( target_selector, uri, lang ) {
+
+	$.get( uri, function( data ) {
+
+		$( target_selector ).html( Prism.highlight(data, Prism.languages[lang], lang) );
+
+	});
+
+}
+
 function loadFunction( jQuery ) {
 
-	$( window ).scroll( updateArticleNumber );
+	$( window ).scroll( updateSectionNumber );
 
 	$( window ).keypress( closeOverlayOnEscPress );
 
@@ -114,4 +132,4 @@ function loadFunction( jQuery ) {
 
 }
  
-$( window ).on( "load", loadFunction );
+$( window ).on( 'load', loadFunction );
