@@ -1,11 +1,9 @@
 /**
- *
  * NoMustache
  * 
  * A simple tool for processing data stored in a Google spreadsheet through
  * a Mustache-based HTML template. Outputs an HTML file for each row or
  * column of data as specifed by user input.
- * 
  */
 
 const fs       = require('fs');

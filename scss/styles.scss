@@ -73,7 +73,6 @@ $icon-repository:    "\e0ee"; //list_alt
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Signika:wght@300;400;500;600');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-
 // mixins
 @mixin center() {
 	left: 50%;
@@ -391,12 +390,12 @@ main p {
 			}
 
 			nav a {
-				// display: inline-block;
-				// font-size: 1.5em;
-				// font-weight: $font-weight-semi-bold;
-				// margin: 0;
-				// padding: 0.25em 1em;
-				// text-decoration: none;
+				display: inline-block;
+				font-size: 1.5em;
+				font-weight: $font-weight-semi-bold;
+				margin: 0;
+				padding: 0.25em 1em;
+				text-decoration: none;
 			}
 
 			nav a.selected {
@@ -405,7 +404,7 @@ main p {
 
 			section {
 				display: none;
-				padding: 1.5em 1em;
+				padding: 1px 1em 1.5em;
 				margin: 0 -1em;	
 				border-top: none;
 				background-color: $beige;
@@ -422,8 +421,8 @@ main p {
 			}
 
 			p {
-				font-size: 1.2em;
-				font-style: italic;
+				font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+				font-size: 1.1em;
 				font-weight: $font-weight-semi-bold;
 				color: $alpha-dark-5;
 				margin: 1em 0.5em 0;
@@ -444,6 +443,12 @@ main p {
 				text-decoration: underline;
 			}
 
+			a.github {
+				display: inline-block;
+				margin-left: -0.25em;
+				padding-left: 0.25em;
+			}
+
 			a.github::before {
 				display: inline-block;
 				content: url( '../img/github-mark-24.png' );
@@ -452,7 +457,11 @@ main p {
 				background-color: $light-beige;
 				border-radius: 50%;
 				margin-right: 0.5em;
-				vertical-align: middle;
+				vertical-align: -0.25em;
+			}
+
+			strong {
+				font-weight: $font-weight-bold;
 			}
 
 			pre {
@@ -462,28 +471,6 @@ main p {
 				border-radius: 16px;
 				margin-top: 1em;
 				padding: 0.5em 1em;
-			}
-
-			.button.github {
-				font-size: 1.1em;
-				color: $beige !important;
-				background-color: $purple;
-			}
-
-			.button.github:hover {
-				color: $light-beige !important;
-				background-color: $dark-purple;
-			}
-
-			.button.github span::before {
-				@include material-icon($icon: $icon-repository, $bg-color: $alpha-dark-2);
-
-				color: $beige;
-			}
-
-			.button.github:hover span::before {
-				color: $light-beige;
-				background-color: $alpha-light-2;
 			}
 		}
 	}
