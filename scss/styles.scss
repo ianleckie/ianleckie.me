@@ -67,6 +67,7 @@ $icon-repository:    "\e0ee"; //list_alt
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
+@use 'animation';
 
 
 // webfonts
@@ -361,6 +362,16 @@ main p {
 	background-color: $alpha-dark-5;
 	z-index: 997;
 
+	.cp_embed_wrapper {
+		margin: 1em 0;
+		border: 0.5em solid $light-beige;
+		border-radius: 1.25em;
+
+		iframe {
+			border-radius: 0.75em;
+		}
+	}
+
 	.wrapper {
 		position: fixed;
 		top: 0;
@@ -428,7 +439,6 @@ main p {
 			}
 
 			h1 {
-				color: $purple;
 				margin: 0;
 			}
 
@@ -529,6 +539,43 @@ main p {
 		margin: 0;
 		background-color: $alpha-dark-5;
 		font-size: 1.4em;
+	}
+}
+
+#overlay[class*="code"] .wrapper .contents h1 {
+	color: $purple;
+}
+
+#overlay[class*="design"] .wrapper .contents {
+	background-color: $blue !important;
+}
+
+#overlay[class*="clients"] .wrapper .contents {
+	background-color: $purple !important;
+
+	p, h1 {
+		text-align: center;
+		color: $beige;
+	}
+
+	h1 {
+		text-shadow: $text-shadow;
+	}
+
+	em {
+		color: $dark-beige;
+	}
+
+	a {
+		color: $beige !important;
+	}
+}
+
+#overlay[class*="chai"] .wrapper .contents {
+	// background-color: $green !important;
+
+	* {
+		color: $alpha-dark-5;
 	}
 }
 

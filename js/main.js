@@ -25,10 +25,9 @@ function checkVisibility( element ) {
 }
 
 /*
-Determines which section is currently active
-by checking the visibility of each section
-and it's predecessor and keeps #section-number
-updated with that value
+Determines which section is currently active by checking the visibility of
+each section and it's predecessor and keeps #section-number updated with
+that value
 */
 function updateSectionNumber() {
 	
@@ -75,14 +74,15 @@ function openLinkInOverlay( event ) {
 
 	toggleOverlay();
 
+	$( overlay_selector ).removeClass().addClass( $(this).attr( 'href' ) );
+
 	$( overlay_contents_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
 
 
 }
 
 /*
-Empties overlay, toggles body scrolling
-and then fades overlay in or out
+Empties overlay, toggles body scrolling and then fades overlay in or out
 */
 function toggleOverlay() {
 
@@ -95,8 +95,7 @@ function toggleOverlay() {
 }
 
 /*
-Checks if ESC is pressed while the overlay
-is open and closes it if so
+Checks if ESC is pressed while the overlay is open and closes it if so
 */
 function closeOverlayOnEscPress( event ) {
 
@@ -121,6 +120,9 @@ function loadExampleCode( target_selector, uri, lang ) {
 
 }
 
+/*
+Manages hiding and showing of code example sections
+*/
 function selectCodeExample( event ) {
 
 	event.preventDefault();
@@ -130,6 +132,8 @@ function selectCodeExample( event ) {
 
 	$( overlay_section_selector ).hide();
 	$( $(this).attr( 'href' ) ).show();
+
+	window.__CPEmbed();
 
 }
 
@@ -144,8 +148,6 @@ function loadFunction( jQuery ) {
 	$( overlay_link_selector ).click( openLinkInOverlay );
 	
 	$( gallery_link_selector ).click( updateGallery ).first().click();
-
-	// $( code_link_selector ).click( selectCodeExample );
 
 }
  
