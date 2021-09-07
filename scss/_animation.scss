@@ -16,6 +16,7 @@
 }
 
 .animation-wrap {
+  background: #A6A18D;
   display: flex;
   height: 500px;
   width: 100%;
@@ -34,8 +35,8 @@
   width: 200px;
   height: 200px;
   transform-style: preserve-3d;
-  animation: rotate-cube 24s infinite ease;
-  animation-delay: 2s;
+  animation: rotate-cube 18s infinite ease;
+  animation-delay: 1.5s;
 }
 
 .cube div {
@@ -96,6 +97,6 @@
   border-radius: 100%;
   background: radial-gradient(black 0%, transparent 70%);
   opacity: 0.25;
-  animation: stretch-shadow 4s infinite ease;
-  animation-delay: 2s;
+  animation: stretch-shadow 3s infinite ease;
+  animation-delay: 1.5s;
 }
