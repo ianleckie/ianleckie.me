@@ -1,3 +1,6 @@
+$cube-color: #000 !default;
+$background-color: #fff !default;
+
 @keyframes rotate-cube {
   0%   { transform: ''; }
   17%  { transform: rotateY(90deg); }
@@ -16,7 +19,7 @@
 }
 
 .animation-wrap {
-  background: #A6A18D;
+  background: $background-color;
   display: flex;
   height: 500px;
   width: 100%;
@@ -46,7 +49,8 @@
   margin-bottom: -50%;
   width: 200px;
   height: 200px;
-  background-color: rgb(99, 62, 96, 0.9);
+  background: $cube-color;
+  opacity: 0.9;
   box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background-size: 150px;

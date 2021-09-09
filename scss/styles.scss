@@ -4,22 +4,23 @@
 $breakpoint: 70em;
 
 // colors
-$light-beige:   #EBE4C7;
-$beige:         #BFBAA3;
-$dark-beige:    #A6A18D;
-$darkest-beige: #45433B;
+$purple:        #5B3D67;
+$dark-purple:   #442D4D;
 
-$purple:        #633E60;
-$dark-purple:   #422f54;
+$blue:          #1A849D;
 
-$light-blue:    #5CB3B8;
-$blue:          #4D9599;
+$green:         #00895E;
 
-$light-green:   #C1D96C;
-$green:         #838C3A;
+$light-beige:   #ddd7bc;
+$beige:         #CCC6AD;
+$dark-beige:    #BFBAA3;
+$darkest-beige: #A6A18D;
 
-$red:           #8C0303;
-$dark-red:      #730202;
+$link-color:    #67D594;
+
+// $light-blue:    #5CB3B8;
+// $red:           #8C0303;
+// $dark-red:      #730202;
 
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
@@ -67,7 +68,7 @@ $icon-repository:    "\e0ee"; //list_alt
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
-@use 'animation';
+@use 'animation' with ( $cube-color: $purple, $background-color: $darkest-beige );
 
 
 // webfonts
@@ -110,7 +111,7 @@ $icon-repository:    "\e0ee"; //list_alt
 }
 
 body {
-	background-color: $red;
+	background-color: $purple;
 	font-family: $font-family;
 	line-height: $line-height;
 	color: $light-beige;
@@ -175,7 +176,7 @@ a {
 }
 
 main a {
-	color: $light-green;
+	color: $link-color;
 	padding: 0.1em 0.2em;
 	margin: 0 -0.2em;
 	border-radius: 8px;
@@ -200,7 +201,7 @@ main a.selected:hover {
 
 main section {
 	padding: 5em 0 6em;
-	border-top: 0.5em solid $beige;
+	border-top: 0.5em solid $light-beige;
 	position: relative;
 }
 
@@ -260,7 +261,7 @@ main p {
 .button.download {
 	margin: 2em 0 1em;
 	color: $beige;
-	background-color: $red;
+	background-color: $purple;
 	position: relative;
 	
 	@include center();
@@ -271,7 +272,7 @@ main p {
 }
 
 .button.download:hover {
-	background-color: $dark-red;
+	background-color: $dark-purple;
 
 	span::before {
 		background-color: $alpha-dark-4;
@@ -303,7 +304,7 @@ main p {
 	margin-left: -52px;
 	border-left: 52px solid transparent;
 	border-right: 52px solid transparent;
-	border-top: 52px solid $beige;
+	border-top: 52px solid $light-beige;
 	z-index: 899;
 }
 
@@ -547,7 +548,7 @@ main p {
 }
 
 #overlay[class*="design"] .wrapper .contents {
-	background-color: $blue !important;
+	// background-color: $blue !important;
 }
 
 #overlay[class*="clients"] .wrapper .contents {
@@ -582,14 +583,14 @@ main p {
 #gallery {
 	max-width: 100%;
 	margin-top: 1em;
-	background-color: $alpha-dark-2;
+	background: $alpha-dark-2;
 	border-radius: 24px;
 	padding: 1em;
 	box-shadow: $large-shadow;
 
 	img {
 		width: 100%;
-		border: 6px solid $alpha-dark-4;
+		border: 6px solid $alpha-dark-2;
 		border-radius: 16px;
 	}
 
@@ -630,10 +631,6 @@ main p {
 		border-radius: 50%;
 		box-shadow: $large-shadow;
 		border: 2px solid $beige;
-	}
-
-	#more-about-me {
-		background-color: $green;
 	}
 }
 
@@ -705,7 +702,7 @@ main p {
 }
 
 #colophon {
-	@include section-colors($red);
+	@include section-colors($purple);
 
 	padding: 2em 0;
 
@@ -719,10 +716,6 @@ main p {
 		line-height: 1.8;
 		display: inline-block;
 		float: left;
-	}
-
-	a:hover {
-		background-color: $dark-red;
 	}
 
 	#tech-stack {
