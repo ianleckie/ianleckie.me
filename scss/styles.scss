@@ -7,18 +7,25 @@ $breakpoint: 70em;
 $purple:        #5B3D67;
 $dark-purple:   #442D4D;
 
+$grey-blue:     #3b4856;
+
 $blue:          #1A849D;
+$dark-blue:     #5774AC;
 
 $green:         #00895E;
+$dark-green:    #007171;
+
+$lavender:      #B3A7B7;
+$dark-lavender: #9999B0;
 
 $light-beige:   #ddd7bc;
 $beige:         #CCC6AD;
-$dark-beige:    #BFBAA3;
+$dark-beige:    #B3A7B7;
 $darkest-beige: #A6A18D;
 
 $link-color:    #67D594;
 
-// $light-blue:    #5CB3B8;
+// $blue:    #5CB3B8;
 // $red:           #8C0303;
 // $dark-red:      #730202;
 
@@ -44,6 +51,7 @@ $large-shadow: 0 6px 18px rgba(0,0,0,0.2);
 
 $alpha-light-1: rgba(255,255,255,0.75);
 $alpha-light-2: rgba(255,255,255,0.05);
+$alpha-light-3: rgba(255,255,255,0.2);
 $alpha-dark-1:	 rgba(0,0,0,0.1);
 $alpha-dark-2:	 rgba(0,0,0,0.2);
 $alpha-dark-3:	 rgba(0,0,0,0.3);
@@ -68,7 +76,7 @@ $icon-repository:    "\e0ee"; //list_alt
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
-@use 'animation' with ( $cube-color: $purple, $background-color: $darkest-beige );
+@use 'animation' with ( $cube-color: $grey-blue, $background-color: $lavender );
 
 
 // webfonts
@@ -148,7 +156,7 @@ ul {
 	}
 
 	li::before {
-		@include material-icon($icon-list, $color: $alpha-dark-4, $bg-color: transparent, $size: 1em);
+		@include material-icon($icon-list, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
 		margin: 0;
 		padding: 0;
 	}
@@ -175,7 +183,7 @@ a {
 	font-weight: $font-weight-semi-bold;	
 }
 
-main a {
+a {
 	color: $link-color;
 	padding: 0.1em 0.2em;
 	margin: 0 -0.2em;
@@ -183,19 +191,19 @@ main a {
 	white-space: nowrap;
 }
 
-main a:hover {
+a:hover {
 	color: $light-beige;
 	background-color: $dark-purple;
 	text-decoration: none;
 }
 
-main a.selected {
+a.selected {
 	color: $light-beige;
 	background-color: $alpha-dark-2 !important;
 	text-decoration: none;
 }
 
-main a.selected:hover {
+a.selected:hover {
 	cursor: default;
 }
 
@@ -324,7 +332,8 @@ main p {
 }
 
 .file-preview:hover {
-	background-color: $beige;
+	background-color: $alpha-dark-2;
+	box-shadow: $large-shadow inset;
 }
 
 .file-preview:hover::after {
@@ -365,7 +374,7 @@ main p {
 
 	.cp_embed_wrapper {
 		margin: 1em 0;
-		border: 0.5em solid $light-beige;
+		border: 0.5em solid $dark-beige;
 		border-radius: 1.25em;
 
 		iframe {
@@ -389,7 +398,7 @@ main p {
 			width: 100%;
 			max-width: 75em;
 			padding: 3em 5em;
-			background-color: $light-beige;
+			background-image: linear-gradient(160deg, $grey-blue, $purple);
 			z-index: 999;
 			overflow: scroll;
 
@@ -398,7 +407,7 @@ main p {
 			nav {
 				margin: 1em -1em 0 -1em;
 				padding-left: 1.5em;
-				background-color: $beige;
+				background-color: $alpha-light-3;
 				border-radius: 2em 2em 0 0;
 			}
 
@@ -413,11 +422,11 @@ main p {
 			}
 
 			nav a:hover {
-				color: $light-beige;
+				color: $alpha-light-2;
 			}
 
 			nav a.selected {
-				background-color: $light-beige;
+				background-color: $alpha-light-3;
 				cursor: default;
 				box-shadow: $large-shadow;
 			}
@@ -431,7 +440,7 @@ main p {
 				padding: 1px 1em 1.5em;
 				margin: 0 -1em;	
 				border-top: none;
-				background-color: $beige;
+				background-color: $alpha-light-3;
 				border-radius: 0 0 2em 2em;
 			}
 
@@ -441,11 +450,13 @@ main p {
 
 			h1 {
 				margin: 0;
+				color: $beige;
+				text-shadow: $text-shadow;
 			}
 
 			p {
 				margin: 0.5em 0 0;
-				color: $alpha-dark-5;
+				color: $beige;
 			}
 
 			section p {
@@ -455,24 +466,34 @@ main p {
 				margin: 1em 0.5em 0;
 			}
 
-			a {
-				color: $purple;
+			nav a {
+				color: $beige;
 				font-weight: $font-weight-bold;
-				text-decoration: none;
 			}
 
-			p a:hover {
-				color: $dark-purple;
-				text-decoration: underline;
+			nav a.selected {
+				background-color: $purple !important;	
+			}
+
+			nav a.selected:hover {
+				color: $beige;
+				background-color: $purple !important;
+			}
+
+			nav a:hover {
+				color: $beige;
+				background-color: $alpha-dark-2 !important;
 			}
 
 			a.github {
-				background-color: $light-beige;
+				background-color: $alpha-dark-3;
 				display: inline-block;
 				margin-left: -0.1em;
 				padding: 0.25em 1em 0.25em 0.25em;
 				border-radius: 1em;
 				box-shadow: $large-shadow;
+				color: $beige;
+				text-decoration: none;
 			}
 
 			a.github:hover {
@@ -503,7 +524,7 @@ main p {
 			pre {
 				height: 25.2em;
 				overflow: scroll;
-				border: 0.5em solid $light-beige;
+				border: 0.5em solid $dark-beige;
 				border-radius: 1.25em;
 				margin: 1em 0 1.25em;
 				padding: 0.5em 1em;
@@ -543,17 +564,7 @@ main p {
 	}
 }
 
-#overlay[class*="code"] .wrapper .contents h1 {
-	color: $purple;
-}
-
-#overlay[class*="design"] .wrapper .contents {
-	// background-color: $blue !important;
-}
-
 #overlay[class*="clients"] .wrapper .contents {
-	background-color: $purple !important;
-
 	p, h1 {
 		text-align: center;
 		color: $beige;
@@ -573,7 +584,7 @@ main p {
 }
 
 #overlay[class*="chai"] .wrapper .contents {
-	// background-color: $green !important;
+	background: $beige !important;
 
 	* {
 		color: $alpha-dark-5;
@@ -615,6 +626,10 @@ main p {
 
 #intro {
 	@include section-colors($purple);
+
+	min-height: 92vh;
+
+	background-image: linear-gradient(160deg, $grey-blue, #3c475e, #424564, #4d4267, $purple 70%);
 	
 	border-top: none;
 
@@ -637,8 +652,10 @@ main p {
 #experience {
 	@include section-colors($blue);
 
+	background-image: linear-gradient(160deg, $dark-blue, $blue 70%);
+
 	h2 {
-		color: $dark-purple;
+		color: $alpha-dark-5;
 		line-height: 2;
 	}
 
@@ -647,13 +664,13 @@ main p {
 	}
 
 	#software-frameworks::before {
-		@include material-icon($icon-experience, $color: $beige, $bg-color: $purple);
+		@include material-icon($icon-experience, $color: $beige, $bg-color: $alpha-dark-3);
 		
 		margin: 0 0.5em 0 0;
 	}
 
 	#skills::before {
-		@include material-icon($icon-skills, $color: $beige, $bg-color: $purple);
+		@include material-icon($icon-skills, $color: $beige, $bg-color: $alpha-dark-3);
 		
 		margin: 0 0.5em 0 0;
 	}
@@ -662,13 +679,17 @@ main p {
 #more-about-me {
 	@include section-colors($green);
 
+	background-image: linear-gradient(160deg, $dark-green, $green 70%);
+
 	.description {
 		padding-bottom: 4em;
 	}
 }
 
 #resume {
-	@include section-colors($dark-beige);
+	@include section-colors($lavender);
+
+	background-image: linear-gradient(160deg, $dark-lavender, $lavender 70%);
 	
 	padding: 5em 0 4em;
 
@@ -677,6 +698,7 @@ main p {
 	}
 
 	h2 {
+		color: $alpha-dark-5;
 		margin-top: 0.5em;
 	}
 
@@ -713,13 +735,13 @@ main p {
 		font-family: $font-family;
 		font-weight: $font-weight-bold;
 		font-size: 1.2em;
-		line-height: 1.8;
+		line-height: 1.9;
 		display: inline-block;
 		float: left;
 	}
 
 	#tech-stack {
-		margin: 0 0 0 7.5em;
+		margin: 0 0 0 6em;
 		padding: 0;
 		text-indent: 0;
 
