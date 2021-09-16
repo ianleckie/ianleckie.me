@@ -65,12 +65,21 @@ function updateGallery( event ) {
 
 	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
-		// change height to trigger CSS transition
-		auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
-
-		$( gallery_selector ).height( current_height ).height( auto_height );
+		resizeGallery( current_height );
 
 	} );
+
+}
+
+/*
+Resizes the gallery div based on the size of the new content in order to
+trigger the CSS transition
+*/
+function resizeGallery( current_height ) {
+
+	auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
+
+	$( gallery_selector ).height( current_height ).height( auto_height );
 
 }
 
@@ -151,6 +160,8 @@ function loadFunction( jQuery ) {
 	$( window ).scroll( updateSectionNumber );
 
 	$( window ).keypress( closeOverlayOnEscPress );
+
+	$( window ).resize( resizeGallery );
 
 	$( overlay_close_selector ).click( toggleOverlay );
 
