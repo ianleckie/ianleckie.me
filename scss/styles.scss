@@ -78,13 +78,14 @@ $icon-list:          "\ef76"; //beenhere
 $icon-close:         "\e5cd"; //close
 $icon-repository:    "\e0ee"; //list_alt
 $icon-ingredient:    "\f1df"; //east
+$icon-form:          "\e150"; //create
 
 
 // modules
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
-@use 'animation' with ( $cube-color: $dark-purple, $background-color: $dark-lavender );
+@use 'animation' with ( $cube-color: $dark-purple, $background-color: $alpha-light-2 );
 
 
 // webfonts
@@ -262,7 +263,7 @@ main p {
 	background-color: $alpha-light-0;
 }
 
-.button.email, .button.phone {
+.button.email, .button.phone, .button.form {
 	display: block;
 	margin: 0.6em 5%;
 	color: $beige;
@@ -280,7 +281,12 @@ main p {
 	@include material-icon($icon: $icon-phone, $bg-color: $alpha-dark-2);
 }
 
-.button.email:hover, .button.phone:hover {
+.button.form span::before {
+	@include material-icon($icon: $icon-form, $bg-color: $alpha-dark-2);
+}
+
+
+.button.email:hover, .button.phone:hover, .button.form:hover {
 	background: $dark-green;
 
 	span::before {

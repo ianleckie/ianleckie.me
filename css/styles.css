@@ -487,7 +487,7 @@ pre[class*=language-] {
   }
 }
 .animation-wrap {
-  background: #5C6978;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   height: 500px;
   width: 100%;
@@ -722,7 +722,7 @@ main p {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.button.email, .button.phone {
+.button.email, .button.phone, .button.form {
   display: block;
   margin: 0.6em 5%;
   color: #CCC6AD;
@@ -762,10 +762,25 @@ main p {
   border-radius: 50%;
 }
 
-.button.email:hover, .button.phone:hover {
+.button.form span::before {
+  font-family: "Material Icons";
+  content: "\e150";
+  display: inline-block;
+  margin: 0.3em;
+  color: #CCC6AD;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: -0.15em;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.button.email:hover, .button.phone:hover, .button.form:hover {
   background: #007171;
 }
-.button.email:hover span::before, .button.phone:hover span::before {
+.button.email:hover span::before, .button.phone:hover span::before, .button.form:hover span::before {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
