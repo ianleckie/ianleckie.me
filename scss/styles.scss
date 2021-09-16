@@ -657,7 +657,7 @@ main p {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: $dark-lavender;
+		background-color: #6d697d;
 		transition: top 0.75s ease-in-out, left 0.75s ease-in-out;
 		z-index: 1000;
 		border-radius: 1.5em;
@@ -683,7 +683,7 @@ main p {
 		img {
 			float: right;
 			width: 55%;
-			border: 0.5em solid $alpha-light-2;
+			border: 0.5em solid $alpha-light-3;
 			border-radius: 1.25em;
 			margin: 0.3em 0 2em 2em;
 			box-shadow: $large-shadow;
