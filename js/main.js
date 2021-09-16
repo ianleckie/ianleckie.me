@@ -1,3 +1,6 @@
+/*
+Set some variables
+*/
 var dev_mode = true;
 
 var section_number_selector   = '#section-number',
@@ -9,6 +12,10 @@ var section_number_selector   = '#section-number',
     overlay_section_selector  = '#overlay section',
     overlay_close_selector    = '#overlay .close',
     code_link_selector        = '#code-nav a';
+
+var last_details_id, last_details_pos_top, last_details_pos_left;
+
+var details_open = false;
 
 /*
 Checks whether an element is in the viewport
@@ -113,13 +120,26 @@ function toggleOverlay() {
 }
 
 /*
-Checks if ESC is pressed while the overlay is open and closes it if so
+Checks if ESC is pressed while either the overlay or portfolio details is open
+and closes it if so
 */
 function closeOverlayOnEscPress( event ) {
 
 	var code = event.keyCode || event.which;
 
-	if( code == 27 && $( overlay_selector ).is( ':visible' ) ) toggleOverlay();
+	if ( code == 27 ) {
+
+		if ( details_open ) {
+
+			$( last_details_id + ' .close-details' ).click();
+
+		} else if ( $( overlay_selector ).is( ':visible' ) ) {
+
+			toggleOverlay();
+
+		}
+
+	}
 
 }
 
@@ -155,6 +175,45 @@ function selectCodeExample( event ) {
 
 }
 
+/*
+Opens the selected portfolio details item, and sets some variables so it can
+be closed later
+*/
+function openPortfolioDetails( event ) {
+
+	event.preventDefault();
+
+	details_id_selector = $( this ).attr( 'href' );
+
+	last_details_id = details_id_selector;
+
+	last_details_pos_top  = $( details_id_selector ).css( 'top' );
+	last_details_pos_left = $( details_id_selector ).css( 'left' );
+
+	$( details_id_selector ).css( 'top', 0 );
+	$( details_id_selector ).css( 'left', 0 );
+
+	details_open = true;
+
+}
+
+/*
+Closes the last opened portfolio details item
+*/
+function closePortfolioDetails( event ) {
+
+	event.preventDefault();
+
+	$( last_details_id ).css( 'top', last_details_pos_top );
+	$( last_details_id ).css( 'left', last_details_pos_left );
+
+	details_open = false;
+
+}
+
+/*
+Everything to be run after the main page loads
+*/
 function loadFunction( jQuery ) {
 
 	$( window ).scroll( updateSectionNumber );

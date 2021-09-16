@@ -1,7 +1,7 @@
 // variables
 
 // sizing
-$breakpoint: 70em;
+$breakpoint: 64em;
 
 // colors
 $purple:         #5B3D67;
@@ -84,7 +84,7 @@ $icon-ingredient:    "\f1df"; //east
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
-@use 'animation' with ( $cube-color: $grey-blue, $background-color: $lavender );
+@use 'animation' with ( $cube-color: $dark-purple, $background-color: $dark-lavender );
 
 
 // webfonts
@@ -233,6 +233,10 @@ main section {
 
 main p {
 	margin-bottom: 0;
+}
+
+.nobr {
+	white-space: nowrap;
 }
 
 .noscroll {
@@ -388,7 +392,7 @@ main p {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $alpha-dark-5;
+	background-color: $alpha-dark-8;
 	z-index: 997;
 
 	.cp_embed_wrapper {
@@ -584,15 +588,19 @@ main p {
 }
 
 #portfolio {
+	position: relative;
 	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
-	grid-gap: 1.5em;
-	height: 560px;
-	margin: 1.5em 0 1em -0.75em;
+	grid-gap: 2em;
+	border-radius: 2em;
+	margin: 1.5em 0 0;
 	padding: 0;
 	width: 100%;
 	max-width: 65em;
+	background-color: $alpha-light-2;
+	padding: 1.5em 3.5em 1.5em 1.5em;
+	overflow: hidden;
 
 	.item {
 		box-sizing: border-box;
@@ -601,7 +609,7 @@ main p {
 		background-size: cover;
 		border: 0.5em solid $light-lavender;
 		overflow: hidden;
-		border-radius: 1.25em;
+		border-radius: 1.5em;
 		background-position: top center;
 
 		.caption {
@@ -609,16 +617,24 @@ main p {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: $alpha-dark-8;
+			color: $light-beige !important;
+			background-color: $dark-purple;
+			opacity: 0.95;
 			height: 3.5em;
 			padding-left: 1em;
-			z-index: 1000;
+			z-index: 901;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 
 	.item:hover {
-		border: 0.5em solid $lavender;
 		box-shadow: $large-shadow;
+
+		.caption {
+			opacity: 1;
+		}
 	}
 
 	.item::after {
@@ -628,16 +644,80 @@ main p {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: $alpha-dark-2;
+		background-color: black;
+		opacity: 0.25;
 		z-index: 900;
 	}
 
 	.item:hover::after {
 		background-color: transparent;
 	}
+
+	.details {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: $dark-lavender;
+		transition: top 0.75s ease-in-out, left 0.75s ease-in-out;
+		z-index: 1000;
+		border-radius: 1.5em;
+		padding: 2em 3em;
+		overflow: scroll;
+
+		h1, p {
+			text-align: left;
+		}
+
+		h2 {
+			margin-top: 0 !important;
+			border-bottom: 4px solid $purple;
+			padding-bottom: 0.5em;
+			margin-bottom: 1em;
+		}
+
+		p.sub {
+			font-size: 1.2em;
+			margin-top: 1.2em;
+		}
+
+		img {
+			float: right;
+			width: 55%;
+			border: 0.5em solid $alpha-light-2;
+			border-radius: 1.25em;
+			margin: 0.3em 0 2em 2em;
+			box-shadow: $large-shadow;
+		}
+
+		.close-details {
+			position: absolute;
+			top: 1.6em;
+			right: 3em;
+		}
+	}
+
+	#knitxmidwest {
+		top: -100%;
+		left: -100%;
+	}
+
+	#blood-of-the-young {
+		top: -100%;
+		left: 100%;
+	}
+
+	#art-services {
+		top: 100%;
+		left: -100%;
+	}
+
+	#pin-pushers {
+		top: 100%;
+		left: 100%;
+	}
 }
 
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: $breakpoint) {
 	#portfolio {
 		grid-template-columns: repeat(1, 100%);
 		margin: 1em 0;
@@ -697,7 +777,7 @@ main p {
 			display: none;
 		}
 
-		@media only screen and (min-width: 64em) {
+		@media only screen and (min-width: $breakpoint) {
 
 			img {
 				display: block;
