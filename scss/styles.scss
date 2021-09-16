@@ -53,6 +53,7 @@ $large-shadow-light: 0 6px 18px rgba(0,0,0,0.1);
 $alpha-light-0: rgba(255,255,255,0.05);
 $alpha-light-1: rgba(255,255,255,0.1);
 $alpha-light-2: rgba(255,255,255,0.2);
+$alpha-light-3: rgba(255,255,255,0.3);
 $alpha-light-4: rgba(255,255,255,0.4);
 $alpha-light-5: rgba(255,255,255,0.5);
 $alpha-light-7: rgba(255,255,255,0.75);
@@ -61,6 +62,8 @@ $alpha-dark-2:	 rgba(0,0,0,0.2);
 $alpha-dark-3:	 rgba(0,0,0,0.3);
 $alpha-dark-4:	 rgba(0,0,0,0.4);
 $alpha-dark-5:	 rgba(0,0,0,0.5);
+$alpha-dark-7:	 rgba(0,0,0,0.7);
+$alpha-dark-8:	 rgba(0,0,0,0.8);
 
 // material icons
 $icon-default:       "\e835"; //check_box_outline_blank
@@ -580,6 +583,67 @@ main p {
 	}
 }
 
+#portfolio {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 1.5em;
+	height: 560px;
+	margin: 1.5em 0 1em -0.75em;
+	padding: 0;
+	width: 100%;
+	max-width: 65em;
+
+	.item {
+		box-sizing: border-box;
+		position: relative;
+		height: 280px;
+		background-size: cover;
+		border: 0.5em solid $light-lavender;
+		overflow: hidden;
+		border-radius: 1.25em;
+		background-position: top center;
+
+		.caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: $alpha-dark-8;
+			height: 3.5em;
+			padding-left: 1em;
+			z-index: 1000;
+		}
+	}
+
+	.item:hover {
+		border: 0.5em solid $lavender;
+		box-shadow: $large-shadow;
+	}
+
+	.item::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $alpha-dark-2;
+		z-index: 900;
+	}
+
+	.item:hover::after {
+		background-color: transparent;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	#portfolio {
+		grid-template-columns: repeat(1, 100%);
+		margin: 1em 0;
+	}
+}
+
 #overlay[class*="clients"] .wrapper .contents {
 	p, h1 {
 		text-align: center;
@@ -601,7 +665,7 @@ main p {
 
 #overlay[class*="chai"] .wrapper .contents {
 	background-image: linear-gradient(160deg, $dark-beige, $beige);
-	width: 64em;
+	max-width: 64em;
 
 	h1 {
 		text-shadow: none;
@@ -623,16 +687,27 @@ main p {
 			margin: -1rem -2rem 1em;
 			padding: 1rem 2rem 1rem;
 			background-color: $alpha-dark-2;
+			color: $alpha-dark-2;
 			border-top-left-radius: 25px;
 			border-top-right-radius: 25px;
+			text-shadow: 0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
 		}
 
 		img {
-			width: 350px;
-			margin: 5em 0 0 0;
-			float: right;
-			border: 5px solid $alpha-dark-2;
-			border-radius: 20px;
+			display: none;
+		}
+
+		@media only screen and (min-width: 64em) {
+
+			img {
+				display: block;
+				width: 350px;
+				margin: 5.5em 0 1em 2em;
+				float: right;
+				border: 5px solid $alpha-dark-2;
+				border-radius: 20px;
+			}
+	
 		}
 
 		ul {
