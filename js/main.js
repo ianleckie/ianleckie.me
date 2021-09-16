@@ -88,6 +88,7 @@ trigger the CSS transition
 */
 function resizeGallery( current_height ) {
 
+	// delay to deal with caching on netlify
 	setTimeout( function() {
 
 		auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
