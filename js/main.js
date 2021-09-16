@@ -221,8 +221,6 @@ function loadFunction( jQuery ) {
 	$( window ).keypress( closeOverlayOnEscPress );
 
 	$( window ).resize( resizeGallery );
-	
-	$( window ).reload( resizeGallery );
 
 	$( overlay_close_selector ).click( toggleOverlay );
 
