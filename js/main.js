@@ -70,13 +70,13 @@ function updateGallery( event ) {
 	$( gallery_link_selector ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( gallery_selector + ' div' ).fadeToggle();
+	$( gallery_selector + ' div' ).fadeOut();
 
 	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
 		resizeGallery( current_height );
 
-		$( gallery_selector + ' div' ).fadeToggle();
+		$( gallery_selector + ' div' ).fadeIn();
 
 	} );
 
