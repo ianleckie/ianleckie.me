@@ -21,7 +21,7 @@ $dark-lavender:  #5C6978;
 
 $light-beige:    #ddd7bc;
 $beige:          #CCC6AD;
-$darkest-beige:  #A6A18D;
+$dark-beige:     #A6A18D;
 
 $link-color:     #67D594;
 
@@ -600,7 +600,7 @@ main p {
 }
 
 #overlay[class*="chai"] .wrapper .contents {
-	background-image: linear-gradient(160deg, $darkest-beige, $beige);
+	background-image: linear-gradient(160deg, $dark-beige, $beige);
 	width: 64em;
 
 	h1 {
