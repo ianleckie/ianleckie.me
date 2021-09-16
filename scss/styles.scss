@@ -623,9 +623,7 @@ main p {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			color: $light-beige !important;
-			background-color: $dark-purple;
-			opacity: 0.95;
+			background-color: $alpha-dark-8;
 			height: 3.5em;
 			padding-left: 1em;
 			z-index: 901;
@@ -637,10 +635,6 @@ main p {
 
 	.item:hover {
 		box-shadow: $large-shadow;
-
-		.caption {
-			opacity: 1;
-		}
 	}
 
 	.item::after {
@@ -689,7 +683,7 @@ main p {
 		img {
 			float: right;
 			width: 55%;
-			border: 0.5em solid $alpha-light-3;
+			border: 0.5em solid $light-lavender;
 			border-radius: 1.25em;
 			margin: 0.3em 0 2em 2em;
 			box-shadow: $large-shadow;
