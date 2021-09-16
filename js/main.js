@@ -84,9 +84,13 @@ trigger the CSS transition
 */
 function resizeGallery( current_height ) {
 
-	auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
+	setTimeout( function() {
 
-	$( gallery_selector ).height( current_height ).height( auto_height );
+		auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
+
+		$( gallery_selector ).height( current_height ).height( auto_height );
+
+	}, 100 );
 
 }
 
