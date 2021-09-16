@@ -58,10 +58,19 @@ function updateGallery( event ) {
 
 	event.preventDefault();
 
+	current_height = $( gallery_selector ).height();
+
 	$( gallery_link_selector ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
+	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
+
+		// change height to trigger CSS transition
+		auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
+
+		$( gallery_selector ).height( current_height ).height( auto_height );
+
+	} );
 
 }
 

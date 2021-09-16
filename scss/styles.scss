@@ -4,30 +4,30 @@
 $breakpoint: 70em;
 
 // colors
-$purple:        #5B3D67;
-$dark-purple:   #442D4D;
+$purple:         #5B3D67;
+$dark-purple:    #442D4D;
 
-$grey-blue:     #3b4856;
+$grey-blue:      #3b4856;
 
-$blue:          #1A849D;
-$dark-blue:     #5774AC;
+$blue:           #1A849D;
+$dark-blue:      #5774AC; //#2E5084?
 
-$green:         #00895E;
-$dark-green:    #007171;
+$green:          #00895E;
+$dark-green:     #007171;
 
-$lavender:      #B3A7B7;
-$dark-lavender: #9999B0;
+$light-lavender: #B3A7B7;
+$lavender:       #A4B2C2;
+$dark-lavender:  #5C6978;
 
-$light-beige:   #ddd7bc;
-$beige:         #CCC6AD;
-$dark-beige:    #B3A7B7;
-$darkest-beige: #A6A18D;
+$light-beige:    #ddd7bc;
+$beige:          #CCC6AD;
+$darkest-beige:  #A6A18D;
 
-$link-color:    #67D594;
+$link-color:     #67D594;
 
-// $blue:    #5CB3B8;
-// $red:           #8C0303;
-// $dark-red:      #730202;
+// $blue:           #5CB3B8;
+// $red:            #8C0303;
+// $dark-red:       #730202;
 
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
@@ -46,12 +46,16 @@ $font-weight-semi-bold: 500;
 $font-weight-bold:      600;
 
 // shadows and rgba colors
-$text-shadow:  0 2px 8px  rgba(0,0,0,0.3);
-$large-shadow: 0 6px 18px rgba(0,0,0,0.2);
+$text-shadow:        0 2px 8px  rgba(0,0,0,0.3);
+$large-shadow:       0 6px 18px rgba(0,0,0,0.2);
+$large-shadow-light: 0 6px 18px rgba(0,0,0,0.1);
 
-$alpha-light-1: rgba(255,255,255,0.75);
-$alpha-light-2: rgba(255,255,255,0.05);
-$alpha-light-3: rgba(255,255,255,0.2);
+$alpha-light-0: rgba(255,255,255,0.05);
+$alpha-light-1: rgba(255,255,255,0.1);
+$alpha-light-2: rgba(255,255,255,0.2);
+$alpha-light-4: rgba(255,255,255,0.4);
+$alpha-light-5: rgba(255,255,255,0.5);
+$alpha-light-7: rgba(255,255,255,0.75);
 $alpha-dark-1:	 rgba(0,0,0,0.1);
 $alpha-dark-2:	 rgba(0,0,0,0.2);
 $alpha-dark-3:	 rgba(0,0,0,0.3);
@@ -70,6 +74,7 @@ $icon-tool:          "\e3ae"; //brush
 $icon-list:          "\ef76"; //beenhere
 $icon-close:         "\e5cd"; //close
 $icon-repository:    "\e0ee"; //list_alt
+$icon-ingredient:    "\f1df"; //east
 
 
 // modules
@@ -123,6 +128,16 @@ body {
 	font-family: $font-family;
 	line-height: $line-height;
 	color: $light-beige;
+}
+
+preload {
+	height: 0;
+	line-height: 0;
+
+	* {
+		height: 0;
+		line-height: 0;
+	}
 }
 
 h1 {
@@ -237,14 +252,14 @@ main p {
 }
 
 .button:hover {
-	background-color: $alpha-light-2;
+	background-color: $alpha-light-0;
 }
 
 .button.email, .button.phone {
 	display: block;
 	margin: 0.6em 5%;
 	color: $beige;
-	background-color: $alpha-light-2;
+	background-color: $alpha-light-0;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -259,16 +274,16 @@ main p {
 }
 
 .button.email:hover, .button.phone:hover {
-	background-color: $dark-purple;
+	background: $dark-green;
 
 	span::before {
-		background-color: $alpha-light-2;
+		background-color: $alpha-light-1;
 	}
 }
 
 .button.download {
 	margin: 2em 0 1em;
-	color: $beige;
+	color: $light-beige;
 	background-color: $purple;
 	position: relative;
 	
@@ -280,6 +295,7 @@ main p {
 }
 
 .button.download:hover {
+	color: $light-beige !important;
 	background-color: $dark-purple;
 
 	span::before {
@@ -291,7 +307,7 @@ main p {
 	padding: 1em 0.5em 0.25em;
 	font-size: 1.1em;
 	font-style: italic;
-	color: $alpha-light-1;
+	color: $alpha-light-7;
 }
 
 .arrow-down, .arrow-down-border {
@@ -346,7 +362,7 @@ main p {
 	margin-top: -1em;
 	margin-left: -1em;
 	color: $purple;
-	background-color: $alpha-light-1;
+	background-color: $alpha-light-7;
 	box-shadow: $large-shadow;
 }
 
@@ -374,7 +390,7 @@ main p {
 
 	.cp_embed_wrapper {
 		margin: 1em 0;
-		border: 0.5em solid $dark-beige;
+		border: 0.5em solid $light-lavender;
 		border-radius: 1.25em;
 
 		iframe {
@@ -407,7 +423,7 @@ main p {
 			nav {
 				margin: 1em -1em 0 -1em;
 				padding-left: 1.5em;
-				background-color: $alpha-light-3;
+				background-color: $alpha-light-2;
 				border-radius: 2em 2em 0 0;
 			}
 
@@ -422,11 +438,11 @@ main p {
 			}
 
 			nav a:hover {
-				color: $alpha-light-2;
+				color: $alpha-light-0;
 			}
 
 			nav a.selected {
-				background-color: $alpha-light-3;
+				background-color: $alpha-light-2;
 				cursor: default;
 				box-shadow: $large-shadow;
 			}
@@ -440,7 +456,7 @@ main p {
 				padding: 1px 1em 1.5em;
 				margin: 0 -1em;	
 				border-top: none;
-				background-color: $alpha-light-3;
+				background-color: $alpha-light-2;
 				border-radius: 0 0 2em 2em;
 			}
 
@@ -524,7 +540,7 @@ main p {
 			pre {
 				height: 25.2em;
 				overflow: scroll;
-				border: 0.5em solid $dark-beige;
+				border: 0.5em solid $light-lavender;
 				border-radius: 1.25em;
 				margin: 1em 0 1.25em;
 				padding: 0.5em 1em;
@@ -545,7 +561,7 @@ main p {
 
 	.close::after {
 		content: '[esc]';
-		color: $dark-beige;
+		color: $light-lavender;
 		position: absolute;
 		top: 105%;
 		@include center;
@@ -575,7 +591,7 @@ main p {
 	}
 
 	em {
-		color: $dark-beige;
+		color: $light-lavender;
 	}
 
 	a {
@@ -584,10 +600,58 @@ main p {
 }
 
 #overlay[class*="chai"] .wrapper .contents {
-	background: $beige !important;
+	background-image: linear-gradient(160deg, $darkest-beige, $beige);
+	width: 64em;
+
+	h1 {
+		text-shadow: none;
+	}
 
 	* {
 		color: $alpha-dark-5;
+	}
+
+	#ingredients, #directions {
+		background: $alpha-light-2;
+		padding: 1em 2em 2em;
+		border: 5px solid $alpha-dark-2;
+		border-radius: 30px;
+		margin: 2em 0;
+		box-shadow: $large-shadow-light;
+
+		h2 {
+			margin: -1rem -2rem 1em;
+			padding: 1rem 2rem 1rem;
+			background-color: $alpha-dark-2;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+		}
+
+		img {
+			width: 350px;
+			margin: 5em 0 0 0;
+			float: right;
+			border: 5px solid $alpha-dark-2;
+			border-radius: 20px;
+		}
+
+		ul {
+			padding-left: 2.2em;
+		}
+
+		ol li {
+			margin-bottom: 0.3em;
+		}
+
+		ul li::before {
+			@include material-icon($icon-ingredient, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			white-space: normal;
+		}
 	}
 }
 
@@ -598,6 +662,8 @@ main p {
 	border-radius: 24px;
 	padding: 1em;
 	box-shadow: $large-shadow;
+	transition: height 0.5s;
+	overflow: hidden;
 
 	img {
 		width: 100%;
@@ -698,7 +764,7 @@ main p {
 	}
 
 	h2 {
-		color: $alpha-dark-5;
+		color: $dark-purple;
 		margin-top: 0.5em;
 	}
 
@@ -719,7 +785,7 @@ main p {
 	}
 
 	.arrow-down {
-		border-top-color: $dark-beige;
+		border-top-color: $light-lavender;
 	}
 }
 
@@ -750,7 +816,7 @@ main p {
 			padding: 0 1.2em 0 0;
 			float: left;
 			font-size: 0.9em;
-			background-color: $alpha-light-2;
+			background-color: $alpha-light-0;
 			line-height: 1.6;
 			border-radius: 1.6em;
 			white-space: nowrap;
