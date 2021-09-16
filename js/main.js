@@ -95,7 +95,7 @@ function resizeGallery( current_height ) {
 
 		$( gallery_selector ).height( current_height ).height( auto_height );
 
-	}, 100 );
+	}, 200 );
 
 }
 
