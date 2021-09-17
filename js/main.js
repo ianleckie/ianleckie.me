@@ -229,7 +229,7 @@ function loadFunction( jQuery ) {
 
 	$( window ).scroll( updateSectionNumber );
 
-	$( document ).keypress( closeOverlayOnEscPress );
+	$( document ).keyup( closeOverlayOnEscPress );
 
 	$( window ).resize( resizeGallery );
 
