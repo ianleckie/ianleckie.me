@@ -109,6 +109,8 @@ function resizeGallery( current_height ) {
 
 	auto_height = $( gallery ).css( 'height', 'auto' ).height();
 
+	auto_height = ( $( gallery + ' .video-container' ).length ) ? auto_height + 16 : auto_height;
+
 	$( gallery ).height( current_height ).height( auto_height );
 
 }
