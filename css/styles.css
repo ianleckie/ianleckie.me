@@ -573,7 +573,6 @@ pre[class*=language-] {
   animation-delay: 1.5s;
 }
 
-/* site styles */
 * {
   box-sizing: border-box;
 }
@@ -583,15 +582,6 @@ body {
   font-family: "Montserrat", Helvetica, sans-serif;
   line-height: 1.5;
   color: #ddd7bc;
-}
-
-preload {
-  height: 0;
-  line-height: 0;
-}
-preload * {
-  height: 0;
-  line-height: 0;
 }
 
 h1 {
@@ -659,9 +649,6 @@ em {
 
 a {
   font-weight: 500;
-}
-
-a {
   color: #67D594;
   padding: 0.1em 0.2em;
   margin: 0 -0.2em;
@@ -693,6 +680,15 @@ main section {
 
 main p {
   margin-bottom: 0;
+}
+
+preload {
+  height: 0;
+  line-height: 0;
+}
+preload * {
+  height: 0;
+  line-height: 0;
 }
 
 .nobr {
@@ -1057,7 +1053,7 @@ main p {
 }
 #overlay .close::after {
   content: "[esc]";
-  color: #B3A7B7;
+  color: #A4B2C2;
   position: absolute;
   top: 105%;
   left: 50%;
@@ -1081,8 +1077,88 @@ main p {
   text-align: center;
   border-radius: 50%;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
   font-size: 1.4em;
+}
+
+#overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {
+  text-align: center;
+  color: #CCC6AD;
+}
+#overlay[class*=clients] .wrapper .contents h1 {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+#overlay[class*=clients] .wrapper .contents em {
+  color: #B3A7B7;
+}
+#overlay[class*=clients] .wrapper .contents a {
+  color: #CCC6AD !important;
+}
+
+#overlay[class*=chai] .wrapper .contents {
+  background-image: linear-gradient(160deg, #A6A18D, #CCC6AD);
+  max-width: 64em;
+}
+#overlay[class*=chai] .wrapper .contents h1 {
+  text-shadow: none;
+}
+#overlay[class*=chai] .wrapper .contents * {
+  color: rgba(0, 0, 0, 0.5);
+}
+#overlay[class*=chai] .wrapper .contents #ingredients, #overlay[class*=chai] .wrapper .contents #directions {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1em 2em 2em;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  margin: 2em 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+#overlay[class*=chai] .wrapper .contents #ingredients h2, #overlay[class*=chai] .wrapper .contents #directions h2 {
+  margin: -1rem -2rem 1em;
+  padding: 1rem 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), 0px -1px 0px rgba(0, 0, 0, 0.7);
+}
+#overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
+  display: none;
+}
+@media only screen and (min-width: 64em) {
+  #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
+    display: block;
+    width: 350px;
+    margin: 5.5em 0 1em 2em;
+    float: right;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+}
+#overlay[class*=chai] .wrapper .contents #ingredients ul, #overlay[class*=chai] .wrapper .contents #directions ul {
+  padding-left: 2.2em;
+}
+#overlay[class*=chai] .wrapper .contents #ingredients ol li, #overlay[class*=chai] .wrapper .contents #directions ol li {
+  margin-bottom: 0.3em;
+}
+#overlay[class*=chai] .wrapper .contents #ingredients ul li::before, #overlay[class*=chai] .wrapper .contents #directions ul li::before {
+  font-family: "Material Icons";
+  content: "\f1df";
+  display: inline-block;
+  margin: 0.3em;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: -0.15em;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+#overlay[class*=chai] .wrapper .contents #ingredients em, #overlay[class*=chai] .wrapper .contents #directions em {
+  white-space: normal;
 }
 
 #portfolio {
@@ -1200,86 +1276,6 @@ main p {
     margin: 1em 0;
   }
 }
-#overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {
-  text-align: center;
-  color: #CCC6AD;
-}
-#overlay[class*=clients] .wrapper .contents h1 {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-#overlay[class*=clients] .wrapper .contents em {
-  color: #B3A7B7;
-}
-#overlay[class*=clients] .wrapper .contents a {
-  color: #CCC6AD !important;
-}
-
-#overlay[class*=chai] .wrapper .contents {
-  background-image: linear-gradient(160deg, #A6A18D, #CCC6AD);
-  max-width: 64em;
-}
-#overlay[class*=chai] .wrapper .contents h1 {
-  text-shadow: none;
-}
-#overlay[class*=chai] .wrapper .contents * {
-  color: rgba(0, 0, 0, 0.5);
-}
-#overlay[class*=chai] .wrapper .contents #ingredients, #overlay[class*=chai] .wrapper .contents #directions {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 1em 2em 2em;
-  border: 5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  margin: 2em 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-#overlay[class*=chai] .wrapper .contents #ingredients h2, #overlay[class*=chai] .wrapper .contents #directions h2 {
-  margin: -1rem -2rem 1em;
-  padding: 1rem 2rem 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), 0px -1px 0px rgba(0, 0, 0, 0.7);
-}
-#overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
-  display: none;
-}
-@media only screen and (min-width: 64em) {
-  #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
-    display: block;
-    width: 350px;
-    margin: 5.5em 0 1em 2em;
-    float: right;
-    border: 5px solid rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-  }
-}
-#overlay[class*=chai] .wrapper .contents #ingredients ul, #overlay[class*=chai] .wrapper .contents #directions ul {
-  padding-left: 2.2em;
-}
-#overlay[class*=chai] .wrapper .contents #ingredients ol li, #overlay[class*=chai] .wrapper .contents #directions ol li {
-  margin-bottom: 0.3em;
-}
-#overlay[class*=chai] .wrapper .contents #ingredients ul li::before, #overlay[class*=chai] .wrapper .contents #directions ul li::before {
-  font-family: "Material Icons";
-  content: "\f1df";
-  display: inline-block;
-  margin: 0.3em;
-  color: rgba(0, 0, 0, 0.5);
-  background-color: transparent;
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-  vertical-align: -0.15em;
-  text-align: center;
-  border-radius: 50%;
-  margin: 0;
-  padding: 0;
-}
-#overlay[class*=chai] .wrapper .contents #ingredients em, #overlay[class*=chai] .wrapper .contents #directions em {
-  white-space: normal;
-}
-
 #gallery {
   max-width: 100%;
   margin-top: 1em;
@@ -1481,8 +1477,6 @@ main p {
   margin-right: 0.4em;
 }
 
-/* responsive styles */
-/* print styles */
 @media print {
   *,
 *::before,

@@ -1,5 +1,4 @@
 // variables
-
 // sizing
 $breakpoint: 64em;
 
@@ -24,10 +23,6 @@ $beige:          #CCC6AD;
 $dark-beige:     #A6A18D;
 
 $link-color:     #67D594;
-
-// $blue:           #5CB3B8;
-// $red:            #8C0303;
-// $dark-red:       #730202;
 
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
@@ -122,7 +117,7 @@ $icon-form:          "\e150"; //create
 }
 
 
-/* site styles */
+// base styles
 * {
 	box-sizing: border-box;
 }
@@ -132,16 +127,6 @@ body {
 	font-family: $font-family;
 	line-height: $line-height;
 	color: $light-beige;
-}
-
-preload {
-	height: 0;
-	line-height: 0;
-
-	* {
-		height: 0;
-		line-height: 0;
-	}
 }
 
 h1 {
@@ -199,10 +184,7 @@ em {
 }
 
 a {
-	font-weight: $font-weight-semi-bold;	
-}
-
-a {
+	font-weight: $font-weight-semi-bold;
 	color: $link-color;
 	padding: 0.1em 0.2em;
 	margin: 0 -0.2em;
@@ -236,6 +218,17 @@ main p {
 	margin-bottom: 0;
 }
 
+preload {
+	height: 0;
+	line-height: 0;
+
+	* {
+		height: 0;
+		line-height: 0;
+	}
+}
+
+// utility styles
 .nobr {
 	white-space: nowrap;
 }
@@ -391,6 +384,7 @@ main p {
 	border-radius: 2.5em;
 }
 
+// overlays, etc.
 #overlay {
 	display: none;
 	position: fixed;
@@ -574,7 +568,7 @@ main p {
 
 	.close::after {
 		content: '[esc]';
-		color: $light-lavender;
+		color: $lavender;
 		position: absolute;
 		top: 105%;
 		@include center;
@@ -588,8 +582,94 @@ main p {
 	.close::before {
 		@include material-icon( $icon-close );
 		margin: 0;
-		background-color: $alpha-dark-5;
+		background-color: $alpha-light-1;
 		font-size: 1.4em;
+	}
+}
+
+#overlay[class*="clients"] .wrapper .contents {
+	p, h1 {
+		text-align: center;
+		color: $beige;
+	}
+
+	h1 {
+		text-shadow: $text-shadow;
+	}
+
+	em {
+		color: $light-lavender;
+	}
+
+	a {
+		color: $beige !important;
+	}
+}
+
+#overlay[class*="chai"] .wrapper .contents {
+	background-image: linear-gradient(160deg, $dark-beige, $beige);
+	max-width: 64em;
+
+	h1 {
+		text-shadow: none;
+	}
+
+	* {
+		color: $alpha-dark-5;
+	}
+
+	#ingredients, #directions {
+		background: $alpha-light-2;
+		padding: 1em 2em 2em;
+		border: 5px solid $alpha-dark-2;
+		border-radius: 30px;
+		margin: 2em 0;
+		box-shadow: $large-shadow-light;
+
+		h2 {
+			margin: -1rem -2rem 1em;
+			padding: 1rem 2rem 1rem;
+			background-color: $alpha-dark-2;
+			color: $alpha-dark-2;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+			text-shadow: 0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
+		}
+
+		img {
+			display: none;
+		}
+
+		@media only screen and (min-width: $breakpoint) {
+
+			img {
+				display: block;
+				width: 350px;
+				margin: 5.5em 0 1em 2em;
+				float: right;
+				border: 5px solid $alpha-dark-2;
+				border-radius: 20px;
+			}
+	
+		}
+
+		ul {
+			padding-left: 2.2em;
+		}
+
+		ol li {
+			margin-bottom: 0.3em;
+		}
+
+		ul li::before {
+			@include material-icon($icon-ingredient, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			white-space: normal;
+		}
 	}
 }
 
@@ -724,92 +804,6 @@ main p {
 	}
 }
 
-#overlay[class*="clients"] .wrapper .contents {
-	p, h1 {
-		text-align: center;
-		color: $beige;
-	}
-
-	h1 {
-		text-shadow: $text-shadow;
-	}
-
-	em {
-		color: $light-lavender;
-	}
-
-	a {
-		color: $beige !important;
-	}
-}
-
-#overlay[class*="chai"] .wrapper .contents {
-	background-image: linear-gradient(160deg, $dark-beige, $beige);
-	max-width: 64em;
-
-	h1 {
-		text-shadow: none;
-	}
-
-	* {
-		color: $alpha-dark-5;
-	}
-
-	#ingredients, #directions {
-		background: $alpha-light-2;
-		padding: 1em 2em 2em;
-		border: 5px solid $alpha-dark-2;
-		border-radius: 30px;
-		margin: 2em 0;
-		box-shadow: $large-shadow-light;
-
-		h2 {
-			margin: -1rem -2rem 1em;
-			padding: 1rem 2rem 1rem;
-			background-color: $alpha-dark-2;
-			color: $alpha-dark-2;
-			border-top-left-radius: 25px;
-			border-top-right-radius: 25px;
-			text-shadow: 0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
-		}
-
-		img {
-			display: none;
-		}
-
-		@media only screen and (min-width: $breakpoint) {
-
-			img {
-				display: block;
-				width: 350px;
-				margin: 5.5em 0 1em 2em;
-				float: right;
-				border: 5px solid $alpha-dark-2;
-				border-radius: 20px;
-			}
-	
-		}
-
-		ul {
-			padding-left: 2.2em;
-		}
-
-		ol li {
-			margin-bottom: 0.3em;
-		}
-
-		ul li::before {
-			@include material-icon($icon-ingredient, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
-			margin: 0;
-			padding: 0;
-		}
-
-		em {
-			white-space: normal;
-		}
-	}
-}
-
 #gallery {
 	max-width: 100%;
 	margin-top: 1em;
@@ -845,6 +839,7 @@ main p {
 	}
 }
 
+// main sections
 #intro {
 	@include section-colors($purple);
 
@@ -996,13 +991,13 @@ main p {
 }
 
 
-/* responsive styles */
+// responsive styles
 @media only screen and (min-width: $breakpoint) {
 	
 }
 
 
-/* print styles */
+// print styles
 @media print {
 	*,
 	*::before,
