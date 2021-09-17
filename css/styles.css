@@ -1220,7 +1220,7 @@ preload * {
   height: 100%;
   width: 100%;
   background-color: #6d697d;
-  transition: top 0.75s ease-in-out, left 0.75s ease-in-out;
+  transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
   z-index: 1000;
   border: 1em solid rgba(255, 255, 255, 0.2);
   border-radius: 2em;
@@ -1254,20 +1254,20 @@ preload * {
   right: 2em;
 }
 #portfolio #knitxmidwest {
-  top: -100%;
-  left: -100%;
+  top: 100%;
+  left: 0;
 }
 #portfolio #blood-of-the-young {
-  top: -100%;
-  left: 100%;
+  top: 100%;
+  left: 0;
 }
 #portfolio #art-services {
   top: 100%;
-  left: -100%;
+  left: 0;
 }
 #portfolio #pin-pushers {
   top: 100%;
-  left: 100%;
+  left: 0;
 }
 
 @media only screen and (max-width: 64em) {
