@@ -1059,10 +1059,6 @@ preload * {
   left: 50%;
   transform: translateX(-50%);
 }
-#overlay .close:hover {
-  cursor: pointer;
-  background-color: #5B3D67;
-}
 #overlay .close::before {
   font-family: "Material Icons";
   content: "\e5cd";
@@ -1079,6 +1075,13 @@ preload * {
   margin: 0;
   background-color: rgba(255, 255, 255, 0.1);
   font-size: 1.4em;
+}
+#overlay .close:hover {
+  cursor: pointer;
+  background-color: #442D4D;
+}
+#overlay .close:hover::before {
+  color: #67D594;
 }
 
 #overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {
@@ -1219,7 +1222,7 @@ preload * {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #6d697d;
+  background-color: #6D697D;
   transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
   z-index: 1000;
   border: 1em solid rgba(255, 255, 255, 0.2);

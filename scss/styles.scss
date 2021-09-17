@@ -16,6 +16,7 @@ $dark-green:     #007171;
 
 $light-lavender: #B3A7B7;
 $lavender:       #A4B2C2;
+$med-lavender:   #6D697D;
 $dark-lavender:  #5C6978;
 
 $light-beige:    #ddd7bc;
@@ -573,18 +574,22 @@ preload {
 		top: 105%;
 		@include center;
 	}
-
-	.close:hover {
-		cursor: pointer;
-		background-color: $purple;
-	}
-
 	.close::before {
 		@include material-icon( $icon-close );
 		margin: 0;
 		background-color: $alpha-light-1;
 		font-size: 1.4em;
 	}
+
+	.close:hover {
+		cursor: pointer;
+		background-color: $dark-purple;
+	}
+
+	.close:hover::before {
+		color: $link-color;
+	}
+
 }
 
 #overlay[class*="clients"] .wrapper .contents {
@@ -736,7 +741,7 @@ preload {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: #6d697d;
+		background-color: $med-lavender;
 		transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
 		z-index: 1000;
 		border: 1em solid $alpha-light-2;
