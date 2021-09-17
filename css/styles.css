@@ -999,7 +999,7 @@ preload * {
 }
 #overlay .cp_embed_wrapper {
   margin: 1em 0;
-  border: 0.5em solid #B3A7B7;
+  border: 0.5em solid #b1a7b6;
   border-radius: 1.25em;
 }
 #overlay .cp_embed_wrapper iframe {
@@ -1128,7 +1128,7 @@ preload * {
 #overlay .wrapper .contents pre {
   height: 25.2em;
   overflow: scroll;
-  border: 0.5em solid #B3A7B7;
+  border: 0.5em solid #b1a7b6;
   border-radius: 1.25em;
   margin: 1em 0 1.25em;
   padding: 0.5em 1em;
@@ -1184,7 +1184,7 @@ preload * {
   text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
 }
 #overlay[class*=clients] .wrapper .contents em {
-  color: #B3A7B7;
+  color: #b1a7b6;
 }
 #overlay[class*=clients] .wrapper .contents a {
   color: #CCC6AD !important;
@@ -1275,7 +1275,7 @@ preload * {
   position: relative;
   height: 280px;
   background-size: cover;
-  border: 0.5em solid #B3A7B7;
+  border: 0.5em solid #b1a7b6;
   overflow: hidden;
   border-radius: 1.5em;
   background-position: top center;
@@ -1285,16 +1285,18 @@ preload * {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(68, 45, 77, 0.9);
   height: 3.5em;
   padding-left: 1em;
   z-index: 901;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-style: normal;
 }
 #portfolio .item:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  border: 0.5em solid #b1a7b6;
 }
 #portfolio .item::after {
   content: "";
@@ -1314,12 +1316,12 @@ preload * {
   height: 100%;
   width: 100%;
   background-color: #6D697D;
-  background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.6), rgba(91, 61, 103, 0.2));
+  background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.4), rgba(91, 61, 103, 0.2));
   transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
   z-index: 1000;
-  border: 1em solid #6D697D;
+  border: 0.5em solid #6D697D;
   border-radius: 2em;
-  padding: 1.5em 2em;
+  padding: 1.25em 1.5em;
   overflow: scroll;
 }
 #portfolio .details h1, #portfolio .details p {
@@ -1328,7 +1330,6 @@ preload * {
 #portfolio .details h2 {
   margin: -1em -2em 1em !important;
   padding: 0.75em 2em 0.5em;
-  border-bottom: 0.2em solid #6D697D;
   background-color: #442D4D;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.7), 0px -1px 0px rgba(255, 255, 255, 0.1);
 }
@@ -1522,7 +1523,7 @@ preload * {
   color: #ddd7bc;
 }
 #resume .arrow-down {
-  border-top-color: #B3A7B7;
+  border-top-color: #b1a7b6;
 }
 
 #colophon {

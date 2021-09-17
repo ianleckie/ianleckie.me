@@ -14,7 +14,7 @@ $dark-blue:      #5774AC; //#2E5084?
 $green:          #00895E;
 $dark-green:     #007171;
 
-$light-lavender: #B3A7B7;
+$light-lavender: #b1a7b6;
 $lavender:       #A4B2C2;
 $med-lavender:   #6D697D;
 $dark-lavender:  #5C6978;
@@ -701,18 +701,20 @@ preload {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: rgba( black, 0.9 );
+			background-color: rgba( $dark-purple, 0.9 );
 			height: 3.5em;
 			padding-left: 1em;
 			z-index: 901;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
+			font-style: normal;
 		}
 	}
 
 	.item:hover {
 		box-shadow: $box-shadow;
+		border: 0.5em solid $light-lavender;
 	}
 
 	.item::after {
@@ -735,12 +737,12 @@ preload {
 		height: 100%;
 		width: 100%;
 		background-color: $med-lavender;
-		background-image: linear-gradient( 160deg, rgba( $grey-blue, 0.6 ), rgba( $purple, 0.2 ) );
+		background-image: linear-gradient( 160deg, rgba( $grey-blue, 0.4 ), rgba( $purple, 0.2 ) );
 		transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
 		z-index: 1000;
-		border: 1em solid $med-lavender;
+		border: 0.5em solid $med-lavender;
 		border-radius: 2em;
-		padding: 1.5em 2em;
+		padding: 1.25em 1.5em;
 		overflow: scroll;
 
 		h1, p {
@@ -750,7 +752,7 @@ preload {
 		h2 {
 			margin: -1em -2em 1em !important;
 			padding: 0.75em 2em 0.5em;
-			border-bottom: 0.2em solid $med-lavender;
+			// border-bottom: 0.2em solid $lavender;
 			background-color: $dark-purple;
 			text-shadow: 0px 1px 0px rgba( black, 0.7 ), 0px -1px 0px rgba( white, 0.1 );
 		}
