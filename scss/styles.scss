@@ -610,7 +610,7 @@ preload {
 	max-width: 64em;
 
 	h1 {
-		text-shadow: none;
+		text-shadow: $text-shadow-3d;
 	}
 
 	* {
@@ -673,7 +673,6 @@ preload {
 
 #portfolio {
 	position: relative;
-	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
 	grid-gap: 2em;
@@ -686,7 +685,6 @@ preload {
 	overflow: hidden;
 
 	.item {
-		box-sizing: border-box;
 		position: relative;
 		height: 280px;
 		background-size: cover;
