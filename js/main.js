@@ -74,14 +74,23 @@ function updateGallery( event ) {
 
 	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
-		// delay for image to load
-		setTimeout( function() {
+		if ( $( gallery_selector + ' img' ).length ) {
+
+			$( gallery_selector + ' img' ).on( 'load', function() {
+
+				resizeGallery( current_height );
+
+				$( gallery_selector ).show();
+
+			} );
+
+		} else {
 
 			resizeGallery( current_height );
 
 			$( gallery_selector ).show();
 
-		}, 100 );
+		}
 
 	} );
 
