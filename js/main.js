@@ -6,7 +6,7 @@ var dev_mode = true;
 var section_number   = '#section-number',
     gallery_link     = 'a[target="gallery"]',
     gallery          = '#gallery',
-    gallery_loading  = '#gallery .loading',
+    gallery_loading  = '#gallery-outer .loading',
     overlay_link     = 'a[target="overlay"]',
     overlay          = '#overlay',
     overlay_loading  = '#overlay .loading',
