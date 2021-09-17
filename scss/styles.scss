@@ -41,27 +41,12 @@ $font-weight-regular:   300;
 $font-weight-semi-bold: 500;
 $font-weight-bold:      600;
 
-// shadows and rgba colors
-$alpha-light-0: rgba(255,255,255,0.05);
-$alpha-light-1: rgba(255,255,255,0.1);
-$alpha-light-2: rgba(255,255,255,0.2);
-$alpha-light-3: rgba(255,255,255,0.3);
-$alpha-light-4: rgba(255,255,255,0.4);
-$alpha-light-5: rgba(255,255,255,0.5);
-$alpha-light-7: rgba(255,255,255,0.75);
-$alpha-dark-1:	 rgba(0,0,0,0.1);
-$alpha-dark-2:	 rgba(0,0,0,0.2);
-$alpha-dark-3:	 rgba(0,0,0,0.3);
-$alpha-dark-4:	 rgba(0,0,0,0.4);
-$alpha-dark-5:	 rgba(0,0,0,0.5);
-$alpha-dark-7:	 rgba(0,0,0,0.7);
-$alpha-dark-8:	 rgba(0,0,0,0.8);
+// shadows
+$text-shadow:      0px 2px 8px rgba( black, 0.3 );
+$text-shadow-3d:   0px 1px 0px rgba( white, 0.2 ), 0px -1px 0px rgba( black, 0.7 );
 
-$text-shadow:      0px 2px 8px $alpha-dark-3;
-$text-shadow-3d:   0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
-
-$box-shadow:       0 6px 18px $alpha-dark-2;
-$box-shadow-light: 0 6px 18px $alpha-dark-1;
+$box-shadow:       0 6px 18px rgba( black, 0.2 );
+$box-shadow-light: 0 6px 18px rgba( black, 0.1 );
 
 // material icons
 $icon-default:       "\e835"; //check_box_outline_blank
@@ -84,12 +69,13 @@ $icon-form:          "\e150"; //create
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
 @use 'loading' with ( $timing: 1.6s );
-@use 'animation' with ( $cube-color: $dark-purple, $background-color: $alpha-light-2 );
+@use 'animation' with ( $cube-color: $dark-purple, $background-color: rgba( white, 0.2 ) );
 
 
 // webfonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Signika:wght@300;400;500;600');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 
 // mixins
 @mixin center() {
@@ -97,7 +83,7 @@ $icon-form:          "\e150"; //create
 	transform: translateX(-50%);
 }
 
-@mixin section-colors($color: $alpha-dark-4) {
+@mixin section-colors($color: rgba( black, 0.4 )) {
 	background-color: $color;
 
 	.arrow-down {
@@ -105,7 +91,7 @@ $icon-form:          "\e150"; //create
 	}
 }
 
-@mixin material-icon($icon: $icon-default, $color: $beige, $bg-color: $alpha-dark-1, $size: 2em) {
+@mixin material-icon($icon: $icon-default, $color: $beige, $bg-color: rgba( black, 0.1 ), $size: 2em) {
 	font-family: 'Material Icons';
 	content: $icon;
 	display: inline-block;
@@ -135,7 +121,7 @@ body {
 
 h1 {
 	margin: 0;
-	color: $alpha-dark-5;
+	color: rgba( black, 0.5 );
 	font-family: $header-font-family;
 	font-size: $header-size;
 	line-height: $header-line-height;
@@ -165,7 +151,7 @@ ul {
 	}
 
 	li::before {
-		@include material-icon($icon-list, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
+		@include material-icon($icon-list, $color: rgba( black, 0.5 ), $bg-color: transparent, $size: 1em);
 		margin: 0;
 		padding: 0;
 	}
@@ -205,7 +191,7 @@ a:hover {
 
 a.selected {
 	color: $light-beige;
-	background-color: $alpha-dark-2 !important;
+	background-color: rgba( black, 0.2 ) !important;
 	text-decoration: none;
 }
 
@@ -248,7 +234,7 @@ preload {
 
 .button {
 	display: inline-block;
-	background-color: $alpha-dark-4;
+	background-color: rgba( black, 0.4 );
 	margin: 1em 0 0;
 	padding: 0 1.5em 0 0;
 	font-size: 1.25em;
@@ -258,29 +244,29 @@ preload {
 }
 
 .button:hover {
-	background-color: $alpha-light-0;
+	background-color: rgba( white, 0.05 );
 }
 
 .button.email, .button.phone, .button.form {
 	display: block;
 	margin: 0.6em 5%;
 	color: $beige;
-	background-color: $alpha-light-0;
+	background-color: rgba( white, 0.05 );
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .button.email span::before {
-	@include material-icon($icon: $icon-email, $bg-color: $alpha-dark-2);
+	@include material-icon($icon: $icon-email, $bg-color: rgba( black, 0.2 ));
 }
 
 .button.phone span::before {
-	@include material-icon($icon: $icon-phone, $bg-color: $alpha-dark-2);
+	@include material-icon($icon: $icon-phone, $bg-color: rgba( black, 0.2 ));
 }
 
 .button.form span::before {
-	@include material-icon($icon: $icon-form, $bg-color: $alpha-dark-2);
+	@include material-icon($icon: $icon-form, $bg-color: rgba( black, 0.2 ));
 }
 
 
@@ -288,7 +274,7 @@ preload {
 	background: $dark-green;
 
 	span::before {
-		background-color: $alpha-light-1;
+		background-color: rgba( white, 0.1 );
 	}
 }
 
@@ -301,7 +287,7 @@ preload {
 	@include center();
 
 	span::before {
-		@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: $alpha-dark-2);
+		@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: rgba( black, 0.2 ));
 	}
 }
 
@@ -310,7 +296,7 @@ preload {
 	background-color: $dark-purple;
 
 	span::before {
-		background-color: $alpha-dark-4;
+		background-color: rgba( black, 0.4 );
 	}
 }
 
@@ -318,7 +304,7 @@ preload {
 	padding: 1em 0.5em 0.25em;
 	font-size: 1.1em;
 	font-style: italic;
-	color: $alpha-light-7;
+	color: rgba( white, 0.7 );
 }
 
 .arrow-down, .arrow-down-border {
@@ -331,7 +317,7 @@ preload {
 	height: 0; 
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
-	border-top: 40px solid $alpha-dark-4;
+	border-top: 40px solid rgba( black, 0.4 );
 	z-index: 900;
 }
 
@@ -347,7 +333,7 @@ preload {
 	position: relative;
 	margin: 2em 2em 0;
 	display: block;
-	background-color: $alpha-dark-1;
+	background-color: rgba( black, 0.1 );
 	border-radius: 32px;
 	padding: 2.5em;
 
@@ -359,7 +345,7 @@ preload {
 }
 
 .file-preview:hover {
-	background-color: $alpha-dark-2;
+	background-color: rgba( black, 0.2 );
 	box-shadow: $box-shadow inset;
 }
 
@@ -373,7 +359,7 @@ preload {
 	margin-top: -1em;
 	margin-left: -1em;
 	color: $purple;
-	background-color: $alpha-light-7;
+	background-color: rgba( white, 0.7 );
 	box-shadow: $box-shadow;
 }
 
@@ -383,7 +369,7 @@ preload {
 	left: 2em;
 	width: 5em;
 	text-align: center;
-	background-color: $alpha-dark-4;
+	background-color: rgba( black, 0.4 );
 	line-height: 2.5;
 	padding: 0 1em;
 	border-radius: 2.5em;
@@ -397,7 +383,7 @@ preload {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $alpha-dark-8;
+	background-color: rgba( black, 0.8 );
 	z-index: 950;
 
 	.cp_embed_wrapper {
@@ -416,7 +402,7 @@ preload {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: $alpha-dark-3;
+		background-color: rgba( black, 0.3 );
 		z-index: 960;
 
 		.contents {
@@ -435,7 +421,7 @@ preload {
 			nav {
 				margin: 1em -1em 0 -1em;
 				padding-left: 1.5em;
-				background-color: $alpha-light-2;
+				background-color: rgba( white, 0.2 );
 				border-radius: 2em 2em 0 0;
 			}
 
@@ -450,11 +436,11 @@ preload {
 			}
 
 			nav a:hover {
-				color: $alpha-light-0;
+				color: rgba( white, 0.05 );
 			}
 
 			nav a.selected {
-				background-color: $alpha-light-2;
+				background-color: rgba( white, 0.2 );
 				cursor: default;
 				box-shadow: $box-shadow;
 			}
@@ -468,7 +454,7 @@ preload {
 				padding: 1px 1em 1.5em;
 				margin: 0 -1em;	
 				border-top: none;
-				background-color: $alpha-light-2;
+				background-color: rgba( white, 0.2 );
 				border-radius: 0 0 2em 2em;
 			}
 
@@ -510,11 +496,11 @@ preload {
 
 			nav a:hover {
 				color: $beige;
-				background-color: $alpha-dark-2 !important;
+				background-color: rgba( black, 0.2 ) !important;
 			}
 
 			a.github {
-				background-color: $alpha-dark-3;
+				background-color: rgba( black, 0.3 );
 				display: inline-block;
 				margin-left: -0.1em;
 				padding: 0.25em 1em 0.25em 0.25em;
@@ -581,7 +567,7 @@ preload {
 	.close::before {
 		@include material-icon( $icon-close );
 		margin: 0;
-		background-color: $alpha-light-1;
+		background-color: rgba( white, 0.1 );
 		font-size: 1.4em;
 	}
 
@@ -624,13 +610,13 @@ preload {
 	}
 
 	* {
-		color: $alpha-dark-5;
+		color: rgba( black, 0.5 );
 	}
 
 	#ingredients, #directions {
-		background: $alpha-light-2;
+		background: rgba( white, 0.2 );
 		padding: 1em 2em 2em;
-		border: 5px solid $alpha-dark-2;
+		border: 5px solid rgba( black, 0.2 );
 		border-radius: 30px;
 		margin: 2em 0;
 		box-shadow: $box-shadow-light;
@@ -638,11 +624,11 @@ preload {
 		h2 {
 			margin: -1rem -2rem 1em;
 			padding: 1rem 2rem 1rem;
-			background-color: $alpha-dark-2;
-			color: $alpha-dark-2;
+			background-color: rgba( black, 0.2 );
+			color: rgba( black, 0.2 );
 			border-top-left-radius: 25px;
 			border-top-right-radius: 25px;
-			text-shadow: 0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
+			text-shadow: 0px 1px 0px rgba( white, 0.2 ), 0px -1px 0px rgba( black, 0.7 );
 		}
 
 		img {
@@ -656,7 +642,7 @@ preload {
 				width: 350px;
 				margin: 5.5em 0 1em 2em;
 				float: right;
-				border: 5px solid $alpha-dark-2;
+				border: 5px solid rgba( black, 0.2 );
 				border-radius: 20px;
 			}
 	
@@ -671,7 +657,7 @@ preload {
 		}
 
 		ul li::before {
-			@include material-icon($icon-ingredient, $color: $alpha-dark-5, $bg-color: transparent, $size: 1em);
+			@include material-icon($icon-ingredient, $color: rgba( black, 0.5 ), $bg-color: transparent, $size: 1em);
 			margin: 0;
 			padding: 0;
 		}
@@ -692,7 +678,7 @@ preload {
 	margin: 1em -5.5em 0 -1em;
 	padding: 0;
 	max-width: 67em;
-	background-color: $alpha-light-2;
+	background-color: rgba( white, 0.2 );
 	padding: 1.5em 3.5em 1.5em 1.5em;
 	overflow: hidden;
 
@@ -711,7 +697,7 @@ preload {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background-color: $alpha-dark-8;
+			background-color: rgba( black, 0.9 );
 			height: 3.5em;
 			padding-left: 1em;
 			z-index: 901;
@@ -732,8 +718,7 @@ preload {
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: black;
-		opacity: 0.25;
+		background-color: rgba( black, 0.2 );
 		z-index: 900;
 	}
 
@@ -746,7 +731,7 @@ preload {
 		height: 100%;
 		width: 100%;
 		background-color: $med-lavender;
-		background-image: linear-gradient(160deg,$alpha-dark-2,$alpha-dark-1);
+		background-image: linear-gradient( 160deg, rgba( $grey-blue, 0.6 ), rgba( $purple, 0.2 ) );
 		transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
 		z-index: 1000;
 		border: 1em solid $med-lavender;
@@ -763,7 +748,7 @@ preload {
 			padding: 0.75em 2em 0.5em;
 			border-bottom: 0.2em solid $med-lavender;
 			background-color: $dark-purple;
-			text-shadow: 0px 1px 0px $alpha-dark-7, 0px -1px 0px $alpha-light-1;
+			text-shadow: 0px 1px 0px rgba( black, 0.7 ), 0px -1px 0px rgba( white, 0.1 );
 		}
 
 		p.sub {
@@ -821,7 +806,7 @@ preload {
 #gallery {
 	max-width: 100%;
 	margin-top: 1em;
-	background: $alpha-dark-2;
+	background: rgba( black, 0.2 );
 	border-radius: 24px;
 	padding: 1em;
 	box-shadow: $box-shadow;
@@ -829,7 +814,7 @@ preload {
 
 	img {
 		width: 100%;
-		border: 6px solid $alpha-dark-2;
+		border: 6px solid rgba( black, 0.2 );
 		border-radius: 16px;
 	}
 
@@ -884,7 +869,7 @@ preload {
 	background-image: linear-gradient(160deg, $dark-blue, $blue 70%);
 
 	h2 {
-		color: $alpha-dark-3;
+		color: rgba( black, 0.3 );
 		line-height: 2;
 		text-shadow: $text-shadow-3d;
 	}
@@ -894,13 +879,13 @@ preload {
 	}
 
 	#software-frameworks::before {
-		@include material-icon($icon-experience, $color: $beige, $bg-color: $alpha-dark-3);
+		@include material-icon($icon-experience, $color: $beige, $bg-color: rgba( black, 0.3 ));
 		
 		margin: 0 0.5em 0 0;
 	}
 
 	#skills::before {
-		@include material-icon($icon-skills, $color: $beige, $bg-color: $alpha-dark-3);
+		@include material-icon($icon-skills, $color: $beige, $bg-color: rgba( black, 0.3 ));
 		
 		margin: 0 0.5em 0 0;
 	}
@@ -938,12 +923,12 @@ preload {
 
 	p {
 		margin-top: 1.5em;
-		color: $alpha-dark-5;
+		color: rgba( black, 0.5 );
 		font-size: $text-size-smaller;
 		text-align: justify;
 
 		.thank-you {
-			color: $alpha-dark-5;
+			color: rgba( black, 0.5 );
 			font-weight: $font-weight-semi-bold;
 		}
 	}
@@ -965,7 +950,7 @@ preload {
 	h1 {
 		margin: 0;
 		padding-right: 0.5em;
-		color: $alpha-dark-3;
+		color: rgba( black, 0.3 );
 		font-family: $font-family;
 		font-weight: $font-weight-bold;
 		font-size: 1.2em;
@@ -985,7 +970,7 @@ preload {
 			padding: 0 1.2em 0 0;
 			float: left;
 			font-size: 0.9em;
-			background-color: $alpha-light-0;
+			background-color: rgba( white, 0.05 );
 			line-height: 1.6;
 			border-radius: 1.6em;
 			white-space: nowrap;

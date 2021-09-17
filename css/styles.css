@@ -903,7 +903,7 @@ preload * {
   padding: 1em 0.5em 0.25em;
   font-size: 1.1em;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .arrow-down, .arrow-down-border {
@@ -967,7 +967,7 @@ preload * {
   margin-top: -1em;
   margin-left: -1em;
   color: #5B3D67;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
@@ -1281,7 +1281,7 @@ preload * {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   height: 3.5em;
   padding-left: 1em;
   z-index: 901;
@@ -1299,8 +1299,7 @@ preload * {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: black;
-  opacity: 0.25;
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 900;
 }
 #portfolio .item:hover::after {
@@ -1311,7 +1310,7 @@ preload * {
   height: 100%;
   width: 100%;
   background-color: #6D697D;
-  background-image: linear-gradient(160deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.6), rgba(91, 61, 103, 0.2));
   transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
   z-index: 1000;
   border: 1em solid #6D697D;
