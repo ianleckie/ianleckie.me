@@ -136,8 +136,6 @@ function closeOverlayOnEscPress( event ) {
 
 	var code = event.keyCode || event.which;
 
-	console.log(code);
-
 	if ( code == 27 ) {
 
 		if ( details_open ) {
