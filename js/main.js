@@ -3,15 +3,17 @@ Set some variables
 */
 var dev_mode = true;
 
-var section_number_selector   = '#section-number',
-    gallery_link_selector     = 'a[target="gallery"]',
-    gallery_selector          = '#gallery',
-    overlay_link_selector     = 'a[target="overlay"]',
-    overlay_selector          = '#overlay',
-    overlay_contents_selector = '#overlay .contents',
-    overlay_section_selector  = '#overlay section',
-    overlay_close_selector    = '#overlay .close',
-    code_link_selector        = '#code-nav a';
+var section_number   = '#section-number',
+    gallery_link     = 'a[target="gallery"]',
+    gallery          = '#gallery',
+    gallery_loading  = '#gallery .loading',
+    overlay_link     = 'a[target="overlay"]',
+    overlay          = '#overlay',
+    overlay_loading  = '#overlay .loading',
+    overlay_contents = '#overlay .contents',
+    overlay_section  = '#overlay section',
+    overlay_close    = '#overlay .close',
+    code_link        = '#code-nav a';
 
 var last_details_id, last_details_pos_top, last_details_pos_left;
 
@@ -38,7 +40,7 @@ that value
 */
 function updateSectionNumber() {
 	
-	var section_number  = $( section_number_selector );
+	var section_number  = $( section_number );
 	var last_is_visible = false;
 
 	$( 'section' ).each( function( index ) {
@@ -65,24 +67,24 @@ function updateGallery( event ) {
 
 	event.preventDefault();
 
-	current_height = $( gallery_selector ).height();
+	current_height = $( gallery ).height();
 
-	$( gallery_link_selector ).removeClass( 'selected ');
+	$( gallery_link ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( gallery_selector ).hide();
-	$( '.loading' ).show();
+	$( gallery ).hide();
+	$( gallery_loading ).show();
 
-	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
+	$( gallery ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
-		if ( $( gallery_selector + ' img' ).length ) {
+		if ( $( gallery + ' img' ).length ) {
 
-			$( gallery_selector + ' img' ).on( 'load', function() {
+			$( gallery + ' img' ).on( 'load', function() {
 
 				resizeGallery( current_height );
 
-				$( '.loading' ).hide();
-				$( gallery_selector ).show();
+				$( gallery_loading ).hide();
+				$( gallery ).show();
 
 			} );
 
@@ -90,8 +92,8 @@ function updateGallery( event ) {
 
 			resizeGallery( current_height );
 
-			$( '.loading' ).hide();
-			$( gallery_selector ).show();
+			$( gallery_loading ).hide();
+			$( gallery ).show();
 
 		}
 
@@ -105,9 +107,9 @@ trigger the CSS transition
 */
 function resizeGallery( current_height ) {
 
-	auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
+	auto_height = $( gallery ).css( 'height', 'auto' ).height();
 
-	$( gallery_selector ).height( current_height ).height( auto_height );
+	$( gallery ).height( current_height ).height( auto_height );
 
 }
 
@@ -120,10 +122,12 @@ function openLinkInOverlay( event ) {
 
 	toggleOverlay();
 
-	$( overlay_selector ).removeClass().addClass( $(this).attr( 'href' ) );
+	// clone the loading div to the contents so it's visible until the linked page loads
+	overlay_loading_clone = $( overlay_loading ).clone().appendTo( overlay_contents ).show();
 
-	$( overlay_contents_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
+	$( overlay ).removeClass().addClass( $(this).attr( 'href' ) );
 
+	$( overlay_contents ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
 
 }
 
@@ -132,11 +136,11 @@ Empties overlay, toggles body scrolling and then fades overlay in or out
 */
 function toggleOverlay() {
 
-	$( overlay_contents_selector ).html('');
+	$( overlay_contents ).html('');
 
 	$( 'body' ).toggleClass( 'noscroll' );
 
-	$( overlay_selector ).fadeToggle( 300 );
+	$( overlay ).fadeToggle( 300 );
 
 }
 
@@ -154,7 +158,7 @@ function closeOverlayOnEscPress( event ) {
 
 			$( last_details_id + ' .close-details' ).click();
 
-		} else if ( $( overlay_selector ).is( ':visible' ) ) {
+		} else if ( $( overlay ).is( ':visible' ) ) {
 
 			toggleOverlay();
 
@@ -166,14 +170,14 @@ function closeOverlayOnEscPress( event ) {
 
 /*
 Loads the sample code found at uri into the element identified
-by target_selector, then processes it with prism using the
+by target, then processes it with prism using the
 specified lang value
 */
-function loadExampleCode( target_selector, uri, lang ) {
+function loadExampleCode( target, uri, lang ) {
 
 	$.get( uri, function( data ) {
 
-		$( target_selector ).html( Prism.highlight(data, Prism.languages[lang], lang) );
+		$( target ).html( Prism.highlight(data, Prism.languages[lang], lang) );
 
 	});
 
@@ -186,10 +190,10 @@ function selectCodeExample( event ) {
 
 	event.preventDefault();
 
-	$( code_link_selector ).removeClass( 'selected ');
+	$( code_link ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( overlay_section_selector ).hide();
+	$( overlay_section ).hide();
 	$( $(this).attr( 'href' ) ).show();
 
 	window.__CPEmbed();
@@ -204,15 +208,15 @@ function openPortfolioDetails( event ) {
 
 	event.preventDefault();
 
-	details_id_selector = $( this ).attr( 'href' );
+	details_id = $( this ).attr( 'href' );
 
-	last_details_id = details_id_selector;
+	last_details_id = details_id;
 
-	last_details_pos_top  = $( details_id_selector ).css( 'top' );
-	last_details_pos_left = $( details_id_selector ).css( 'left' );
+	last_details_pos_top  = $( details_id ).css( 'top' );
+	last_details_pos_left = $( details_id ).css( 'left' );
 
-	$( details_id_selector ).css( 'top', 0 );
-	$( details_id_selector ).css( 'left', 0 );
+	$( details_id ).css( 'top', 0 );
+	$( details_id ).css( 'left', 0 );
 
 	details_open = true;
 
@@ -243,11 +247,11 @@ function loadFunction( jQuery ) {
 
 	$( window ).resize( resizeGallery );
 
-	$( overlay_close_selector ).click( toggleOverlay );
+	$( overlay_close ).click( toggleOverlay );
 
-	$( overlay_link_selector ).click( openLinkInOverlay );
+	$( overlay_link ).click( openLinkInOverlay );
 	
-	$( gallery_link_selector ).click( updateGallery ).first().click();
+	$( gallery_link ).click( updateGallery ).first().click();
 
 }
  

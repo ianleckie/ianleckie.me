@@ -460,6 +460,11 @@ pre[class*=language-] {
   z-index: 970;
 }
 
+#overlay .loading {
+  top: 50%;
+  margin-top: -40px;
+}
+
 .loading div {
   position: absolute;
   width: 16px;
