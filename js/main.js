@@ -40,7 +40,6 @@ that value
 */
 function updateSectionNumber() {
 	
-	var section_number  = $( section_number );
 	var last_is_visible = false;
 
 	$( 'section' ).each( function( index ) {
@@ -49,7 +48,7 @@ function updateSectionNumber() {
 
 		if ( !last_is_visible && is_visible ) {
 			
-			section_number.text( index + 1 );
+			$( section_number ).text( index + 1 );
 			return false;
 		
 		}
