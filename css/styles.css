@@ -1148,7 +1148,7 @@ main p {
   z-index: 1000;
   border: 1em solid rgba(255, 255, 255, 0.2);
   border-radius: 2em;
-  padding: 1em 2em;
+  padding: 1.5em 2em;
   overflow: scroll;
 }
 #portfolio .details h1, #portfolio .details p {
@@ -1174,7 +1174,7 @@ main p {
 }
 #portfolio .details .close-details {
   position: absolute;
-  top: 1em;
+  top: 1.25em;
   right: 2em;
 }
 #portfolio #knitxmidwest {
