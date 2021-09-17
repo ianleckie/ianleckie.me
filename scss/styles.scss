@@ -57,11 +57,11 @@ $alpha-dark-5:	 rgba(0,0,0,0.5);
 $alpha-dark-7:	 rgba(0,0,0,0.7);
 $alpha-dark-8:	 rgba(0,0,0,0.8);
 
-$text-shadow:        0px 2px 8px $alpha-dark-3;
-$text-shadow-3d:     0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
+$text-shadow:      0px 2px 8px $alpha-dark-3;
+$text-shadow-3d:   0px 1px 0px $alpha-light-2, 0px -1px 0px $alpha-dark-7;
 
-$large-shadow:       0 6px 18px $alpha-dark-2;
-$large-shadow-light: 0 6px 18px $alpha-dark-1;
+$box-shadow:       0 6px 18px $alpha-dark-2;
+$box-shadow-light: 0 6px 18px $alpha-dark-1;
 
 // material icons
 $icon-default:       "\e835"; //check_box_outline_blank
@@ -352,14 +352,14 @@ preload {
 
 	img {
 		width: 100%;
-		box-shadow: $large-shadow;
+		box-shadow: $box-shadow;
 		border-radius: 10px;
 	}
 }
 
 .file-preview:hover {
 	background-color: $alpha-dark-2;
-	box-shadow: $large-shadow inset;
+	box-shadow: $box-shadow inset;
 }
 
 .file-preview:hover::after {
@@ -373,7 +373,7 @@ preload {
 	margin-left: -1em;
 	color: $purple;
 	background-color: $alpha-light-7;
-	box-shadow: $large-shadow;
+	box-shadow: $box-shadow;
 }
 
 #section-counter {
@@ -455,7 +455,7 @@ preload {
 			nav a.selected {
 				background-color: $alpha-light-2;
 				cursor: default;
-				box-shadow: $large-shadow;
+				box-shadow: $box-shadow;
 			}
 
 			nav a.selected:hover {
@@ -518,7 +518,7 @@ preload {
 				margin-left: -0.1em;
 				padding: 0.25em 1em 0.25em 0.25em;
 				border-radius: 1em;
-				box-shadow: $large-shadow;
+				box-shadow: $box-shadow;
 				color: $beige;
 				text-decoration: none;
 			}
@@ -555,7 +555,7 @@ preload {
 				border-radius: 1.25em;
 				margin: 1em 0 1.25em;
 				padding: 0.5em 1em;
-				box-shadow: $large-shadow;
+				box-shadow: $box-shadow;
 			}
 		}
 	}
@@ -632,7 +632,7 @@ preload {
 		border: 5px solid $alpha-dark-2;
 		border-radius: 30px;
 		margin: 2em 0;
-		box-shadow: $large-shadow-light;
+		box-shadow: $box-shadow-light;
 
 		h2 {
 			margin: -1rem -2rem 1em;
@@ -721,7 +721,7 @@ preload {
 	}
 
 	.item:hover {
-		box-shadow: $large-shadow;
+		box-shadow: $box-shadow;
 	}
 
 	.item::after {
@@ -774,7 +774,7 @@ preload {
 			border: 0.5em solid $light-lavender;
 			border-radius: 1.25em;
 			margin: 0.3em 0 2em 2em;
-			box-shadow: $large-shadow;
+			box-shadow: $box-shadow;
 		}
 
 		.close-details {
@@ -818,8 +818,8 @@ preload {
 	background: $alpha-dark-2;
 	border-radius: 24px;
 	padding: 1em;
-	box-shadow: $large-shadow;
-	transition: height 0.25s;
+	box-shadow: $box-shadow;
+	// transition: height 0.25s;
 	overflow: hidden;
 
 	img {
@@ -868,7 +868,7 @@ preload {
 		width: 90%;
 		margin: 2.5em auto 2em;
 		border-radius: 50%;
-		box-shadow: $large-shadow;
+		box-shadow: $box-shadow;
 		border: 2px solid $beige;
 	}
 }

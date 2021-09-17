@@ -1287,7 +1287,6 @@ preload * {
   border-radius: 24px;
   padding: 1em;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  transition: height 0.25s;
   overflow: hidden;
 }
 #gallery img {

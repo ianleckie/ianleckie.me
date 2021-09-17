@@ -70,13 +70,18 @@ function updateGallery( event ) {
 	$( gallery_link_selector ).removeClass( 'selected ');
 	$( this ).addClass( 'selected' );
 
-	$( gallery_selector + ' div' ).fadeOut( 500 );
+	$( gallery_selector ).hide();
 
 	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
-		resizeGallery( current_height );
+		// delay for image to load
+		setTimeout( function() {
 
-		$( gallery_selector + ' div' ).fadeIn( 500 );
+			resizeGallery( current_height );
+
+			$( gallery_selector ).show();
+
+		}, 100 );
 
 	} );
 
@@ -88,14 +93,9 @@ trigger the CSS transition
 */
 function resizeGallery( current_height ) {
 
-	// delay to deal with caching on netlify
-	setTimeout( function() {
+	auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
 
-		auto_height = $( gallery_selector ).css( 'height', 'auto' ).height();
-
-		$( gallery_selector ).height( current_height ).height( auto_height );
-
-	}, 200 );
+	$( gallery_selector ).height( current_height ).height( auto_height );
 
 }
 
