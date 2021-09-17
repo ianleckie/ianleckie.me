@@ -83,6 +83,7 @@ $icon-form:          "\e150"; //create
 @use 'html5boilerplate';
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
+@use 'loading' with ( $timing: 1.6s );
 @use 'animation' with ( $cube-color: $dark-purple, $background-color: $alpha-light-2 );
 
 
@@ -397,7 +398,7 @@ preload {
 	bottom: 0;
 	left: 0;
 	background-color: $alpha-dark-8;
-	z-index: 997;
+	z-index: 950;
 
 	.cp_embed_wrapper {
 		margin: 1em 0;
@@ -416,7 +417,7 @@ preload {
 		bottom: 0;
 		left: 0;
 		background-color: $alpha-dark-3;
-		z-index: 998;
+		z-index: 960;
 
 		.contents {
 			position: absolute;
@@ -426,7 +427,7 @@ preload {
 			max-width: 75em;
 			padding: 3em 5em;
 			background-image: linear-gradient(160deg, $grey-blue, $purple);
-			z-index: 999;
+			z-index: 970;
 			overflow: scroll;
 
 			@include center();
@@ -745,9 +746,10 @@ preload {
 		height: 100%;
 		width: 100%;
 		background-color: $med-lavender;
+		background-image: linear-gradient(160deg,$alpha-dark-2,$alpha-dark-1);
 		transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
 		z-index: 1000;
-		border: 1em solid $alpha-light-2;
+		border: 1em solid $med-lavender;
 		border-radius: 2em;
 		padding: 1.5em 2em;
 		overflow: scroll;
@@ -757,29 +759,29 @@ preload {
 		}
 
 		h2 {
-			margin-top: 0 !important;
-			border-bottom: 2px solid $light-lavender;
-			padding-bottom: 0.5em;
-			margin-bottom: 1em;
+			margin: -1em -2em 1em !important;
+			padding: 0.75em 2em 0.5em;
+			border-bottom: 0.2em solid $med-lavender;
+			background-color: $dark-purple;
+			text-shadow: 0px 1px 0px $alpha-dark-7, 0px -1px 0px $alpha-light-1;
 		}
 
 		p.sub {
-			font-size: 1.2em;
-			margin-top: 1.2em;
+			font-size: 1.3em;
+			font-style: italic;
+			margin-top: 1em;
 		}
 
 		img {
 			float: right;
 			width: 55%;
-			border: 0.5em solid $light-lavender;
-			border-radius: 1.25em;
-			margin: 0.3em 0 2em 2em;
+			margin: 0.25em 0 2em 2em;
 			box-shadow: $box-shadow;
 		}
 
 		.close-details {
 			position: absolute;
-			top: 1.25em;
+			top: 0.75em;
 			right: 2em;
 		}
 	}
@@ -812,6 +814,10 @@ preload {
 	}
 }
 
+#gallery-outer {
+	position: relative;
+}
+
 #gallery {
 	max-width: 100%;
 	margin-top: 1em;
@@ -819,7 +825,6 @@ preload {
 	border-radius: 24px;
 	padding: 1em;
 	box-shadow: $box-shadow;
-	// transition: height 0.25s;
 	overflow: hidden;
 
 	img {

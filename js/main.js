@@ -71,6 +71,7 @@ function updateGallery( event ) {
 	$( this ).addClass( 'selected' );
 
 	$( gallery_selector ).hide();
+	$( '.loading' ).show();
 
 	$( gallery_selector ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ), function () {
 
@@ -80,6 +81,7 @@ function updateGallery( event ) {
 
 				resizeGallery( current_height );
 
+				$( '.loading' ).hide();
 				$( gallery_selector ).show();
 
 			} );
@@ -88,6 +90,7 @@ function updateGallery( event ) {
 
 			resizeGallery( current_height );
 
+			$( '.loading' ).hide();
 			$( gallery_selector ).show();
 
 		}
