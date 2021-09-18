@@ -786,11 +786,10 @@ form {
   grid-gap: 1em;
   border-radius: 2em;
   margin: 1.5em -2%;
-  padding: 0;
   width: 104%;
   background: rgba(255, 255, 255, 0.3);
   background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.4), rgba(91, 61, 103, 0.2));
-  padding: 1.5em 3.5em 1.5em 1.5em;
+  padding: 2em 3.5em 2em 1.5em;
   overflow: hidden;
 }
 form p {

@@ -103,8 +103,7 @@ function updateGallery( event ) {
 }
 
 /*
-Resizes the gallery div based on the size of the new content in order to
-trigger the CSS transition
+Resizes the gallery div based on the size of the new content
 */
 function resizeGallery( current_height ) {
 
