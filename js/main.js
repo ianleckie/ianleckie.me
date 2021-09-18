@@ -118,18 +118,20 @@ function resizeGallery( current_height ) {
 /*
 Loads a link's href into the overlay rather than following the link
 */
-function openLinkInOverlay( event ) {
+function openLinkInOverlay( event = false, href = false ) {
 	
-	event.preventDefault();
+	if ( event ) event.preventDefault();
+
+	if ( !href ) href = $(this).attr( 'href' );
 
 	toggleOverlay();
 
 	// clone the loading div to the contents so it's visible until the linked page loads
 	overlay_loading_clone = $( overlay_loading ).clone().appendTo( overlay_contents ).show();
 
-	$( overlay ).removeClass().addClass( $(this).attr( 'href' ) );
+	$( overlay ).removeClass().addClass( href );
 
-	$( overlay_contents ).load( $(this).attr( 'href' ) + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
+	$( overlay_contents ).load( href + ( ( dev_mode ) ? '?t=' + Date.now() : '' ) );
 
 }
 
@@ -239,9 +241,27 @@ function closePortfolioDetails( event ) {
 }
 
 /*
+Loads the thank you overlay after conatact form submission.
+*/
+function loadThankYou() {
+
+	const urlSearchParams = new URLSearchParams(window.location.search);
+	const params = Object.fromEntries(urlSearchParams.entries());
+
+	if ( 'thankyou' in params ) {
+
+		openLinkInOverlay( false, 'pages/thank-you.html' );
+
+	}
+
+}
+
+/*
 Everything to be run after the main page loads
 */
 function loadFunction( jQuery ) {
+
+	loadThankYou();
 
 	$( window ).scroll( updateSectionNumber );
 

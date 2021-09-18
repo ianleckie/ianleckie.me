@@ -263,6 +263,7 @@ form {
 		border-radius: 12px;
 		width: 29.5em;
 		outline: none;
+		box-shadow: $box-shadow inset;
 	}
 
 	textarea {
@@ -278,7 +279,7 @@ form {
 	input[type='submit'] {
 		display: block;
 		color: $beige;
-		background-color: $purple;
+		background-color: $dark-purple;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -293,7 +294,7 @@ form {
 
 	input[type='submit']:hover {
 		background-color: $dark-green;
-		border-color: rgba( white, 0.1 );
+		border-color: rgba( black, 0.1 );
 		cursor: pointer;	
 	}
 
@@ -315,6 +316,14 @@ form {
 
 .name {
 	white-space: nowrap;
+}
+
+.thank-you {
+	background-color: $light-beige;
+	margin: 0.5em -0.5em !important;
+	padding: 0.5em 1em;
+	border-radius: 2em;
+	color: rgba( black, 0.7 ) !important;
 }
 
 .button {

@@ -820,6 +820,7 @@ form input[type=text], form textarea {
   border-radius: 12px;
   width: 29.5em;
   outline: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) inset;
 }
 form textarea {
   line-height: 1.2;
@@ -832,7 +833,7 @@ form input[type=text]:focus, form textarea:focus {
 form input[type=submit] {
   display: block;
   color: #CCC6AD;
-  background-color: #5B3D67;
+  background-color: #442D4D;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -846,7 +847,7 @@ form input[type=submit] {
 }
 form input[type=submit]:hover {
   background-color: #007171;
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 form input[type=submit]:active {
@@ -865,6 +866,14 @@ form input[type=submit]:active {
 
 .name {
   white-space: nowrap;
+}
+
+.thank-you {
+  background-color: #ddd7bc;
+  margin: 0.5em -0.5em !important;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .button {
