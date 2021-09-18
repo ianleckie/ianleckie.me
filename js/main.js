@@ -2,7 +2,11 @@
 Set some variables
 */
 var dev_mode = true;
+var details_open = false;
+var last_details_id, last_details_pos_top, last_details_pos_left;
+var contact_form_required_fields = [ 'contact-name', 'contact-email', 'contact-message' ];
 
+// selectors
 var section_number   = '#section-number',
     gallery_link     = 'a[target="gallery"]',
     gallery          = '#gallery',
@@ -15,11 +19,6 @@ var section_number   = '#section-number',
     overlay_close    = '#overlay .close',
     code_link        = '#code-nav a';
 
-var last_details_id, last_details_pos_top, last_details_pos_left;
-
-var details_open = false;
-
-var contact_form_required_fields = [ 'contact-name', 'contact-email', 'contact-message' ];
 
 /*
 Checks whether an element is in the viewport
