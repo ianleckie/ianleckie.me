@@ -19,6 +19,8 @@ var last_details_id, last_details_pos_top, last_details_pos_left;
 
 var details_open = false;
 
+var contact_form_required_fields = [ 'contact-name', 'contact-email', 'contact-message' ];
+
 /*
 Checks whether an element is in the viewport
 */
@@ -241,13 +243,42 @@ function closePortfolioDetails( event ) {
 }
 
 /*
+Simple validation that checks for the required fields on the contact form
+*/
+function validateContactForm( event ) {
+
+	var form_error = false;
+	
+	$( '.error' ).hide();
+	$( '.missing' ).removeClass( 'missing' );
+
+	$( this ).children( 'input[type="text"], textarea' ).each( function( index ) {
+
+		var cur_id = $( this ).attr( 'id' );
+
+		if ( contact_form_required_fields.indexOf( cur_id ) !== -1 && !$( '#' + cur_id ).val() ) {
+			
+			$( '.error' ).fadeIn();
+			$( 'label[for="' + cur_id + '"], #' + cur_id ).addClass( 'missing' );
+
+			form_error = true;
+		
+		}
+
+	} );
+
+	return ( !form_error );
+
+}
+
+/*
 Loads the thank you overlay after contact form submission
 and then cleans up the url
 */
 function loadThankYou() {
 
-	const urlSearchParams = new URLSearchParams(window.location.search);
-	const params = Object.fromEntries(urlSearchParams.entries());
+	var urlSearchParams = new URLSearchParams(window.location.search);
+	var params = Object.fromEntries(urlSearchParams.entries());
 
 	if ( 'thankyou' in params ) {
 

@@ -782,7 +782,7 @@ preload * {
 form {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 8em);
+  grid-template-columns: 8em 1fr;
   grid-gap: 1em;
   border-radius: 2em;
   margin: 1.5em -2%;
@@ -793,12 +793,44 @@ form {
   padding: 1.5em 3.5em 1.5em 1.5em;
   overflow: hidden;
 }
+form p {
+  grid-column: 2;
+  font-size: 1.4em;
+  font-style: italic;
+  background-color: #900;
+  border-radius: 2em;
+  padding: 0 1em 0 0;
+  margin: 0 0 0.5em !important;
+  display: none;
+}
+form p::before {
+  font-family: "Material Icons";
+  content: "\e001";
+  display: inline-block;
+  margin: 0.3em 0.4em 0.3em 0.3em;
+  color: #CCC6AD;
+  background-color: transparent;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  vertical-align: -0.15em;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 1.5em;
+  font-style: normal;
+  vertical-align: -0.3em;
+}
 form label {
+  grid-column: 1;
   font-size: 1.4em;
   line-height: 2.1;
   font-weight: 600;
   text-align: right;
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), 0px -1px 0px rgba(0, 0, 0, 0.7);
+}
+form .missing {
+  border-color: #900 !important;
 }
 form label::after {
   content: " :";
@@ -810,6 +842,7 @@ form label.nocol::after {
   content: "";
 }
 form input[type=text], form textarea {
+  grid-column: 2;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1.2em;
   line-height: 2;
@@ -1373,6 +1406,7 @@ form button span::before {
   overflow: hidden;
 }
 #portfolio .item {
+  padding: 0;
   position: relative;
   height: 280px;
   background-size: cover;
@@ -1380,6 +1414,10 @@ form button span::before {
   overflow: hidden;
   border-radius: 1.25em;
   background-position: top center;
+}
+#portfolio .item img {
+  display: block;
+  width: 100%;
 }
 #portfolio .item .caption {
   position: absolute;

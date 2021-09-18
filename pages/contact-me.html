@@ -4,6 +4,8 @@
 
 <form name="contact-form" id="contact-form" action="/?thankyou" method="POST" data-netlify="true">
 
+	<p class="error">Please fill out the missing fields</p>
+
 	<label for="contact-name">Name</label>
 	<input type="text" id="contact-name" name="contact-name">
 
@@ -20,3 +22,9 @@
 	<button id="send" name="send"><span>Send Message</span></button>
 
 </form>
+
+<script type="text/javascript">
+	
+	$('form').submit( validateContactForm );
+
+</script>
