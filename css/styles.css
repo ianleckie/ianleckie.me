@@ -185,7 +185,7 @@ body {
 }
 
 .container {
-  width: 75%;
+  width: 100%;
   max-width: 78rem;
   margin-left: auto;
   margin-right: auto;
@@ -221,6 +221,7 @@ body {
 .col-11,
 .col-12 {
   width: 96%;
+  padding: 0 0.5em;
 }
 
 .col-1-sm {
@@ -271,7 +272,7 @@ body {
   width: 96%;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 1023px) {
   .col-1 {
     width: 4.3333333333%;
   }
@@ -850,7 +851,7 @@ form input[type=text], form textarea {
   padding: 0 0.5em;
   color: #ddd7bc;
   border-radius: 12px;
-  width: 29.5em;
+  width: 100%;
   outline: none;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2) inset;
 }
@@ -1154,7 +1155,7 @@ form button span::before {
   top: 0;
   bottom: 0;
   width: 100%;
-  max-width: 75em;
+  max-width: 1023px;
   padding: 3em 5em;
   background-image: linear-gradient(160deg, #3b4856, #5B3D67);
   z-index: 970;
@@ -1312,7 +1313,7 @@ form button span::before {
 }
 
 #overlay[class*=contact] .wrapper .contents, #overlay[class*=thank-you] .wrapper .contents {
-  max-width: 56.5em;
+  max-width: 1023px;
 }
 
 #overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {
@@ -1355,7 +1356,7 @@ form button span::before {
 #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
   display: none;
 }
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 1023px) {
   #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
     display: block;
     width: 350px;
@@ -1399,7 +1400,7 @@ form button span::before {
   border-radius: 2em;
   margin: 1em -5.5em 0 -1em;
   padding: 0;
-  max-width: 67em;
+  width: 104%;
   background-color: rgba(255, 255, 255, 0.2);
   padding: 1.5em 3.5em 1.5em 1.5em;
   overflow: hidden;
@@ -1409,7 +1410,7 @@ form button span::before {
   position: relative;
   height: 280px;
   background-size: cover;
-  border: 0.5em solid #b1a7b6;
+  border: 0.5em solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
   border-radius: 1.25em;
   background-position: top center;
@@ -1434,7 +1435,7 @@ form button span::before {
 }
 #portfolio .item:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  border: 0.5em solid #b1a7b6;
+  border: 0.5em solid rgba(255, 255, 255, 0.7);
 }
 #portfolio .item::after {
   content: "";
@@ -1457,7 +1458,7 @@ form button span::before {
   background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.4), rgba(91, 61, 103, 0.2));
   transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
   z-index: 1000;
-  border: 0.5em solid #6D697D;
+  border: 0.5em solid rgba(255, 255, 255, 0.4);
   border-radius: 2em;
   padding: 1.25em 1.5em;
   overflow: scroll;
@@ -1504,12 +1505,6 @@ form button span::before {
   left: 0;
 }
 
-@media only screen and (max-width: 64em) {
-  #portfolio {
-    grid-template-columns: repeat(1, 100%);
-    margin: 1em 0;
-  }
-}
 #gallery-outer {
   position: relative;
 }
@@ -1722,6 +1717,59 @@ form button span::before {
   margin-right: 0.4em;
 }
 
+@media only screen and (max-width: 1440px) {
+  #section-counter {
+    display: none;
+  }
+
+  #intro {
+    padding-top: 3em;
+  }
+
+  #pic img {
+    margin-top: 20px !important;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  p, li {
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 2em !important;
+    margin-top: 0.75em;
+  }
+
+  .arrow-down, .arrow-down-border {
+    display: none;
+  }
+
+  section {
+    padding: 2em !important;
+  }
+
+  #pic img {
+    float: right;
+    margin: 0 !important;
+    width: 25% !important;
+  }
+  #pic div {
+    margin-right: 30%;
+    margin-top: -0.8em;
+  }
+  #pic a {
+    font-size: 1em !important;
+    margin-left: 0;
+  }
+  #pic a.form {
+    display: none;
+  }
+
+  #portfolio {
+    grid-template-columns: repeat(1, 100%);
+    margin: 1em 0;
+  }
+}
 @media print {
   *,
 *::before,

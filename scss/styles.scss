@@ -1,6 +1,6 @@
 // variables
 // sizing
-$breakpoint: 64em;
+$main-breakpoint: 1023px;
 
 // colors
 $purple:         #5B3D67;
@@ -28,11 +28,14 @@ $link-color:     #67D594;
 // font styles
 $font-family: 'Montserrat', Helvetica, sans-serif;
 $text-size: 1.5em;
+$res-text-size: 1.2em;
 $text-size-smaller: 1.4em;
+$res-text-size-smaller: 1.2em;
 $line-height: 1.5;
 
 $header-font-family: 'Signika', Helvetica, sans-serif;
 $header-size: 3em;
+$res-header-size: 2em;
 $intro-header-size: 4em;
 $header-line-height: 1.25;
 
@@ -68,7 +71,7 @@ $icon-error:         "\e001"; //error
 
 // modules
 @use 'html5boilerplate';
-@use 'simple-grid' with ( $breakpoint: $breakpoint );
+@use 'simple-grid' with ( $breakpoint: $main-breakpoint );
 @use 'prism';
 @use 'loading' with ( $timing: 1.6s );
 @use 'animation' with ( $cube-color: $dark-purple, $background-color: rgba( white, 0.2 ), $border-color: $light-lavender );
@@ -289,7 +292,7 @@ form {
 		padding: 0 0.5em;
 		color: $light-beige;
 		border-radius: 12px;
-		width: 29.5em;
+		width: 100%;
 		outline: none;
 		box-shadow: $box-shadow inset;
 	}
@@ -546,7 +549,7 @@ form {
 			top: 0;
 			bottom: 0;
 			width: 100%;
-			max-width: 75em;
+			max-width: $main-breakpoint;
 			padding: 3em 5em;
 			background-image: linear-gradient(160deg, $grey-blue, $purple);
 			z-index: 970;
@@ -719,7 +722,7 @@ form {
 }
 
 #overlay[class*="contact"] .wrapper .contents, #overlay[class*="thank-you"] .wrapper .contents {
-	max-width: 56.5em;
+	max-width: $main-breakpoint;
 }
 
 #overlay[class*="clients"] .wrapper .contents {
@@ -770,7 +773,7 @@ form {
 			display: none;
 		}
 
-		@media only screen and (min-width: $breakpoint) {
+		@media only screen and (min-width: $main-breakpoint) {
 
 			img {
 				display: block;
@@ -811,7 +814,7 @@ form {
 	border-radius: 2em;
 	margin: 1em -5.5em 0 -1em;
 	padding: 0;
-	max-width: 67em;
+	width: 104%;
 	background-color: rgba( white, 0.2 );
 	padding: 1.5em 3.5em 1.5em 1.5em;
 	overflow: hidden;
@@ -821,7 +824,7 @@ form {
 		position: relative;
 		height: 280px;
 		background-size: cover;
-		border: 0.5em solid $light-lavender;
+		border: 0.5em solid rgba( white, 0.4 );
 		overflow: hidden;
 		border-radius: 1.25em;
 		background-position: top center;
@@ -849,7 +852,7 @@ form {
 
 	.item:hover {
 		box-shadow: $box-shadow;
-		border: 0.5em solid $light-lavender;
+		border: 0.5em solid rgba( white, 0.7 );
 	}
 
 	.item::after {
@@ -875,7 +878,7 @@ form {
 		background-image: linear-gradient( 160deg, rgba( $grey-blue, 0.4 ), rgba( $purple, 0.2 ) );
 		transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
 		z-index: 1000;
-		border: 0.5em solid $med-lavender;
+		border: 0.5em solid rgba( white, 0.4 );
 		border-radius: 2em;
 		padding: 1.25em 1.5em;
 		overflow: scroll;
@@ -930,13 +933,6 @@ form {
 	#pin-pushers {
 		top: 100%;
 		left: 0;
-	}
-}
-
-@media only screen and (max-width: $breakpoint) {
-	#portfolio {
-		grid-template-columns: repeat(1, 100%);
-		margin: 1em 0;
 	}
 }
 
@@ -1140,8 +1136,87 @@ form {
 
 
 // responsive styles
-@media only screen and (min-width: $breakpoint) {
+@media only screen and (max-width: 1440px) {
+
+	#section-counter {
+		display: none;
+	}
+
+	#intro {
+		padding-top: 3em;
+	}
+
+	#pic img {
+		margin-top: 20px !important;
+	}
+
+}
+
+@media only screen and (max-width: $main-breakpoint) {
+
+	p, li {
+		font-size: $res-text-size;
+	}
+
+	h1 {
+		font-size: $res-header-size !important;
+		margin-top: 0.75em;
+	}
+
+	.arrow-down, .arrow-down-border {
+		display: none;
+	}
+
+	section {
+		padding: 2em !important;
+	}
+
+	#pic {
+
+		img {
+			float: right;
+			margin: 0 !important;
+			width: 25% !important;
+		}
+
+		div {
+			margin-right: 30%;
+			margin-top: -0.8em;
+		}
+
+		a {
+			font-size: 1em !important;
+			// padding-left: 1em;
+			margin-left: 0;
+
+			span::before {
+				// display: none;
+			}
+		}
+
+		a.form {
+			display: none;
+		}
+
+	}
 	
+	#portfolio {
+		grid-template-columns: repeat(1, 100%);
+		margin: 1em 0;
+	}
+
+}
+
+@media only screen and (max-width: 900px) {
+
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+
+
 }
 
 
