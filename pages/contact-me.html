@@ -31,7 +31,7 @@
 		e.preventDefault()
 		let myForm = document.getElementById('pizzaOrder');
 		let formData = new FormData(myForm)
-		fetch('/', {
+		fetch('/index.html?thankyou', {
 			method: 'POST',
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: new URLSearchParams(formData).toString()
