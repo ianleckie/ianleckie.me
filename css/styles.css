@@ -779,6 +779,82 @@ preload * {
   line-height: 0;
 }
 
+form {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 8em);
+  grid-gap: 1em;
+  border-radius: 2em;
+  margin: 1.5em -2%;
+  padding: 0;
+  width: 104%;
+  background: rgba(255, 255, 255, 0.3);
+  background-image: linear-gradient(160deg, rgba(59, 72, 86, 0.4), rgba(91, 61, 103, 0.2));
+  padding: 1.5em 3.5em 1.5em 1.5em;
+  overflow: hidden;
+}
+form label {
+  font-size: 1.4em;
+  line-height: 2.1;
+  font-weight: 600;
+  text-align: right;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), 0px -1px 0px rgba(0, 0, 0, 0.7);
+}
+form label::after {
+  content: " :";
+  color: #A6A18D;
+  display: inline-block;
+  margin-left: 0.125em;
+}
+form label.nocol::after {
+  content: "";
+}
+form input[type=text], form textarea {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1.2em;
+  line-height: 2;
+  background-color: #2d2d2d;
+  border: 0.1875em solid rgba(255, 255, 255, 0.5);
+  padding: 0 0.5em;
+  color: #ddd7bc;
+  border-radius: 12px;
+  width: 29.5em;
+  outline: none;
+}
+form textarea {
+  line-height: 1.2;
+  padding: 0.5em 0.5em;
+  height: 9.5em;
+}
+form input[type=text]:focus, form textarea:focus {
+  border-color: #ddd7bc;
+}
+form input[type=submit] {
+  display: block;
+  color: #CCC6AD;
+  background-color: #5B3D67;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-weight: 500;
+  padding: 0;
+  font-size: 1.25em;
+  line-height: 2.1;
+  border-radius: 2em;
+  border: 0.1875em solid transparent;
+}
+form input[type=submit]:hover {
+  background-color: #007171;
+  border-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+form input[type=submit]:active {
+  background-color: #007171;
+  border-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
 .nobr {
   white-space: nowrap;
 }
@@ -1174,6 +1250,10 @@ preload * {
 }
 #overlay .close:hover::before {
   color: #67D594;
+}
+
+#overlay[class*=contact] .wrapper .contents {
+  max-width: 56.5em;
 }
 
 #overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {

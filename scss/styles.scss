@@ -219,6 +219,91 @@ preload {
 	}
 }
 
+form {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 8em);
+	grid-gap: 1em;
+	border-radius: 2em;
+	margin: 1.5em -2%;
+	padding: 0;
+	width: 104%;
+	background: rgba( white, 0.3 );
+	background-image: linear-gradient( 160deg, rgba( $grey-blue, 0.4 ), rgba( $purple, 0.2 ) );
+	padding: 1.5em 3.5em 1.5em 1.5em;
+	overflow: hidden;
+
+	label {
+		font-size: 1.4em;
+		line-height: 2.1;
+		font-weight: $font-weight-bold;
+		text-align: right;
+		text-shadow: $text-shadow-3d;
+	}
+
+	label::after {
+		content: ' :';
+		color: $dark-beige;
+		display: inline-block;
+		margin-left: 0.125em;
+	}
+
+	label.nocol::after {
+		content: '';
+	}
+
+	input[type='text'], textarea {
+		font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+		font-size: 1.2em;
+		line-height: 2;
+		background-color: #2d2d2d;
+		border: 0.1875em solid rgba( white, 0.5 );
+		padding: 0 0.5em;
+		color: $light-beige;
+		border-radius: 12px;
+		width: 29.5em;
+		outline: none;
+	}
+
+	textarea {
+		line-height: 1.2;
+		padding: 0.5em 0.5em;
+		height: 9.5em;
+	}
+
+	input[type='text']:focus, textarea:focus {
+		border-color: $light-beige;
+	}
+
+	input[type='submit'] {
+		display: block;
+		color: $beige;
+		background-color: $purple;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-family: $font-family;
+		font-weight: $font-weight-semi-bold;
+		padding: 0;
+		font-size: 1.25em;
+		line-height: 2.1;
+		border-radius: 2em;
+		border: 0.1875em solid transparent;
+	}
+
+	input[type='submit']:hover {
+		background-color: $dark-green;
+		border-color: rgba( white, 0.1 );
+		cursor: pointer;	
+	}
+
+	input[type='submit']:active {
+		background-color: $dark-green;
+		border-color: rgba( white, 0.2 );
+		cursor: pointer;	
+	}
+}
+
 // utility styles
 .nobr {
 	white-space: nowrap;
@@ -584,6 +669,10 @@ preload {
 		color: $link-color;
 	}
 
+}
+
+#overlay[class*="contact"] .wrapper .contents {
+	max-width: 56.5em;
 }
 
 #overlay[class*="clients"] .wrapper .contents {

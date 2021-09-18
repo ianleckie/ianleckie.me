@@ -238,6 +238,31 @@ function closePortfolioDetails( event ) {
 
 }
 
+function submitForm( event ) {
+
+	event.preventDefault();
+
+	var form_data = {
+		contact_name:    $("#contact-name").val(),
+		contact_company: $("#contact-company").val(),
+		contact_email:   $("#contact-email").val(),
+		contact_message: $("#contact-message").val()
+	};
+
+    $.ajax({
+		type: "POST",
+		url: "/",
+		data: form_data,
+		dataType: "json",
+		encode: true,
+	}).done( function ( data ) {
+		
+		console.log(data);
+	
+	});
+
+}
+
 /*
 Everything to be run after the main page loads
 */
