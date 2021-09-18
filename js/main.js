@@ -252,12 +252,10 @@ function submitForm( event ) {
 	// 	contact_message: $("#contact-message").val()
 	// };
 
-    $.ajax({
-		type: "POST",
+    $.post({
 		url: "/",
-		data: form_data,
-		dataType: "json",
-		encode: true,
+		headers: { "Content-Type": "application/x-www-form-urlencoded" },
+		body: form_data
 	}).done( function ( data ) {
 		
 		console.log(data);
