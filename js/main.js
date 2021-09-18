@@ -241,7 +241,8 @@ function closePortfolioDetails( event ) {
 }
 
 /*
-Loads the thank you overlay after conatact form submission.
+Loads the thank you overlay after contact form submission
+and then cleans up the url
 */
 function loadThankYou() {
 
