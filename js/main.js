@@ -242,12 +242,15 @@ function submitForm( event ) {
 
 	event.preventDefault();
 
-	var form_data = {
-		contact_name:    $("#contact-name").val(),
-		contact_company: $("#contact-company").val(),
-		contact_email:   $("#contact-email").val(),
-		contact_message: $("#contact-message").val()
-	};
+	var raw_data = new FormData( document.getElementById( 'contact-form' ) );
+	var form_data = new URLSearchParams( raw_data ).toString();
+
+	// var form_data = {
+	// 	contact_name:    $("#contact-name").val(),
+	// 	contact_company: $("#contact-company").val(),
+	// 	contact_email:   $("#contact-email").val(),
+	// 	contact_message: $("#contact-message").val()
+	// };
 
     $.ajax({
 		type: "POST",
