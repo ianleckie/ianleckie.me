@@ -62,6 +62,7 @@ $icon-close:         "\e5cd"; //close
 $icon-repository:    "\e0ee"; //list_alt
 $icon-ingredient:    "\f1df"; //east
 $icon-form:          "\e150"; //create
+$icon-send:          "\e163"; //send
 
 
 // modules
@@ -69,7 +70,7 @@ $icon-form:          "\e150"; //create
 @use 'simple-grid' with ( $breakpoint: $breakpoint );
 @use 'prism';
 @use 'loading' with ( $timing: 1.6s );
-@use 'animation' with ( $cube-color: $dark-purple, $background-color: rgba( white, 0.2 ) );
+@use 'animation' with ( $cube-color: $dark-purple, $background-color: rgba( white, 0.2 ), $border-color: $light-lavender );
 
 
 // webfonts
@@ -270,16 +271,17 @@ form {
 		line-height: 1.2;
 		padding: 0.5em 0.5em;
 		height: 9.5em;
+		resize: none;
 	}
 
 	input[type='text']:focus, textarea:focus {
 		border-color: $light-beige;
 	}
 
-	input[type='submit'] {
+	button {
 		display: block;
 		color: $beige;
-		background-color: $dark-purple;
+		background-color: rgba( $dark-purple, 0.7 );
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -287,21 +289,37 @@ form {
 		font-weight: $font-weight-semi-bold;
 		padding: 0;
 		font-size: 1.25em;
-		line-height: 2.1;
+		line-height: 1;
 		border-radius: 2em;
-		border: 0.1875em solid transparent;
+		border: none;
+		box-shadow: $box-shadow;
+		text-align: left;
+		width: 11.5em;
 	}
 
-	input[type='submit']:hover {
+	button:hover {
 		background-color: $dark-green;
 		border-color: rgba( black, 0.1 );
-		cursor: pointer;	
+		cursor: pointer;
+		box-shadow: $box-shadow;
+
+		span::before {
+			background-color: rgba( white, 0.1 );
+		}
 	}
 
-	input[type='submit']:active {
+	button:active {
 		background-color: $dark-green;
 		border-color: rgba( white, 0.2 );
-		cursor: pointer;	
+		cursor: pointer;
+
+		span::before {
+			background-color: rgba( white, 0.1 );
+		}
+	}
+
+	button span::before {
+		@include material-icon($icon: $icon-send, $bg-color: rgba( black, 0.2 ));
 	}
 }
 
@@ -672,7 +690,7 @@ form {
 
 }
 
-#overlay[class*="contact"] .wrapper .contents {
+#overlay[class*="contact"] .wrapper .contents, #overlay[class*="thank-you"] .wrapper .contents {
 	max-width: 56.5em;
 }
 

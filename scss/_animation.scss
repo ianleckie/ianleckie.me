@@ -1,5 +1,6 @@
 $cube-color: #000 !default;
 $background-color: #fff !default;
+$border-color: #ddd !default;
 
 @keyframes rotate-cube {
   0%   { transform: ''; }
@@ -30,7 +31,7 @@ $background-color: #fff !default;
   perspective-origin: 50%;
   border-radius: 2em;
   margin: 2em auto;
-  border: 0.5em solid rgba(255, 255, 255, 0.05);
+  border: 0.5em solid rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 -6px 18px rgba(0,0,0,0.15);
 }
 

@@ -585,7 +585,7 @@ pre[class*=language-] {
   perspective-origin: 50%;
   border-radius: 2em;
   margin: 2em auto;
-  border: 0.5em solid rgba(255, 255, 255, 0.05);
+  border: 0.5em solid rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 -6px 18px rgba(0, 0, 0, 0.15);
 }
 
@@ -826,14 +826,15 @@ form textarea {
   line-height: 1.2;
   padding: 0.5em 0.5em;
   height: 9.5em;
+  resize: none;
 }
 form input[type=text]:focus, form textarea:focus {
   border-color: #ddd7bc;
 }
-form input[type=submit] {
+form button {
   display: block;
   color: #CCC6AD;
-  background-color: #442D4D;
+  background-color: rgba(68, 45, 77, 0.7);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -841,19 +842,43 @@ form input[type=submit] {
   font-weight: 500;
   padding: 0;
   font-size: 1.25em;
-  line-height: 2.1;
+  line-height: 1;
   border-radius: 2em;
-  border: 0.1875em solid transparent;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  width: 11.5em;
 }
-form input[type=submit]:hover {
+form button:hover {
   background-color: #007171;
   border-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
-form input[type=submit]:active {
+form button:hover span::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+form button:active {
   background-color: #007171;
   border-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
+}
+form button:active span::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+form button span::before {
+  font-family: "Material Icons";
+  content: "\e163";
+  display: inline-block;
+  margin: 0.3em;
+  color: #CCC6AD;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: -0.15em;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .nobr {
@@ -1253,7 +1278,7 @@ form input[type=submit]:active {
   color: #67D594;
 }
 
-#overlay[class*=contact] .wrapper .contents {
+#overlay[class*=contact] .wrapper .contents, #overlay[class*=thank-you] .wrapper .contents {
   max-width: 56.5em;
 }
 

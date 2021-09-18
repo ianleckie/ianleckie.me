@@ -254,7 +254,7 @@ function loadThankYou() {
 		openLinkInOverlay( false, 'pages/thank-you.html' );
 
 		var uri = window.location.toString();
-		var clean_uri = uri.substring(0, uri.indexOf("?")).substring(0, uri.indexOf("index.html"));
+		var clean_uri = uri.substring(0, uri.indexOf("?"));
     	window.history.replaceState({}, document.title, clean_uri);
 
 	}
