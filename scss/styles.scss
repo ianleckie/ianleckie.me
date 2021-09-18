@@ -387,6 +387,7 @@ form {
 	color: $light-beige;
 	background-color: $purple;
 	position: relative;
+	box-shadow: $box-shadow;
 	
 	@include center();
 
@@ -397,10 +398,10 @@ form {
 
 .button.download:hover {
 	color: $light-beige !important;
-	background-color: $dark-purple;
+	background-color: $dark-green;
 
 	span::before {
-		background-color: rgba( black, 0.4 );
+		background-color: rgba( white, 0.1 );
 	}
 }
 
@@ -706,10 +707,6 @@ form {
 
 	em {
 		color: $light-lavender;
-	}
-
-	a {
-		color: $beige !important;
 	}
 }
 

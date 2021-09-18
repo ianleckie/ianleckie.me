@@ -975,6 +975,7 @@ form button span::before {
   color: #ddd7bc;
   background-color: #5B3D67;
   position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   left: 50%;
   transform: translateX(-50%);
 }
@@ -995,10 +996,10 @@ form button span::before {
 
 .button.download:hover {
   color: #ddd7bc !important;
-  background-color: #442D4D;
+  background-color: #007171;
 }
 .button.download:hover span::before {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .caption {
@@ -1291,9 +1292,6 @@ form button span::before {
 }
 #overlay[class*=clients] .wrapper .contents em {
   color: #b1a7b6;
-}
-#overlay[class*=clients] .wrapper .contents a {
-  color: #CCC6AD !important;
 }
 
 #overlay[class*=chai] .wrapper .contents {
