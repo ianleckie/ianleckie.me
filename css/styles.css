@@ -1802,7 +1802,8 @@ form button span::before {
   }
   #pic img {
     width: 3em !important;
-    margin: 0 2em 0 0 !important;
+    margin: 0 2.5em 0 0 !important;
+    border-color: rgba(221, 215, 188, 0.8) !important;
   }
   #pic a {
     font-size: 1em !important;
