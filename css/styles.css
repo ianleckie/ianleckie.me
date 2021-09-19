@@ -1155,7 +1155,7 @@ form button span::before {
   top: 0;
   bottom: 0;
   width: 100%;
-  max-width: 1023px;
+  max-width: 75em;
   padding: 3em 5em;
   background-image: linear-gradient(160deg, #3b4856, #5B3D67);
   z-index: 970;
@@ -1467,8 +1467,8 @@ form button span::before {
   text-align: left;
 }
 #portfolio .details h2 {
-  margin: -1em -2em 1em !important;
-  padding: 0.75em 2em 0.5em;
+  margin: -1em -1em 1em !important;
+  padding: 0.75em 1em 0.5em;
   background-color: #442D4D;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.7), 0px -1px 0px rgba(255, 255, 255, 0.1);
 }
@@ -1485,8 +1485,8 @@ form button span::before {
 }
 #portfolio .details .close-details {
   position: absolute;
-  top: 0.75em;
-  right: 2em;
+  top: 0.6em;
+  right: 1.25em;
 }
 #portfolio #knitxmidwest {
   top: 100%;
