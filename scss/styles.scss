@@ -1154,13 +1154,33 @@ form {
 
 @media only screen and (max-width: $main-breakpoint) {
 
-	p, li {
-		font-size: $res-text-size;
+	p, li, h2 {
+		font-size: $res-text-size !important;
+	}
+
+	#experience ul {
+		margin: 0;
+		padding: 0 0 0 1.85em;
+		list-style: none;
+		text-indent: -1.1em;
+
+		li {
+			margin: 0;
+			padding: 0.2em 0;
+			font-size: 1.1em !important;
+		}
 	}
 
 	h1 {
 		font-size: $res-header-size !important;
-		margin-top: 0.75em;
+	}
+
+	h2 {
+		margin-left: -0.25em;
+	}
+
+	h2::before {
+		font-size: 0.9em;
 	}
 
 	.arrow-down, .arrow-down-border {
@@ -1168,34 +1188,68 @@ form {
 	}
 
 	section {
-		padding: 2em !important;
+		padding: 2em 1.5em 4em !important;
+		background-attachment: fixed;
+		border-width: 0.2em !important;
+	}
+
+	#intro {
+		min-height: auto;
+		margin-top: 5em;
 	}
 
 	#pic {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 0;
+		padding: 1em 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $dark-purple;
+		z-index: 100;
 
 		img {
-			float: right;
-			margin: 0 !important;
-			width: 25% !important;
-		}
-
-		div {
-			margin-right: 30%;
-			margin-top: -0.8em;
+			width: 3em !important;
+			margin: 0 2em 0 0 !important;
 		}
 
 		a {
 			font-size: 1em !important;
-			// padding-left: 1em;
-			margin-left: 0;
+			margin: 0 1em 0 0 !important;
+			padding: 0 1.25em 0 0 !important;
+			float: left;
 
-			span::before {
-				// display: none;
+			span {
+				display: none;
 			}
 		}
 
-		a.form {
-			display: none;
+		a.button.form::before {
+			@include material-icon($icon: $icon-form, $bg-color: rgba( black, 0.2 ));
+		}
+
+		a.button.email::before {
+			@include material-icon($icon: $icon-email, $bg-color: rgba( black, 0.2 ));
+		}
+
+		a.button.phone::before {
+			@include material-icon($icon: $icon-phone, $bg-color: rgba( black, 0.2 ));
+		}
+
+		a.button.form::after {
+			content: 'Contact Form';
+		}
+
+		a.button.email::after {
+			content: 'Email';
+		}
+
+		a.button.phone::after {
+			content: 'Phone';
 		}
 
 	}
@@ -1205,17 +1259,88 @@ form {
 		margin: 1em 0;
 	}
 
+	#gallery-outer {
+		display: none !important;
+	}
+
+	.description {
+		padding-bottom: 0 !important;
+	}
+
+	#more-about-me {
+		a[target='gallery'] {
+			color: $light-beige;
+			font-weight: $font-weight-regular;
+			text-decoration: none !important;
+			background: none !important;
+			cursor: default;
+		}
+	}
+
+	#resume {
+
+		.file-preview {
+			padding: 1em;
+			width: 30%;
+			margin: 0 auto;
+		}
+
+	}
+
 }
 
 @media only screen and (max-width: 900px) {
 
+	#experience ul {
+		columns: 2;
 
+		li {
+			padding-right: 2em;
+		}
+	}
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 
+	#experience ul {
+		columns: 1;
+	}
 
+	#pic a.button {
+		padding-right: 0 !important;
+	}
+
+	#pic a.button::before {
+		margin: 0.3em !important;
+		vertical-align: middle !important;
+	}
+
+	#pic a.button::after {
+		display: none !important;
+	}
+
+	#resume {
+
+		.file-preview {
+			width: 50%;
+		}
+
+	}
+
+	.button.download {
+		span {
+			display: none;
+		}
+	}
+
+	.button.download::before {
+		@include material-icon($icon: $icon-file-download, $color: $light-beige, $bg-color: rgba( black, 0.2 ));
+	}
+
+	.button.download::after {
+		content: 'Download';
+	}
 
 }
 

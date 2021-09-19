@@ -1731,13 +1731,32 @@ form button span::before {
   }
 }
 @media only screen and (max-width: 1023px) {
-  p, li {
-    font-size: 1.2em;
+  p, li, h2 {
+    font-size: 1.2em !important;
+  }
+
+  #experience ul {
+    margin: 0;
+    padding: 0 0 0 1.85em;
+    list-style: none;
+    text-indent: -1.1em;
+  }
+  #experience ul li {
+    margin: 0;
+    padding: 0.2em 0;
+    font-size: 1.1em !important;
   }
 
   h1 {
     font-size: 2em !important;
-    margin-top: 0.75em;
+  }
+
+  h2 {
+    margin-left: -0.25em;
+  }
+
+  h2::before {
+    font-size: 0.9em;
   }
 
   .arrow-down, .arrow-down-border {
@@ -1745,29 +1764,173 @@ form button span::before {
   }
 
   section {
-    padding: 2em !important;
+    padding: 2em 1.5em 4em !important;
+    background-attachment: fixed;
+    border-width: 0.2em !important;
   }
 
-  #pic img {
-    float: right;
-    margin: 0 !important;
-    width: 25% !important;
+  #intro {
+    min-height: auto;
+    margin-top: 5em;
   }
-  #pic div {
-    margin-right: 30%;
-    margin-top: -0.8em;
+
+  #pic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #442D4D;
+    z-index: 100;
+  }
+  #pic img {
+    width: 3em !important;
+    margin: 0 2em 0 0 !important;
   }
   #pic a {
     font-size: 1em !important;
-    margin-left: 0;
+    margin: 0 1em 0 0 !important;
+    padding: 0 1.25em 0 0 !important;
+    float: left;
   }
-  #pic a.form {
+  #pic a span {
     display: none;
+  }
+  #pic a.button.form::before {
+    font-family: "Material Icons";
+    content: "\e150";
+    display: inline-block;
+    margin: 0.3em 0.4em 0.3em 0.3em;
+    color: #CCC6AD;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: -0.15em;
+    text-align: center;
+    border-radius: 50%;
+  }
+  #pic a.button.email::before {
+    font-family: "Material Icons";
+    content: "\e0be";
+    display: inline-block;
+    margin: 0.3em 0.4em 0.3em 0.3em;
+    color: #CCC6AD;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: -0.15em;
+    text-align: center;
+    border-radius: 50%;
+  }
+  #pic a.button.phone::before {
+    font-family: "Material Icons";
+    content: "\e325";
+    display: inline-block;
+    margin: 0.3em 0.4em 0.3em 0.3em;
+    color: #CCC6AD;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: -0.15em;
+    text-align: center;
+    border-radius: 50%;
+  }
+  #pic a.button.form::after {
+    content: "Contact Form";
+  }
+  #pic a.button.email::after {
+    content: "Email";
+  }
+  #pic a.button.phone::after {
+    content: "Phone";
   }
 
   #portfolio {
     grid-template-columns: repeat(1, 100%);
     margin: 1em 0;
+  }
+
+  #gallery-outer {
+    display: none !important;
+  }
+
+  .description {
+    padding-bottom: 0 !important;
+  }
+
+  #more-about-me a[target=gallery] {
+    color: #ddd7bc;
+    font-weight: 300;
+    text-decoration: none !important;
+    background: none !important;
+    cursor: default;
+  }
+
+  #resume .file-preview {
+    padding: 1em;
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #experience ul {
+    columns: 2;
+  }
+  #experience ul li {
+    padding-right: 2em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #experience ul {
+    columns: 1;
+  }
+
+  #pic a.button {
+    padding-right: 0 !important;
+  }
+
+  #pic a.button::before {
+    margin: 0.3em !important;
+    vertical-align: middle !important;
+  }
+
+  #pic a.button::after {
+    display: none !important;
+  }
+
+  #resume .file-preview {
+    width: 50%;
+  }
+
+  .button.download span {
+    display: none;
+  }
+
+  .button.download::before {
+    font-family: "Material Icons";
+    content: "\e2c4";
+    display: inline-block;
+    margin: 0.3em 0.4em 0.3em 0.3em;
+    color: #ddd7bc;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: -0.15em;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .button.download::after {
+    content: "Download";
   }
 }
 @media print {
