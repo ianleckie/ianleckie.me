@@ -1089,30 +1089,31 @@ form {
 #colophon {
 	@include section-colors($purple);
 
-	padding: 2em 0;
+	padding: 2em 0 0;
 
-	h1 {
-		margin: 0;
-		padding-right: 0.5em;
-		color: rgba( black, 0.3 );
-		font-family: $font-family;
-		font-weight: $font-weight-bold;
-		font-size: 1.2em;
-		line-height: 1.9;
-		display: inline-block;
-		float: left;
-		text-shadow: none;
+	p {
+		text-align: center;
+		font-size: 0.8em;
+		color: rgba( white, 0.3 );
+		margin: 1em 0 0;
+
+		span::before {
+			@include material-icon('\e5cd', $color: rgba( white, 0.3 ), $bg-color: transparent, $size: 1em);
+		}
 	}
 
 	#tech-stack {
-		margin: 0 0 0 6em;
+		margin: 0;
 		padding: 0;
 		text-indent: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 
 		li {
 			margin: 0 0.6em 0.5em 0;
 			padding: 0 1.2em 0 0;
-			float: left;
 			font-size: 0.9em;
 			background-color: rgba( white, 0.05 );
 			line-height: 1.6;
@@ -1302,6 +1303,15 @@ form {
 			margin: 0 auto;
 		}
 
+	}
+
+	#colophon {
+		font-size: 0.75em;
+		padding: 3em 0 0 !important;
+
+		h1 {
+			display: none;
+		}
 	}
 
 }

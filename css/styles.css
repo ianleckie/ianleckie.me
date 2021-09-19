@@ -1665,32 +1665,43 @@ form button span::before {
 
 #colophon {
   background-color: #5B3D67;
-  padding: 2em 0;
+  padding: 2em 0 0;
 }
 #colophon .arrow-down {
   border-top-color: #5B3D67;
 }
-#colophon h1 {
-  margin: 0;
-  padding-right: 0.5em;
-  color: rgba(0, 0, 0, 0.3);
-  font-family: "Montserrat", Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 1.2em;
-  line-height: 1.9;
+#colophon p {
+  text-align: center;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 1em 0 0;
+}
+#colophon p span::before {
+  font-family: "Material Icons";
+  content: "\e5cd";
   display: inline-block;
-  float: left;
-  text-shadow: none;
+  margin: 0.3em 0.4em 0.3em 0.3em;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  vertical-align: -0.15em;
+  text-align: center;
+  border-radius: 50%;
 }
 #colophon #tech-stack {
-  margin: 0 0 0 6em;
+  margin: 0;
   padding: 0;
   text-indent: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 #colophon #tech-stack li {
   margin: 0 0.6em 0.5em 0;
   padding: 0 1.2em 0 0;
-  float: left;
   font-size: 0.9em;
   background-color: rgba(255, 255, 255, 0.05);
   line-height: 1.6;
@@ -1891,6 +1902,14 @@ form button span::before {
     padding: 1em;
     width: 30%;
     margin: 0 auto;
+  }
+
+  #colophon {
+    font-size: 0.75em;
+    padding: 3em 0 0 !important;
+  }
+  #colophon h1 {
+    display: none;
   }
 }
 @media only screen and (max-width: 900px) {
