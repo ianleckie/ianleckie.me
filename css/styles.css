@@ -1111,6 +1111,10 @@ form button span::before {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+.mobile {
+  display: none !important;
+}
+
 #section-counter {
   position: fixed;
   top: 2em;
@@ -1761,6 +1765,14 @@ form button span::before {
 
   .arrow-down, .arrow-down-border {
     display: none;
+  }
+
+  .full {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block !important;
   }
 
   section {

@@ -502,6 +502,10 @@ form {
 	box-shadow: $box-shadow;
 }
 
+.mobile {
+	display: none !important;
+}
+
 #section-counter {
 	position: fixed;
 	top: 2em;
@@ -1185,6 +1189,14 @@ form {
 
 	.arrow-down, .arrow-down-border {
 		display: none;
+	}
+
+	.full {
+		display: none !important;
+	}
+
+	.mobile {
+		display: block !important;
 	}
 
 	section {
