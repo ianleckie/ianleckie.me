@@ -1955,6 +1955,13 @@ form button span::before {
   }
 }
 @media only screen and (max-width: 600px) {
+  body {
+    background-image: url("../img/me.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+  }
+
   form {
     display: block;
     padding: 1em 1.5em 2em;
