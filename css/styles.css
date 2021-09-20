@@ -1330,6 +1330,7 @@ form button span::before {
 }
 #overlay[class*=clients] .wrapper .contents em {
   color: #b1a7b6;
+  white-space: normal;
 }
 
 #overlay[class*=chai] .wrapper .contents {
@@ -1787,6 +1788,9 @@ form button span::before {
   .contents {
     padding: 2em !important;
   }
+  .contents section {
+    margin: 0 -1em !important;
+  }
 
   section {
     padding: 2em 1.5em 4em !important;
@@ -1964,6 +1968,49 @@ form button span::before {
   }
   form .nocol {
     display: none;
+  }
+
+  pre {
+    border: none !important;
+    border-radius: 1em !important;
+    font-size: 0.9em !important;
+  }
+
+  .github span {
+    display: none;
+  }
+
+  .github::after {
+    content: "View on GitHub";
+  }
+
+  a[href="#css-example"] {
+    display: none !important;
+  }
+
+  #overlay section {
+    padding: 1em !important;
+    border-radius: 0 0 1.5em 1.5em !important;
+  }
+  #overlay section p {
+    margin: 0 0 1em !important;
+  }
+
+  #code-nav {
+    padding-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 1.5em 1.5em 0 0 !important;
+  }
+
+  #code-nav a {
+    font-size: 1.4em !important;
+  }
+
+  #overlay .wrapper .contents nav a:hover {
+    background-color: transparent !important;
   }
 
   #experience ul {
