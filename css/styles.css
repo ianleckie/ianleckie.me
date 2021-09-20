@@ -1956,7 +1956,7 @@ form button span::before {
 }
 @media only screen and (max-width: 600px) {
   body {
-    background: url("../img/me.jpg") no-repeat fixed center -200px;
+    background: #442D4D url("../img/me.jpg") center -200px no-repeat fixed;
     background-size: 100%;
   }
 
