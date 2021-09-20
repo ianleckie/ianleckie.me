@@ -1360,17 +1360,12 @@ form button span::before {
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2), 0px -1px 0px rgba(0, 0, 0, 0.7);
 }
 #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
-  display: none;
-}
-@media only screen and (min-width: 1023px) {
-  #overlay[class*=chai] .wrapper .contents #ingredients img, #overlay[class*=chai] .wrapper .contents #directions img {
-    display: block;
-    width: 350px;
-    margin: 5.5em 0 1em 2em;
-    float: right;
-    border: 5px solid rgba(0, 0, 0, 0.2);
-    border-radius: 1.5em;
-  }
+  display: block;
+  width: 350px;
+  margin: 5.5em 0 1em 2em;
+  float: right;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1.5em;
 }
 #overlay[class*=chai] .wrapper .contents #ingredients ul, #overlay[class*=chai] .wrapper .contents #directions ul {
   padding-left: 2.2em;
@@ -1893,7 +1888,7 @@ form button span::before {
     height: 200px;
   }
   #portfolio .details h2 {
-    margin: -1em -1.55em 1em !important;
+    margin: -1em -1.52em 1em !important;
   }
 
   #more-about-me a[target=gallery] {
@@ -1902,6 +1897,10 @@ form button span::before {
     text-decoration: none !important;
     background: none !important;
     cursor: default;
+  }
+
+  #ingredients img, #directions img {
+    width: 250px !important;
   }
 
   #experience ul {
@@ -2016,7 +2015,7 @@ form button span::before {
     margin: 0 0 1em;
   }
   #portfolio .details h2 {
-    margin: -1em -1.5em 1em !important;
+    margin: -1em -1.25em 1em !important;
   }
   #portfolio .details .close-details {
     position: initial;
@@ -2062,6 +2061,10 @@ form button span::before {
     width: 50%;
   }
 
+  #ingredients img, #directions img {
+    display: none !important;
+  }
+
   .button.download span {
     display: none;
   }
@@ -2083,6 +2086,13 @@ form button span::before {
 
   .button.download::after {
     content: "Download";
+  }
+
+  #overlay[class*=chai] .wrapper .contents h2 {
+    padding-left: 1em !important;
+  }
+  #overlay[class*=chai] .wrapper .contents ul, #overlay[class*=chai] .wrapper .contents ol {
+    padding-left: 1.4em !important;
   }
 }
 @media print {

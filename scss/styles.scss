@@ -776,21 +776,29 @@ form {
 		}
 
 		img {
-			display: none;
+			display: block;
+			width: 350px;
+			margin: 5.5em 0 1em 2em;
+			float: right;
+			border: 5px solid rgba( black, 0.2 );
+			border-radius: 1.5em;
 		}
 
-		@media only screen and (min-width: $main-breakpoint) {
+		// @media only screen and (max-width: $main-breakpoint) {
 
-			img {
-				display: block;
-				width: 350px;
-				margin: 5.5em 0 1em 2em;
-				float: right;
-				border: 5px solid rgba( black, 0.2 );
-				border-radius: 1.5em;
-			}
+		// 	img {
+		// 		width: 250px;
+		// 	}
 	
-		}
+		// }
+
+		// @media only screen and (min-width: 600) {
+
+		// 	img {
+		// 		display: none;
+		// 	}
+	
+		// }
 
 		ul {
 			padding-left: 2.2em;
@@ -1288,7 +1296,7 @@ form {
 
 		.details {
 			h2 {
-				margin: -1em -1.55em 1em !important;
+				margin: -1em -1.52em 1em !important;
 			}
 		}
 	}
@@ -1301,6 +1309,10 @@ form {
 			background: none !important;
 			cursor: default;
 		}
+	}
+
+	#ingredients img, #directions img {
+		width: 250px !important;
 	}
 
 	#experience ul {
@@ -1438,7 +1450,7 @@ form {
 			}
 
 			h2 {
-				margin: -1em -1.5em 1em !important;
+				margin: -1em -1.25em 1em !important;
 			}
 
 			.close-details {
@@ -1491,6 +1503,10 @@ form {
 
 	}
 
+	#ingredients img, #directions img {
+		display: none !important;
+	}
+
 	.button.download {
 		span {
 			display: none;
@@ -1503,6 +1519,16 @@ form {
 
 	.button.download::after {
 		content: 'Download';
+	}
+
+	#overlay[class*="chai"] .wrapper .contents {
+		h2 {
+			padding-left: 1em !important;
+		}
+
+		ul, ol {
+			padding-left: 1.4em !important;
+		}
 	}
 
 }
