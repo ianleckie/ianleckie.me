@@ -666,7 +666,7 @@ pre[class*=language-] {
 }
 
 body {
-  background-color: #5B3D67;
+  background-color: #442D4D;
   font-family: "Montserrat", Helvetica, sans-serif;
   line-height: 1.5;
   color: #ddd7bc;
@@ -772,6 +772,7 @@ main p {
 }
 
 preload {
+  position: absolute;
   height: 0;
   line-height: 0;
 }
@@ -1665,7 +1666,7 @@ form button span::before {
 
 #colophon {
   background-color: #5B3D67;
-  padding: 2em 0 0;
+  padding: 0;
 }
 #colophon .arrow-down {
   border-top-color: #5B3D67;
@@ -1674,7 +1675,7 @@ form button span::before {
   text-align: center;
   font-size: 0.8em;
   color: rgba(255, 255, 255, 0.3);
-  margin: 1em 0 0;
+  margin: 1em 0;
 }
 #colophon p span::before {
   font-family: "Material Icons";
@@ -1689,6 +1690,11 @@ form button span::before {
   vertical-align: -0.15em;
   text-align: center;
   border-radius: 50%;
+}
+#colophon p.tools {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: 500;
 }
 #colophon #tech-stack {
   margin: 0;
@@ -1912,10 +1918,13 @@ form button span::before {
 
   #colophon {
     font-size: 0.75em;
-    padding: 3em 0 0 !important;
+    padding: 0 !important;
   }
   #colophon h1 {
     display: none;
+  }
+  #colophon #tech-stack li {
+    font-size: 1em !important;
   }
 }
 @media only screen and (max-width: 900px) {

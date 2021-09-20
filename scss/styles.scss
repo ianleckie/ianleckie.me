@@ -118,7 +118,7 @@ $icon-error:         "\e001"; //error
 }
 
 body {
-	background-color: $purple;
+	background-color: $dark-purple;
 	font-family: $font-family;
 	line-height: $line-height;
 	color: $light-beige;
@@ -215,6 +215,7 @@ main p {
 }
 
 preload {
+	position: absolute;
 	height: 0;
 	line-height: 0;
 
@@ -1089,17 +1090,23 @@ form {
 #colophon {
 	@include section-colors($purple);
 
-	padding: 2em 0 0;
+	padding: 0;
 
 	p {
 		text-align: center;
 		font-size: 0.8em;
 		color: rgba( white, 0.3 );
-		margin: 1em 0 0;
+		margin: 1em 0;
 
 		span::before {
 			@include material-icon( $icon-close, $color: rgba( white, 0.3 ), $bg-color: transparent, $size: 1em);
 		}
+	}
+
+	p.tools {
+		margin-bottom: 0.5em;
+		font-size: 1em;
+		font-weight: $font-weight-semi-bold;
 	}
 
 	#tech-stack {
@@ -1197,7 +1204,6 @@ form {
 
 	section {
 		padding: 2em 1.5em 4em !important;
-		// background-attachment: fixed;
 		border-width: 0.2em !important;
 	}
 
@@ -1309,10 +1315,14 @@ form {
 
 	#colophon {
 		font-size: 0.75em;
-		padding: 3em 0 0 !important;
+		padding: 0 !important;
 
 		h1 {
 			display: none;
+		}
+
+		#tech-stack li {
+			font-size: 1em !important;
 		}
 	}
 
