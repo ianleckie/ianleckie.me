@@ -1467,7 +1467,8 @@ form button span::before {
   border: 0.5em solid rgba(255, 255, 255, 0.4);
   border-radius: 2em;
   padding: 1.25em 1.5em;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 #portfolio .details h1, #portfolio .details p {
   text-align: left;
@@ -1888,9 +1889,11 @@ form button span::before {
     content: "Phone";
   }
 
-  #portfolio {
-    grid-template-columns: repeat(1, 100%);
-    margin: 1em 0;
+  #portfolio .item {
+    height: 200px;
+  }
+  #portfolio .details h2 {
+    margin: -1em -1.55em 1em !important;
   }
 
   #more-about-me a[target=gallery] {
@@ -1955,7 +1958,8 @@ form button span::before {
 @media only screen and (max-width: 600px) {
   form {
     display: block;
-    padding: 1em 1em 2em;
+    padding: 1em 1.5em 2em;
+    border-radius: 1.5em;
   }
   form .error span {
     display: none;
@@ -1994,6 +1998,30 @@ form button span::before {
   }
   #overlay section p {
     margin: 0 0 1em !important;
+  }
+
+  #portfolio {
+    grid-template-columns: repeat(1, 100%);
+    margin: 1em -2%;
+    padding: 1.5em;
+    width: 104%;
+    border-radius: 1.5em;
+  }
+  #portfolio .details {
+    border-radius: 1.5em;
+  }
+  #portfolio .details img {
+    float: none;
+    width: 100%;
+    margin: 0 0 1em;
+  }
+  #portfolio .details h2 {
+    margin: -1em -1.5em 1em !important;
+  }
+  #portfolio .details .close-details {
+    position: initial;
+    top: 0.6em;
+    right: 1.25em;
   }
 
   #code-nav {

@@ -887,7 +887,8 @@ form {
 		border: 0.5em solid rgba( white, 0.4 );
 		border-radius: 2em;
 		padding: 1.25em 1.5em;
-		overflow: scroll;
+		overflow-x: hidden;
+  		overflow-y: scroll;
 
 		h1, p {
 			text-align: left;
@@ -1279,10 +1280,17 @@ form {
 		}
 
 	}
-	
+
 	#portfolio {
-		grid-template-columns: repeat(1, 100%);
-		margin: 1em 0;
+		.item {
+			height: 200px;
+		}
+
+		.details {
+			h2 {
+				margin: -1em -1.55em 1em !important;
+			}
+		}
 	}
 
 	#more-about-me {
@@ -1364,7 +1372,8 @@ form {
 
 	form {
 		display: block;
-		padding: 1em 1em 2em;
+		padding: 1em 1.5em 2em;
+		border-radius: 1.5em;
 
 		.error span {
 			display: none;
@@ -1409,6 +1418,34 @@ form {
 
 		p {
 			margin: 0 0 1em !important;
+		}
+	}
+	
+	#portfolio {
+		grid-template-columns: repeat(1, 100%);
+		margin: 1em -2%;
+		padding: 1.5em;
+		width: 104%;
+		border-radius: 1.5em;
+
+		.details {
+			border-radius: 1.5em;
+
+			img {
+				float: none;
+				width: 100%;
+				margin: 0 0 1em;
+			}
+
+			h2 {
+				margin: -1em -1.5em 1em !important;
+			}
+
+			.close-details {
+				position: initial;
+				top: 0.6em;
+				right: 1.25em;
+			}
 		}
 	}
 
