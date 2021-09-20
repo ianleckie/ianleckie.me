@@ -1098,7 +1098,7 @@ form {
 		margin: 1em 0 0;
 
 		span::before {
-			@include material-icon('\e5cd', $color: rgba( white, 0.3 ), $bg-color: transparent, $size: 1em);
+			@include material-icon( $icon-close, $color: rgba( white, 0.3 ), $bg-color: transparent, $size: 1em);
 		}
 	}
 
@@ -1163,19 +1163,6 @@ form {
 		font-size: $res-text-size !important;
 	}
 
-	#experience ul {
-		margin: 0;
-		padding: 0 0 0 1.85em;
-		list-style: none;
-		text-indent: -1.1em;
-
-		li {
-			margin: 0;
-			padding: 0.2em 0;
-			font-size: 1.1em !important;
-		}
-	}
-
 	h1 {
 		font-size: $res-header-size !important;
 	}
@@ -1192,12 +1179,20 @@ form {
 		display: none;
 	}
 
+	.close::after {
+		display: none;
+	}
+
 	.full {
 		display: none !important;
 	}
 
 	.mobile {
 		display: block !important;
+	}
+
+	.contents {
+		padding: 2em !important;
 	}
 
 	section {
@@ -1209,6 +1204,12 @@ form {
 	#intro {
 		min-height: auto;
 		margin-top: 5em;
+	}
+
+	#intro .row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	#pic {
@@ -1242,10 +1243,6 @@ form {
 			}
 		}
 
-		a.button.phone {
-			// margin-right: 0 !important;
-		}
-
 		a.button.form::before {
 			@include material-icon($icon: $icon-form, $bg-color: rgba( black, 0.2 ));
 		}
@@ -1277,14 +1274,6 @@ form {
 		margin: 1em 0;
 	}
 
-	#gallery-outer {
-		display: none !important;
-	}
-
-	.description {
-		padding-bottom: 0 !important;
-	}
-
 	#more-about-me {
 		a[target='gallery'] {
 			color: $light-beige;
@@ -1295,14 +1284,27 @@ form {
 		}
 	}
 
+	#experience ul {
+		margin: 0;
+		padding: 0 0 0 1.85em;
+		list-style: none;
+		text-indent: -1.1em;
+
+		li {
+			margin: 0;
+			padding: 0.2em 0;
+			font-size: 1.1em !important;
+		}
+	}
+
 	#resume {
+		p {
+			text-align: left;
+		}
 
 		.file-preview {
 			padding: 1em;
-			width: 30%;
-			margin: 0 auto;
 		}
-
 	}
 
 	#colophon {
@@ -1318,6 +1320,14 @@ form {
 
 @media only screen and (max-width: 900px) {
 
+	#gallery-outer {
+		display: none !important;
+	}
+
+	.description {
+		padding-bottom: 0 !important;
+	}
+
 	#experience ul {
 		columns: 2;
 
@@ -1326,9 +1336,37 @@ form {
 		}
 	}
 
+	#resume {
+		.file-preview {
+			width: 30%;
+			margin: 0 auto;
+		}
+	}
+
 }
 
 @media only screen and (max-width: 600px) {
+
+	form {
+		display: block;
+		padding: 1em 1em 2em;
+
+		.error span {
+			display: none;
+		}
+
+		.error::after {
+			content: 'Required fields'
+		}
+
+		button {
+			margin: 1em auto 0;
+		}
+
+		.nocol {
+			display: none;
+		}
+	}
 
 	#experience ul {
 		columns: 1;

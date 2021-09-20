@@ -1750,18 +1750,6 @@ form button span::before {
     font-size: 1.2em !important;
   }
 
-  #experience ul {
-    margin: 0;
-    padding: 0 0 0 1.85em;
-    list-style: none;
-    text-indent: -1.1em;
-  }
-  #experience ul li {
-    margin: 0;
-    padding: 0.2em 0;
-    font-size: 1.1em !important;
-  }
-
   h1 {
     font-size: 2em !important;
   }
@@ -1778,12 +1766,20 @@ form button span::before {
     display: none;
   }
 
+  .close::after {
+    display: none;
+  }
+
   .full {
     display: none !important;
   }
 
   .mobile {
     display: block !important;
+  }
+
+  .contents {
+    padding: 2em !important;
   }
 
   section {
@@ -1795,6 +1791,12 @@ form button span::before {
   #intro {
     min-height: auto;
     margin-top: 5em;
+  }
+
+  #intro .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   #pic {
@@ -1882,14 +1884,6 @@ form button span::before {
     margin: 1em 0;
   }
 
-  #gallery-outer {
-    display: none !important;
-  }
-
-  .description {
-    padding-bottom: 0 !important;
-  }
-
   #more-about-me a[target=gallery] {
     color: #ddd7bc;
     font-weight: 300;
@@ -1898,10 +1892,23 @@ form button span::before {
     cursor: default;
   }
 
+  #experience ul {
+    margin: 0;
+    padding: 0 0 0 1.85em;
+    list-style: none;
+    text-indent: -1.1em;
+  }
+  #experience ul li {
+    margin: 0;
+    padding: 0.2em 0;
+    font-size: 1.1em !important;
+  }
+
+  #resume p {
+    text-align: left;
+  }
   #resume .file-preview {
     padding: 1em;
-    width: 30%;
-    margin: 0 auto;
   }
 
   #colophon {
@@ -1913,14 +1920,44 @@ form button span::before {
   }
 }
 @media only screen and (max-width: 900px) {
+  #gallery-outer {
+    display: none !important;
+  }
+
+  .description {
+    padding-bottom: 0 !important;
+  }
+
   #experience ul {
     columns: 2;
   }
   #experience ul li {
     padding-right: 2em;
   }
+
+  #resume .file-preview {
+    width: 30%;
+    margin: 0 auto;
+  }
 }
 @media only screen and (max-width: 600px) {
+  form {
+    display: block;
+    padding: 1em 1em 2em;
+  }
+  form .error span {
+    display: none;
+  }
+  form .error::after {
+    content: "Required fields";
+  }
+  form button {
+    margin: 1em auto 0;
+  }
+  form .nocol {
+    display: none;
+  }
+
   #experience ul {
     columns: 1;
   }
