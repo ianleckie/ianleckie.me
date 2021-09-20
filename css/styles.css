@@ -2095,6 +2095,71 @@ form button span::before {
   }
 }
 @media print {
+  html {
+    font-size: 0.6em;
+  }
+
+  section {
+    padding: 3em 5em 1em !important;
+    margin: 1em 0 !important;
+    min-height: 0 !important;
+    border: none !important;
+  }
+
+  #resume {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #pic, #gallery, .arrow-down, .arrow-down-border, #section-counter, #resume h1, #resume h2, #resume p, #colophon, .button {
+    display: none !important;
+  }
+
+  h1 {
+    margin: 0 !important;
+  }
+
+  h2 {
+    font-size: 2.4em;
+    margin: 0.5em 0 !important;
+  }
+
+  #software-frameworks {
+    margin: 0.25em 0 0.5em !important;
+  }
+
+  #skills {
+    margin-top: 2em !important;
+  }
+
+  #software-frameworks::before, #skills::before {
+    display: none !important;
+  }
+
+  ul.software li {
+    width: 50%;
+    float: left;
+  }
+
+  ul.expertise {
+    margin-right: 4em !important;
+    text-indent: -1.2em;
+  }
+
+  .file-preview {
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  .file-preview img {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .col-6 {
+    page-break-inside: avoid;
+  }
+
   *,
 *::before,
 *::after {
@@ -2106,20 +2171,8 @@ form button span::before {
 
   a,
 a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]::after,
-a[href^="javascript:"]::after {
-    content: "";
+    text-decoration: none;
+    font-weight: inherit;
   }
 
   pre {
