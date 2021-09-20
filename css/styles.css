@@ -1784,7 +1784,6 @@ form button span::before {
 
   section {
     padding: 2em 1.5em 4em !important;
-    background-attachment: fixed;
     border-width: 0.2em !important;
   }
 
