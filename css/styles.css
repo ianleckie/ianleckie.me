@@ -1676,10 +1676,10 @@ form button span::before {
 }
 #colophon p span::before {
   font-family: "Material Icons";
-  content: "\e5cd";
+  content: "\e87d";
   display: inline-block;
   margin: 0.3em 0.4em 0.3em 0.3em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.2);
   background-color: transparent;
   width: 1em;
   height: 1em;

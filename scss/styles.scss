@@ -67,6 +67,7 @@ $icon-ingredient:    "\f1df"; //east
 $icon-form:          "\e150"; //create
 $icon-send:          "\e163"; //send
 $icon-error:         "\e001"; //error
+$icon-favorite:      "\e87d"; //favorite
 
 
 // modules
@@ -1109,7 +1110,7 @@ form {
 		margin: 1em 0;
 
 		span::before {
-			@include material-icon( $icon-close, $color: rgba( white, 0.3 ), $bg-color: transparent, $size: 1em);
+			@include material-icon( $icon-favorite, $color: rgba( white, 0.2 ), $bg-color: transparent, $size: 1em);
 		}
 	}
 
