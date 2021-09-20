@@ -1908,10 +1908,11 @@ form button span::before {
     padding: 0 0 0 1.85em;
     list-style: none;
     text-indent: -1.1em;
+    columns: 2;
   }
   #experience ul li {
     margin: 0;
-    padding: 0.2em 0;
+    padding: 0.2em 2em 0.2em 0;
     font-size: 1.1em !important;
   }
 
@@ -1940,13 +1941,6 @@ form button span::before {
 
   .description {
     padding-bottom: 0 !important;
-  }
-
-  #experience ul {
-    columns: 2;
-  }
-  #experience ul li {
-    padding-right: 2em;
   }
 
   #resume .file-preview {
