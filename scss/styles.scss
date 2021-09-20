@@ -1383,7 +1383,8 @@ form {
 @media only screen and (max-width: 600px) {
 
 	body {
-		background: url('../img/me.jpg') no-repeat fixed -200px center 100%;
+		background: url('../img/me.jpg') no-repeat fixed center -200px;
+		background-size: 100%;
 	}
 
 	form {
