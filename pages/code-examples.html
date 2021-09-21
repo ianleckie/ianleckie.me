@@ -4,18 +4,28 @@
 
 <nav id="code-nav">
 	<a href="#php-example" class="selected">PHP</a>
-	<a href="#jquery-example">jQuery</a>
 	<a href="#node-example">node.js</a>
+	<a href="#jquery-example">jQuery</a>
 	<a href="#css-example">CSS</a>
 </nav>
 
 <section id="php-example" class="selected">
 
-	<p>The main class from a bare-bones Markdown-based CMS:</p>
+	<p>Statik is a command line Markdown to HTML batch processor that leverages Laravel-Zero, Parsedown and Mustache. This is the main class:</p>
 
 	<pre class="language-php"><code id="php-code"></code></pre>
 
-	<p><a href="https://github.com/ianleckie/" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/</span></a></p>
+	<p><a href="https://github.com/ianleckie/statik" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/statik</span></a></p>
+
+</section>
+
+<section id="node-example">
+	
+	<p>NoMustache is a command line tool to generate HTML files from data stored in Google Spreadsheets. This is the main controller:</p>
+
+	<pre class="language-js"><code id="node-code"></code></pre>
+
+	<p><a href="https://github.com/ianleckie/no-mustache-cli" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/no-mustache-cli</span></a></p>
 
 </section>
 
@@ -26,16 +36,6 @@
 	<pre class="language-javascript"><code id="jquery-code"></code></pre>
 
 	<p><a href="https://github.com/ianleckie/ianleckie.me" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/ianleckie.me</span></a></p>
-
-</section>
-
-<section id="node-example">
-	
-	<p>A node.js-based command line tool to automate the processing of HTML emails:</p>
-
-	<pre class="language-js"><code id="node-code"></code></pre>
-
-	<p><a href="https://github.com/ianleckie/no-mustache-cli" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/no-mustache-cli</span></a></p>
 
 </section>
 
@@ -54,7 +54,7 @@
 
 <script type="text/javascript">
 	
-	loadExampleCode( '#php-code', 'code-samples/generator.class.php', 'php' );
+	loadExampleCode( '#php-code', 'code-samples/Statik.php', 'php' );
 	loadExampleCode( '#jquery-code', 'js/main.js', 'javascript' );
 	loadExampleCode( '#node-code', 'code-samples/NoMustache.js', 'javascript' );
 
