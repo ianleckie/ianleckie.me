@@ -54,6 +54,18 @@ class Statik
 	protected $template;
 
 	/**
+	 * ANSI color codes for colorizing output
+	 * 
+	 * @var array
+	 */
+	protected $ansi_colors = array(
+		'white'      => "\e[0;37m",
+		'purple'     => "\e[0;35m",
+		'cyan'       => "\e[0;36m",
+		'bold_green' => "\e[1;32m",
+		'reset'      => "\e[0m" );
+
+	/**
 	 * Instantiate the Parsedown and Mustache objects
 	 * 
 	 * @return void
@@ -71,14 +83,14 @@ class Statik
 	 * 
 	 * @return bool
 	 */
-	public function generateHTMLFiles( object $command, string $source_path, string $target_path, string $template = '' ) {
+	public function generateHTMLFiles( \App\Commands\Generate $command, string $source_path, string $target_path, string $template = '' ) {
 
 		$this->command     = $command;
 		$this->source_path = $source_path;
 		$this->target_path = $target_path;
 		$this->template    = $template;
 
-		$this->command->info( "\e[1;32mGenerating HTML files..." );
+		$this->command->info( $this->ansi_colors['bold_green'] . "Generating HTML files..." . $this->ansi_colors['reset'] );
 
 		return (bool) $this->checkPaths() && $this->checkTemplateFile() && $this->getSourceFiles() && $this->resetTargetDir() && $this->makeHTMLFiles();
 		
@@ -136,7 +148,7 @@ class Statik
 			
 			} else {
 				
-				$this->command->info( "\e[0;35mUsing template: \e[0;37m" . $this->template . "\e[0m" );
+				$this->command->info( $this->ansi_colors['purple'] . "Using template: " . $this->ansi_colors['white'] . $this->template . $this->ansi_colors['reset'] );
 			
 			}
 
@@ -162,6 +174,8 @@ class Statik
 	 * @return bool
 	 */
 	protected function resetTargetDir() {
+
+		// TODO: delete all .html files instead?
 		
 		return (bool) \File::deleteDirectory( $this->target_path ) && \File::makeDirectory( $this->target_path );
 	
@@ -202,9 +216,9 @@ class Statik
 
 		$out_file = $this->sourceFileToTargetFile( $file );
 
-		if ( $this->createTargetDirectory( $out_file ) && \File::put( $out_file, $html ) ) {
+		if ( $this->createOutputDirectory( $out_file ) && \File::put( $out_file, $html ) ) {
 
-			$this->command->info( "\e[0;36mWriting file: \e[0;97m" . $out_file );
+			$this->command->info( $this->ansi_colors['cyan'] . "Writing file: " . $this->ansi_colors['white'] . $out_file . $this->ansi_colors['reset'] );
 
 			$success = true;
 		
@@ -215,11 +229,11 @@ class Statik
 	}
 
 	/**
-	 * Create a new directory inside the target directory
+	 * Create directory inside the target directory if it doesn't already exist
 	 * 
 	 * @return bool
 	 */
-	protected function createTargetDirectory( string $path ) {
+	protected function createOutputDirectory( string $path ) {
 
 		$out_dir  = pathinfo( $path )['dirname'];
 
