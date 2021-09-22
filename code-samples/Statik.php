@@ -2,6 +2,8 @@
 
 namespace App\Statik;
 
+use Symfony\Component\Finder\SplFileInfo;
+
 class Statik
 {
 	/**
@@ -175,8 +177,6 @@ class Statik
 	 */
 	protected function resetTargetDir() {
 
-		// TODO: delete all .html files instead?
-		
 		return (bool) \File::deleteDirectory( $this->target_path ) && \File::makeDirectory( $this->target_path );
 	
 	}
@@ -206,7 +206,7 @@ class Statik
 	 * 
 	 * @return bool
 	 */
-	protected function makeHTMLFile( object $file ) {
+	protected function makeHTMLFile( SplFileInfo $file ) {
 
 		$success = false;
 
@@ -247,7 +247,7 @@ class Statik
 	 * 
 	 * @return string the translated path
 	 */
-	protected function sourceFileToTargetFile( object $file ) {
+	protected function sourceFileToTargetFile( SplFileInfo $file ) {
 		
 		return (string) str_replace( config('statik')['markdown_extension'], '.html', str_replace( $this->source_path, $this->target_path, $file ) );
 	
