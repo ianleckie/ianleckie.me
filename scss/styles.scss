@@ -1,6 +1,6 @@
 // variables
 // sizing
-$main-breakpoint: 1023px;
+$main-breakpoint: 1025px;
 
 // colors
 $purple:         #5B3D67;
@@ -1290,6 +1290,10 @@ form {
 
 	}
 
+	#gallery-outer {
+		display: none !important;
+	}
+
 	#portfolio {
 		.item {
 			height: 200px;
@@ -1336,7 +1340,12 @@ form {
 		}
 
 		.file-preview {
-			padding: 1em;
+			width: 33%;
+			margin: 0 auto;
+		}
+
+		h2 {
+			margin-top: 1em;
 		}
 	}
 
@@ -1357,17 +1366,13 @@ form {
 
 @media only screen and (max-width: 900px) {
 
-	#gallery-outer {
-		display: none !important;
-	}
-
 	.description {
 		padding-bottom: 0 !important;
 	}
 
 	#resume {
 		.file-preview {
-			width: 30%;
+			width: 50%;
 			margin: 0 auto;
 		}
 	}
@@ -1497,7 +1502,7 @@ form {
 	#resume {
 
 		.file-preview {
-			width: 50%;
+			padding: 1.5em;
 		}
 
 	}

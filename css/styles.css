@@ -272,7 +272,7 @@ body {
   width: 96%;
 }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1025px) {
   .col-1 {
     width: 4.3333333333%;
   }
@@ -1318,7 +1318,7 @@ form button span::before {
 }
 
 #overlay[class*=contact] .wrapper .contents, #overlay[class*=thank-you] .wrapper .contents {
-  max-width: 1023px;
+  max-width: 1025px;
 }
 
 #overlay[class*=clients] .wrapper .contents p, #overlay[class*=clients] .wrapper .contents h1 {
@@ -1748,7 +1748,7 @@ form button span::before {
     margin-top: 20px !important;
   }
 }
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1025px) {
   p, li, h2 {
     font-size: 1.2em !important;
   }
@@ -1884,6 +1884,10 @@ form button span::before {
     content: "Phone";
   }
 
+  #gallery-outer {
+    display: none !important;
+  }
+
   #portfolio .item {
     height: 200px;
   }
@@ -1920,7 +1924,11 @@ form button span::before {
     text-align: left;
   }
   #resume .file-preview {
-    padding: 1em;
+    width: 33%;
+    margin: 0 auto;
+  }
+  #resume h2 {
+    margin-top: 1em;
   }
 
   #colophon {
@@ -1935,16 +1943,12 @@ form button span::before {
   }
 }
 @media only screen and (max-width: 900px) {
-  #gallery-outer {
-    display: none !important;
-  }
-
   .description {
     padding-bottom: 0 !important;
   }
 
   #resume .file-preview {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
   }
 }
@@ -2057,7 +2061,7 @@ form button span::before {
   }
 
   #resume .file-preview {
-    width: 50%;
+    padding: 1.5em;
   }
 
   #ingredients img, #directions img {
