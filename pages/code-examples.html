@@ -4,6 +4,7 @@
 
 <nav id="code-nav">
 	<a href="#php-example" class="selected">PHP</a>
+	<a href="#vue-example">Vue.js</a>
 	<a href="#node-example">node.js</a>
 	<a href="#jquery-example">jQuery</a>
 	<a href="#css-example">CSS</a>
@@ -16,6 +17,16 @@
 	<pre class="language-php"><code id="php-code"></code></pre>
 
 	<p><a href="https://github.com/ianleckie/statik" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/statik</span></a></p>
+
+</section>
+
+<section id="vue-example">
+	
+	<p>KeepScore is a super simple score keeping web toy written in Vue.js. <a href="https://ianleckie.github.io/keep-score/" target="_blank">Try it here!</a></p>
+
+	<pre class="language-js"><code id="vue-code"></code></pre>
+
+	<p><a href="https://github.com/ianleckie/keep-score" title="View repository on GitHub" class="github" target="_blank"><span>https://github.com/ianleckie/keep-score</span></a></p>
 
 </section>
 
@@ -57,6 +68,7 @@
 	loadExampleCode( '#php-code', 'code-samples/Statik.php', 'php' );
 	loadExampleCode( '#jquery-code', 'js/main.js', 'javascript' );
 	loadExampleCode( '#node-code', 'code-samples/NoMustache.js', 'javascript' );
+	loadExampleCode( '#vue-code', 'code-samples/keep-score.js', 'javascript' );
 
 	$( code_link ).click( selectCodeExample );
 
